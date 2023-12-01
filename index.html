@@ -108,7 +108,7 @@
   
   <div class="article-meta">
     <a href="/2023/12/01/%E7%AC%94%E8%AE%B0%E4%B8%89/" class="article-date">
-  <time datetime="2023-12-01T08:35:00.000Z" itemprop="datePublished">2023-12-01</time>
+  <time datetime="2023-12-01T08:35:00.311Z" itemprop="datePublished">2023-12-01</time>
 </a>
     
     
@@ -119,7 +119,97 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        
+        <p><strong>flash钓鱼</strong></p>
+<p>一、flsah页面制作</p>
+<p>1.在虚拟机上下载PHPstudy<a target="_blank" rel="noopener" href="https://www.xp.cn/">https://www.xp.cn/</a></p>
+<p>2.将Apache2.4.39启动</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242117277-07e2434c-de41-49e8-b0b5-422296d3c198.png" alt="img"></p>
+<p>3.点击网站-&gt;管理-&gt;打开根目录</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242425297-25627557-6a19-4482-bced-647075779340.png" alt="img"></p>
+<p>4.删除里面所有的文件，然后创建一个txt后缀的文本文件，然后重命名为html后缀的index文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242539683-444f293f-c0aa-4b85-aa9d-03fe9a389e69.png" alt="img"></p>
+<p>5.在物理机上创建一个同样名字的HTML文件，再用物理机打开vscode</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242703814-fa5379d5-1015-4289-9201-e127352a8641.png" alt="img"></p>
+<p>6.点击文件-&gt;打开文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249884601-dddd9c7f-40c9-4e2a-87eb-b2dbc22de4e9.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249910816-31ce902a-0c4a-4802-b7e8-09cfaab3a726.png" alt="img"></p>
+<p>7.选择创建好了的html后缀的文件，然后点击打开，按住shift+!再回车就会出现主体代码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701250528610-3f9e007a-c789-44c5-8b06-9fc229a01caa.png" alt="img"></p>
+<p>8.在body部分输入</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./flash.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257286044-367b115c-8415-489f-9684-616a4ee65d0b.png" alt="img"></p>
+<p>9.把刚刚在win10虚拟机中创建的html后缀的文件以记事本方式打开</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701256764522-d9dc980c-5cf8-4ccc-a1fb-e27e9af713a4.png" alt="img"></p>
+<p>10.把刚刚在vscode里面编辑的代码全选放到虚拟机打开的记事本中并保存</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257377858-610ce9af-b02a-4a33-8817-11d58da08b97.png" alt="img"></p>
+<p>11.使用一个js脚本，放在phpstudy的根目录下面</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/38965110/1701257616887-4fb4735e-cf48-4c4f-a6e3-5d8e645a7e65.js">📎flash.js</a></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257517150-40da6315-c04d-4eca-a6ff-5bff5e230329.png" alt="img"></p>
+<p>12.打开phpsutdy,点击网站-&gt;管理-&gt;打开网站</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257104962-c5db6f7e-616d-4512-bd2a-e7b429701929.png" alt="img"></p>
+<p>13.打开之后就会显示出已经成功做好的flash页面</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257675328-58254a46-e6ca-4d01-818d-c590670d89c7.png" alt="img"></p>
+<p>二、flash捆绑木马</p>
+<p>1.关掉所有的杀毒软件，然后下载好一个木马程序和flash安装包</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701257965001-0662f572-9b18-4ca9-ba98-f76b17434788.rar">📎木马.rar</a></p>
+<p>2.同时选中木马程序和flash安装包，右击，然后选择添加到压缩文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258200200-8652d6be-397d-4065-9d28-a8772764173b.png" alt="img"></p>
+<p>3.勾选创建自解压格式压缩文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258292065-c75d18f8-e62b-43ec-bfe7-ff4f2c0e7efa.png" alt="img"></p>
+<p>4.点击高级-&gt;自解压选项</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258341196-70b676d4-5e92-4b83-93bd-e7d699d36688.png" alt="img"></p>
+<p>5.解压路径设置 C:\windows\temp</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258415770-b0abff9f-be5c-499c-94e8-322225312f64.png" alt="img"></p>
+<p>6.然后点击设置选项卡，在解压后运行里面输入</p>
+<p>C:\windows\temp\flashcenter_pp_ax_install_cn.exe </p>
+<p>（黄色背景部分对应之前下载好的flash安装包的名字）</p>
+<p>C:\windows\temp\flash.exe</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258524712-fc5f3e77-99bf-43a6-8bcf-088ab7ccda83.png" alt="img"></p>
+<p>7.点击模式选项卡，选择全部隐藏</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258662803-6b087acd-87b1-4fb2-a402-3cc6602034a4.png" alt="img"></p>
+<p>8.点击更新选项卡，将更新模式和覆盖模式都选择为第二个</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258732039-f6afe207-716d-4536-bb1e-a9b363100495.png" alt="img"></p>
+<p>9.点击确定，然后会显示出一个压缩包</p>
+<p>10.下载一个图标更改程序</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701259144003-8c7b05df-dee9-4dc0-a0ea-892dc098d500.rar">📎更改图标.rar</a></p>
+<p>11.点击Restorator.exe启动程序</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259200499-893f034b-5038-404e-8df3-93c51ba774d3.png" alt="img"></p>
+<p>12.将刚刚做好的压缩包和flash安装包拖到资源树中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259331313-7c90067b-2109-4b43-8d78-037de2cdbb93.png" alt="img"></p>
+<p>13.删除压缩包的图标，将flash安装包的图标复制到压缩包中git clone </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259414320-5998c659-18b4-4ad1-b87e-f6d3e625aff0.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259443564-3d4782d7-e7d0-4301-a310-9d7c59665e9d.png" alt="img"></p>
+<p>14.再次点击压缩包的图标，可以发现它变成了flash安装包的图标</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259474971-33a92c45-eeef-4d07-b7cd-8f0c974944fa.png" alt="img"></p>
+<p>15.点击保存</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259612821-1bc8a54f-0982-434e-8bb7-ff49d96f27fa.png" alt="img"></p>
+<p>16.将改好的压缩包放入phpstudy的根目录中，并将其名字改为flash压缩包的名字</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260620277-b5c02f4a-9f08-4618-9473-179e12ca3f10.png" alt="img"></p>
+<p>17.打开浏览器，在地址栏输入127.0.0.1，就可以看到捆绑木马的flash网站做好了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260813077-0f742009-228e-480a-bf63-14a0633b3ba9.png" alt="img"></p>
+<p>18.点击立即升级，下载压缩包并打开，打开之后可以看到木马已经植入电脑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260922885-cbc0e881-ff3d-4de9-afc1-12bb17a4cfd5.png" alt="img"></p>
+<p>三、自制的其它钓鱼网页（不带免杀）</p>
+<p>1.打开一个steam网页，右击选择另存页面为，将源码保存phpstudy的根目录下</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261407197-fcc16284-f069-4ad4-b056-eec6a81a0669.png" alt="img"></p>
+<p>2.找到一个steam安装包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261585930-1f872cc8-d5bb-447c-9c17-439d347a28d2.png" alt="img"></p>
+<p>3.选中之前下好的木马和steam安装包，右击重复之前的压缩步骤，这一步的路径要改为steam安装包的名字</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261737866-6b0721e8-4371-4466-9bd7-1e47d4730c22.png" alt="img"></p>
+<p>4.压缩好了之后，再重复之前更改图标的操作，然后将压缩包放入phstudy的根目录中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261867321-37455cc4-23ac-4773-a0cf-b69126b0f0e2.png" alt="img"></p>
+<p>5.把之前下好的Sign In.htm改为index.html</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261979887-6c17d526-e257-4fdb-bd81-2f1fe2295cd8.png" alt="img"></p>
+<p>6.右击index.html用记事本打开，找到installsteam这一部分</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262093234-b2da25f4-326c-41b5-ab6f-5d1c04c15669.png" alt="img"></p>
+<p>7.将href&#x3D;” “里面的内容改为&#x2F;Steaminstaller.exe ,保存更改</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262136805-e092cdc8-ced2-4d36-90f6-4f0d52f1ea84.png" alt="img"></p>
+<p>8.打开浏览器在地址栏输入127.0.0.1，点击Install steam</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262295670-2c70901a-1472-463d-bf8a-348747ce7c7d.png" alt="img"></p>
+<p>9.打开下载好的文件，可以看到电脑跟之前已植入木马</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262451061-c1c606b5-e522-48f7-87b6-6675ef8850af.png" alt="img"></p>
+
       
     </div>
     
