@@ -628,82 +628,6 @@
 </article>
 
   
-    <article id="post-安卓病毒监听-1" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/">安卓病毒监听</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/" class="article-date">
-  <time datetime="2023-12-10T01:17:30.000Z" itemprop="datePublished">2023-12-10</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、反弹shell和正向shell</p>
-<p>s:服务器  c:客户端</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660291846-a17e872b-24f3-4200-b7bf-d429150169ff.png" alt="img"></p>
-<p>正向shell可能会出现bug，会有window或者Linux的防火墙抵御来自sever的监听。</p>
-<p>但是反向shell不会，因为反向shell是客户机c出栈，正向shell是入栈。</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660366168-55370707-0415-4889-b18d-e9263ebf2e0e.png" alt="img"><br>解决防火墙抵御bug的解决方法</p>
-<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660546331-ed973438-6252-49ca-b6a7-ddc3d16bc886.png" alt="img"></p>
-<p>二、使用mumu进行病毒监听</p>
-<p>1.在官网上下载mumu模拟器版本，下载mumu6</p>
-<p><a target="_blank" rel="noopener" href="https://mumu.163.com/index.html">https://mumu.163.com/index.html</a></p>
-<p>2.安装好AhMyth程序</p>
-<p><img src="/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1.assets/1701673342335-595d7072-fc46-42d4-86a6-e036d13fd1ff.png" alt="img"></p>
-<p>3.win+r,输入cmd，输入ipconfig查找自己的ip</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688130573-7551193e-0e3d-409e-a28c-54ce1d53339b.png" alt="img"></p>
-<p>4.打开AhMyth，在Source IP中输入刚刚获取到的ip，端口号默认即可，然后点击Build</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688335608-ead456f5-0a71-4bb2-9509-87ca511dc95b.png" alt="img"></p>
-<p>5.找到生成的apk文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688393706-ba395adc-e388-4025-860e-c3e7aa3ec09e.png" alt="img"></p>
-<p>6.打开mumu模拟器，点击安装，选择刚刚生成的apk文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688447498-e444b208-2423-4cf2-bf56-3cce5e3ab818.png" alt="img"></p>
-<p>7.可以看到桌面上多了一个安卓图标</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688516812-5438a0ea-bff8-446d-b1e3-9eea23365e91.png" alt="img"></p>
-<p>8.切换到AhMyth，点击Listen,然后回到mumu双击安卓图标</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688610483-37e894f1-5985-43d8-95fc-ba48de88fd44.png" alt="img"></p>
-<p>9.点击Open The Lab，然后可以发现打开了一个新窗口。利用这个窗口可以实现对mumu模拟器的监听。</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688749674-43eb71c1-a0c4-4ae9-9a81-5a44eb4ab9a2.png" alt="img"></p>
-<p>三、java的安装和环境配置</p>
-<p>1.下载Java安装包</p>
-<p>2.新建两个文件夹，分别命名为java8和java_jre</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701689197739-b795bea7-3220-4d8a-abf5-971840b870d9.png" alt="img"></p>
-<p>3.点击安装，将目录更换到java8文件夹下（由于我是在虚拟机安装没有其它盘，只能装在c盘），然后点击下一步</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690375791-21869947-b4d0-409b-ae95-db18a418fbab.png" alt="img"></p>
-<p>4.将目标文件夹的路径更换到java_jre文件夹中，然后下一步</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690636924-0e22f115-06ec-4de8-b27d-324070f46eb6.png" alt="img"></p>
-<p>5.右击此电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量，</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690778669-e54569a8-4e63-447a-b5f0-d8e560198c60.png" alt="img"></p>
-<p>6.找到系统变量的Path变量，双击打开</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690882716-646fe9b5-e576-4967-8a36-7fc736ff225d.png" alt="img"></p>
-<p>7.将新建的两个文件夹的路径加进去，然后确定，这样java环境就配置好了</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701691046259-19f314a4-937a-488e-85ac-62cc76225858.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
     <article id="post-安卓病毒监听" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -854,7 +778,7 @@
 <p>5.systemctl restart sshd</p>
 <p>6.ip add 查找centos的地址</p>
 <p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701586631402-6bc21dcd-3793-4dfd-a3d9-7780affd935c.png" alt="img"></p>
-<p>7.ssh <a href="mailto:&#x72;&#x6f;&#111;&#x74;&#64;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#x31;&#48;&#x32;&#46;&#x31;&#x33;&#55;">&#x72;&#x6f;&#111;&#x74;&#64;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#x31;&#48;&#x32;&#46;&#x31;&#x33;&#55;</a></p>
+<p>7.ssh <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#50;&#46;&#x31;&#x33;&#55;">&#x72;&#111;&#111;&#116;&#x40;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#50;&#46;&#x31;&#x33;&#55;</a></p>
 <p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701586055000-fb47b375-ec7e-4571-8a51-ccac036fd23c.png" alt="img"></p>
 
       
@@ -989,6 +913,97 @@
 <p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701602243155-14b10907-29fe-452c-a789-0ee636ac79bd.png" alt="img"></p>
 <p>4.补充</p>
 <p>pass 代码占位</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-blog搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/">blog搭建</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time datetime="2023-12-01T08:35:18.000Z" itemprop="datePublished">2023-12-01</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、利用github搭建hexo博客</p>
+<p>1.下载typora</p>
+<p>2.下载picgo</p>
+<p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p>
+<p>3.下载node.js</p>
+<p> <a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en</a></p>
+<p>4.下载git</p>
+<p>5.注册一个github账号</p>
+<p>6.在本地新建一个文件夹，名为hexo，路径不要有中文（不建议在C盘建立文件夹）</p>
+<p>7.选定hexo文件夹，右击-&gt;Git Bash Here</p>
+<p>8.使用nmp命令安装hexo,输入：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmp install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421082102-981198c7-483b-44f3-84f4-6ec2f2aefaaf.png" alt="img"></p>
+<p>9.检测网站雏形，在Git Bash Here中输入以下命令</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+
+<p>10.配置ssh</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></div>
+
+<p>11.如果提示：No such file or directory说明你是第一次使用git</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>12.连续按三次回车后,打开用户目录,找到.ssh\id_rsa.pub文件,用记事本打开并复制里面的内容,打开你的github主页,进入个人设置-&gt;SSH and GPG keys-&gt;New SSH key:</p>
+<p>在key里面填写刚刚复制的内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421806986-ca65d812-0185-4d0f-983d-2827ebf202a3.png" alt="img"></p>
+<p>13.尝试ssh连接,测试是否成功</p>
+<p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>(邮箱地址不用改)</p>
+<p>14.在blog目录下打开cmd</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git-save</span><br></pre></td></tr></table></figure></div>
+
+<p>15.在上一个Git Bash Here中继续配置</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;asd&quot;//你的github用户名,非昵称</span><br><span class="line">git config --global user.name &quot;xxx@qq.com&quot;//填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div>
+
+<p>16.在github上新建一个存储库,命名为github的用户名.github.io</p>
+<p>17.编辑_config.yml文件,在最后面改成这样</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>:git</span><br><span class="line">	repository:git@github.com:asd/asd.github.io.git</span><br><span class="line">	branch:main</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422480401-0e9f8e54-4f97-4c1e-a45a-88f901b1d09e.png" alt="img"></p>
+<p>18.在Git Bash Here中输入hexo d -g上传</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422630998-a298dcfe-af8f-410c-b144-c8369324af81.png" alt="img"></p>
+<p>二、picgo和typora的连接</p>
+<p>1.打开typora,选择文件-&gt;偏好设置</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423371632-41787294-abcf-4b8b-91d2-334307e8a083.png" alt="img"></p>
+<p>2.点击图像,插入图片时选择第三个,然后勾选前四个,上传服务选择PicGo(app),PicGo路径精确定位到PicGo.exe</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423418143-126c33c9-8687-4447-96cd-2954e1ff6838.png" alt="img"></p>
+<p>3.在github上点击个人主页,选择setting</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422863941-2661a534-3d7b-4deb-b831-c9f85cf844b0.png" alt="img"></p>
+<p>4.找到develoer setting-&gt;Personal access tokens-&gt;Tokens(classic)-&gt;Generate new token-&gt;Generate new token(classic),命名为123,生效时间选择永久,勾选第一个,生产令牌后复制令牌</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423208708-5b1c8bcf-97ce-45e5-a261-8facc836009e.png" alt="img"></p>
+<p>5.打开PicGo,点击图床设置-&gt;GitHub,然后编辑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423796833-9950406b-68e4-4a09-b7e8-50a9daa7b40a.png" alt="img"></p>
+<p>6.图床配置名为123,仓库名为github用户名&#x2F;仓库名,分支名设为main,Token处填写刚刚复制的令牌,设定存储路径为img&#x2F;,点击确定,然后设为默认图床</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423908277-71582001-1645-4aea-af5e-cd41482b55fa.png" alt="img"></p>
+<p>7.回到typora,点击验证图片上传选项,会显示验证成功,这样PicGo和typora的连接就建立成功了.</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701424133266-dd775176-adb1-480f-a2fb-db0f2ef72ea1.png" alt="img"></p>
 
       
     </div>

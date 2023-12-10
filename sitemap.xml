@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/</loc>
+    <loc>http://example.com/2023/12/03/centos%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2023-12-10</lastmod>
     
@@ -120,15 +120,6 @@
   
   <url>
     <loc>http://example.com/2023/12/01/blog%E6%90%AD%E5%BB%BA/</loc>
-    
-    <lastmod>2023-12-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2023/12/03/centos%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2023-12-03</lastmod>
     
