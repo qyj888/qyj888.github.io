@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>字典 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、字典的概念 字典是以键值对的形式进行存储数据的 字典的表示方式：{key:value,key2:value,key3:value} 用起来只是把索引换成了key  字典的key必须是可哈希的数据类型  字典的val可以是任何数据类型  二、字典的增删改查 1.增加  如果字典里已经有了一个相同的key那么执行的就是修改操作  setdefault() 设置默认值，如果之前已经有了tom了，那么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字典">
+<meta property="og:url" content="http://example.com/2023/12/10/%E5%AD%97%E5%85%B8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、字典的概念 字典是以键值对的形式进行存储数据的 字典的表示方式：{key:value,key2:value,key3:value} 用起来只是把索引换成了key  字典的key必须是可哈希的数据类型  字典的val可以是任何数据类型  二、字典的增删改查 1.增加  如果字典里已经有了一个相同的key那么执行的就是修改操作  setdefault() 设置默认值，如果之前已经有了tom了，那么">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701869597350-21c3bb5d-c6c9-4903-ae78-7f01b66b31e4-170217257992130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701869702106-8de24410-1e30-4850-95de-e5f3712e5c99.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701869804311-89e76d3c-641c-48a9-a07e-562205b0b5df.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871004801-3241e56b-6027-4d54-9f7d-884d96ce7665.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871594674-f9248ea1-5a56-4760-ac13-19f12bfff728.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871755916-80d6162e-a01f-4208-b468-0a8ed310a536.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871825072-7390e505-52cc-4c73-a4f6-9abbff03eb39.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871905535-c7be1b69-68b8-4dcb-8469-47a7ba24fc43.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871965204-af2b2f1a-77b7-4118-9914-5fa45f350641.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701871994959-5649fa5f-a1f9-401d-86df-c1baa26469f3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701872308919-6c9bd991-cafc-46e9-8885-d50441117e77.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701872574684-c84d20ad-b7f9-47f3-9b05-3e0bd5a5c9f3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701872949235-c7d9e492-b269-4d21-b7d9-d1f0405896d1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701873052476-2897c0b0-aa69-4773-85d4-16955d257411.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701873271727-870a2553-e031-4952-838a-890f6cacc4cc.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701873726003-25a85623-5d70-4322-9067-c06395f31a72.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874069203-666d10d4-5216-49ac-8461-5913dd709acc.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874123122-924ce637-8d2b-4788-a2e5-2419c982d473.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874281198-fcbbb103-1297-48f5-9b2b-e7026852e64c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701873874828-db00e330-594d-4d90-a427-0eff03df87a2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874461023-ffd34164-967c-4656-a745-2feeddc23b2c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874574034-f92caa04-8da8-431f-8411-2aba01a6ee64.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701874693210-164ce52e-c470-48d3-8e71-01df8de3ba83.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701875080422-45def8e4-a07b-4898-baf8-7d0fe5bbba91.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701875096637-92acf055-3634-41f1-83ef-eec5babb226d.png">
+<meta property="article:published_time" content="2023-12-10T01:38:53.000Z">
+<meta property="article:modified_time" content="2023-12-10T01:44:48.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701869597350-21c3bb5d-c6c9-4903-ae78-7f01b66b31e4-170217257992130.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-字典" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      字典
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E5%85%B8/" class="article-date">
+  <time datetime="2023-12-10T01:38:53.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、字典的概念</p>
+<p>字典是以键值对的形式进行存储数据的</p>
+<p>字典的表示方式：{key:value,key2:value,key3:value}</p>
+<p>用起来只是把索引换成了key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869597350-21c3bb5d-c6c9-4903-ae78-7f01b66b31e4-170217257992130.png" alt="img"></p>
+<p>字典的key必须是可哈希的数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869702106-8de24410-1e30-4850-95de-e5f3712e5c99.png" alt="img"></p>
+<p>字典的val可以是任何数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869804311-89e76d3c-641c-48a9-a07e-562205b0b5df.png" alt="img"></p>
+<p>二、字典的增删改查</p>
+<p>1.增加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871004801-3241e56b-6027-4d54-9f7d-884d96ce7665.png" alt="img"></p>
+<p>如果字典里已经有了一个相同的key那么执行的就是修改操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871594674-f9248ea1-5a56-4760-ac13-19f12bfff728.png" alt="img"></p>
+<p>setdefault() 设置默认值，如果之前已经有了tom了，那么setdefault就不起作用了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871755916-80d6162e-a01f-4208-b468-0a8ed310a536.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871825072-7390e505-52cc-4c73-a4f6-9abbff03eb39.png" alt="img"></p>
+<p>2.删除</p>
+<p>pop()根据key去删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871905535-c7be1b69-68b8-4dcb-8469-47a7ba24fc43.png" alt="img"></p>
+<p>3.查询</p>
+<p>如果key不存在，程序会报错，当你确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871965204-af2b2f1a-77b7-4118-9914-5fa45f350641.png" alt="img"></p>
+<p>get() 如果key不存在会返回None，当你不确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871994959-5649fa5f-a1f9-401d-86df-c1baa26469f3.png" alt="img"></p>
+<p>None单纯的就是空，表示没有的意思</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872308919-6c9bd991-cafc-46e9-8885-d50441117e77.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872574684-c84d20ad-b7f9-47f3-9b05-3e0bd5a5c9f3.png" alt="img"></p>
+<p>三、字典的循环和嵌套</p>
+<p>1.可以用for循环直接拿到key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872949235-c7d9e492-b269-4d21-b7d9-d1f0405896d1.png" alt="img"></p>
+<p>2.希望把所有的key全都保存在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873052476-2897c0b0-aa69-4773-85d4-16955d257411.png" alt="img"></p>
+<p>3.希望把所有的val都放在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873271727-870a2553-e031-4952-838a-890f6cacc4cc.png" alt="img"></p>
+<p>4.直接拿到字典中的key和val</p>
+<p>item中只有两项元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873726003-25a85623-5d70-4322-9067-c06395f31a72.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874069203-666d10d4-5216-49ac-8461-5913dd709acc.png" alt="img"></p>
+<p>for key,value in dic.items():    可以直接拿到字典的所有的key和value</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874123122-924ce637-8d2b-4788-a2e5-2419c982d473.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874281198-fcbbb103-1297-48f5-9b2b-e7026852e64c.png" alt="img"></p>
+<p>解构（解包）元组或者列表都可以执行该操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873874828-db00e330-594d-4d90-a427-0eff03df87a2.png" alt="img"></p>
+<p>5.字典的嵌套</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874461023-ffd34164-967c-4656-a745-2feeddc23b2c.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874574034-f92caa04-8da8-431f-8411-2aba01a6ee64.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874693210-164ce52e-c470-48d3-8e71-01df8de3ba83.png" alt="img"></p>
+<p>四、循环删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875080422-45def8e4-a07b-4898-baf8-7d0fe5bbba91.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875096637-92acf055-3634-41f1-83ef-eec5babb226d.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            字符集和编码
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">列表的操作</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/">字符串的进阶操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/">centos安装环境和html5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

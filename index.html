@@ -59,6 +59,651 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-字符集和编码" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/" class="article-date">
+  <time datetime="2023-12-10T01:45:12.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、字符集和编码</p>
+<p>ascii &#x3D;&gt;编排了128个文字符号，只需要7个0和1就可以表示了</p>
+<p>1 byte &#x3D;&gt;8bit</p>
+<p>ANSI &#x3D;&gt; 一套标准，每个字符16bit，2byte</p>
+<p>gb231编码(中国),gbk编码(windows 默认就是这个) ，16bit，2byte</p>
+<p>JIS编码(日本)</p>
+<p>Unicode:万国码，32bit，4byte（只是一个标准，不能用）</p>
+<p>utf：是可变长度的unicode，可以进行数据的传输和存储-&gt;行书，草书，隶书</p>
+<p>btf-8:最短的字节长度8</p>
+<p>​        英文：8bit，1byte</p>
+<p>​        欧洲文字：16bit，2byte</p>
+<p>​        中文：24bit，3byte</p>
+<p>gbk和utf-8不能直接进行转化</p>
+<p>二、编码和解码</p>
+<p>1.bytes</p>
+<p>程序员平时遇见的所有的数据最终单位都是字节byte</p>
+<p>b ‘xxxxx’ btyes类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954291004-ab4f1288-d2c7-41b3-821b-7f2eb9d05f8c.png" alt="img"></p>
+<p>如何把一个gbk的字节转化成utf-8的字节</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954468012-f62a4199-ca77-4df8-91ce-baeb3a6ca786.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954872043-f6e79979-ede6-46f6-aa99-b6bf1d88bb99.png" alt="img"></p>
+<p>三、运算符</p>
+<p>算数运算 + - * &#x2F; % &#x2F;&#x2F;</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955273511-3a0781af-8257-46a9-89e3-1061bbb43b9b.png" alt="img"></p>
+<p>比较运算符 &gt; &gt;&#x3D; &lt; &lt;&#x3D; &#x3D;&#x3D; !&#x3D;</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955315268-2bb5a2b6-2a3f-4412-b683-b17c99e2ba35.png" alt="img"></p>
+<p>赋值运算符 &#x3D; +&#x3D; -&#x3D; *&#x3D; ….</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955568252-c114342c-5ca3-42fc-8e3d-977f8db864a1.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955605394-05154e8d-2ce4-4407-b7dc-e533d847eda0.png" alt="img"></p>
+<p>逻辑运算符</p>
+<p>and 并且，左右两端同时成立结果为真</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955889653-9a003a3b-1652-4fef-8dd6-818397467a2f.png" alt="img"></p>
+<p>or 或者，左右两端有一个成立结果就成立</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955968191-4c310807-4f79-4fe2-a8c3-d8a108c67cb9.png" alt="img"></p>
+<p>not 非，非真即假，非假即真</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701956054559-1a9ffce9-0ce0-446e-84fa-0a2a5bac6f2f.png" alt="img"></p>
+<p>当and和or以及not同时出现的时候，最好加上括号，不会产生歧义或者不易理解</p>
+<p>运算顺序：括号&gt;not&gt;and&gt;or</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701956635891-b9c5b47e-22ae-46b1-93d9-adf5f089dee1.png" alt="img"></p>
+<p>成员运算符</p>
+<p>in 判断xxx是否在xxx中出现了</p>
+<p>not in 判断xxx是否不在xxx中出现了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701957837904-0cf3720a-2a63-4190-8683-68cab3cf00d4-170217287312814.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-字典" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E5%85%B8/" class="article-date">
+  <time datetime="2023-12-10T01:38:53.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、字典的概念</p>
+<p>字典是以键值对的形式进行存储数据的</p>
+<p>字典的表示方式：{key:value,key2:value,key3:value}</p>
+<p>用起来只是把索引换成了key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869597350-21c3bb5d-c6c9-4903-ae78-7f01b66b31e4-170217257992130.png" alt="img"></p>
+<p>字典的key必须是可哈希的数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869702106-8de24410-1e30-4850-95de-e5f3712e5c99.png" alt="img"></p>
+<p>字典的val可以是任何数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869804311-89e76d3c-641c-48a9-a07e-562205b0b5df.png" alt="img"></p>
+<p>二、字典的增删改查</p>
+<p>1.增加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871004801-3241e56b-6027-4d54-9f7d-884d96ce7665.png" alt="img"></p>
+<p>如果字典里已经有了一个相同的key那么执行的就是修改操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871594674-f9248ea1-5a56-4760-ac13-19f12bfff728.png" alt="img"></p>
+<p>setdefault() 设置默认值，如果之前已经有了tom了，那么setdefault就不起作用了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871755916-80d6162e-a01f-4208-b468-0a8ed310a536.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871825072-7390e505-52cc-4c73-a4f6-9abbff03eb39.png" alt="img"></p>
+<p>2.删除</p>
+<p>pop()根据key去删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871905535-c7be1b69-68b8-4dcb-8469-47a7ba24fc43.png" alt="img"></p>
+<p>3.查询</p>
+<p>如果key不存在，程序会报错，当你确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871965204-af2b2f1a-77b7-4118-9914-5fa45f350641.png" alt="img"></p>
+<p>get() 如果key不存在会返回None，当你不确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871994959-5649fa5f-a1f9-401d-86df-c1baa26469f3.png" alt="img"></p>
+<p>None单纯的就是空，表示没有的意思</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872308919-6c9bd991-cafc-46e9-8885-d50441117e77.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872574684-c84d20ad-b7f9-47f3-9b05-3e0bd5a5c9f3.png" alt="img"></p>
+<p>三、字典的循环和嵌套</p>
+<p>1.可以用for循环直接拿到key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872949235-c7d9e492-b269-4d21-b7d9-d1f0405896d1.png" alt="img"></p>
+<p>2.希望把所有的key全都保存在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873052476-2897c0b0-aa69-4773-85d4-16955d257411.png" alt="img"></p>
+<p>3.希望把所有的val都放在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873271727-870a2553-e031-4952-838a-890f6cacc4cc.png" alt="img"></p>
+<p>4.直接拿到字典中的key和val</p>
+<p>item中只有两项元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873726003-25a85623-5d70-4322-9067-c06395f31a72.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874069203-666d10d4-5216-49ac-8461-5913dd709acc.png" alt="img"></p>
+<p>for key,value in dic.items():    可以直接拿到字典的所有的key和value</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874123122-924ce637-8d2b-4788-a2e5-2419c982d473.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874281198-fcbbb103-1297-48f5-9b2b-e7026852e64c.png" alt="img"></p>
+<p>解构（解包）元组或者列表都可以执行该操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873874828-db00e330-594d-4d90-a427-0eff03df87a2.png" alt="img"></p>
+<p>5.字典的嵌套</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874461023-ffd34164-967c-4656-a745-2feeddc23b2c.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874574034-f92caa04-8da8-431f-8411-2aba01a6ee64.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874693210-164ce52e-c470-48d3-8e71-01df8de3ba83.png" alt="img"></p>
+<p>四、循环删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875080422-45def8e4-a07b-4898-baf8-7d0fe5bbba91.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875096637-92acf055-3634-41f1-83ef-eec5babb226d.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-列表的操作" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2023-12-10T01:30:27.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、列表的概念</p>
+<p>在python中用[ ]来表示一个列表，列表中的元素用逗号隔开</p>
+<p>特性：</p>
+<p>​     也像字符串一样有索引和切片 </p>
+<p>​     索引如果超过范围会报错</p>
+<p>​     可以用for循环进行遍历</p>
+<p>​     用len可以拿到列表的长度</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701697938933-d9bfe8bd-5f49-44e5-8557-6fe5d0ce620f.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701698093309-218858b4-6f93-4b1d-852e-27e3ed7bb90e.png" alt="img"></p>
+<p>二、列表的增删改查</p>
+<p>1.向列表中添加内容</p>
+<p>append()追加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701698403563-dafb49f7-68f1-4590-9807-50f4f9bafd7e.png" alt="img"></p>
+<p>insert()插入</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701699047083-2203e06a-3224-449a-927e-b2fa7cbcaadf.png" alt="img"> </p>
+<p>extend([ ])可以合并两个列表</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701699120339-6ce2003b-8da8-4b25-91b4-c20783acd38c.png" alt="img"></p>
+<p>2.删除</p>
+<p>pop()   给出被删除的索引，返回被删除的元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701767235047-4a80d825-e156-49a5-b557-104fd9d4c3d1.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701767327712-a44d7145-3e1c-4bd0-9ac2-4c55411775a9.png" alt="img"></p>
+<p>remove()  删除某个元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701767456798-51c37ed5-d792-44fb-8d21-75015f5f52e2.png" alt="img"></p>
+<p>3.修改</p>
+<p>  直接用索引就可以进行修改操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701767537611-1e5cba28-f633-4eb7-9021-bad4c838c296.png" alt="img"></p>
+<p>4.查询</p>
+<p>直接用索引进行查询</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701767585817-e51a96ce-489a-4f7b-9693-eef9e42be76d.png" alt="img"></p>
+<p>5.增删改查综合操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701768599061-b54e0d0d-0b5d-4c61-962b-3372b4c99ebc.png" alt="img"></p>
+<p>三、知识补充</p>
+<p>1.排序</p>
+<p>sort()对列表进行升序排序</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701775039164-3ff6bf7e-f889-4ce0-91aa-c0120d218784.png" alt="img"></p>
+<p> sort(reverse&#x3D;True)   reverse：翻转</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701775117143-ff8318c5-b9a0-47e1-ad27-31f24ce271c3.png" alt="img"></p>
+<p>2.列表的嵌套</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701775311979-15418d6f-0d4c-4cf7-84ca-66882a1bcdbb.png" alt="img"></p>
+<p>3.列表的循环删除</p>
+<p>列表中的某一个元素被删除，列表中的其它元素会自动往前补齐</p>
+<p>安全稳妥的循环删除方式：</p>
+<p>​       将要删除的内容保存在一个新列表中，循环新列表，删除老列表</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701781991019-269df453-35a6-438a-8cdb-68a8e0892a10.png" alt="img"></p>
+<p>四、元组</p>
+<p>特点：不可变的列表</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701783107773-c4937046-b606-4db4-b27d-6a978dcb9326.png" alt="img"></p>
+<p>元组如果只有一个元素需要在末尾添加逗号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701783466736-24f0a0c6-883c-48dd-8c86-4a13f3476e78.png" alt="img"></p>
+<p>关于元组不可变的一个坑，元组里面有列表，那么列表里面的内容可以改但是内存地址不能更改</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701787783592-37db7419-6b91-4929-a6dd-a8b271e1d186.png" alt="img"></p>
+<p>五、set集合</p>
+<ol>
+<li>不可哈希：python 中的set集合进行数据存储的时候，需要对数据进行哈希计算，根据计算出来的哈希值进行存储数据，set集合要求存储的数据是可以进行哈希计算的。可变的数据类型（list，dict，set）</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701867953425-6ccd9765-cdf3-4e2e-8398-34599efa6f82.png" alt="img"></p>
+<p>可哈希：不可变的数据类型（int，str，tuple，bool）</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701867984496-1a108c68-fa66-476e-b7d5-6e84151cf2c8.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868022099-3183caed-715f-4294-8623-c822d0b433fb.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868285658-8205007d-089e-4ab5-9c85-ff545cb6cf74.png" alt="img"></p>
+<p>pop()默认弹出最后一个，由于集合无序，测试的时候无法验证谁是最后一个</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868379200-859779b2-2c94-4fd6-b447-da1d93f49032.png" alt="img"></p>
+<p>remove()直接删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868486324-aab6b150-1bae-4fc3-a9b8-f17eac424b87.png" alt="img"></p>
+<p>想要修改，先删除,再新增</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868543340-b6ff4c58-014a-481c-ac4e-a5fc46ced640.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868610876-a493f105-de51-4f2f-8a8b-26907a39e09f.png" alt="img"></p>
+<p>2.补充</p>
+<p>交集  &amp;    intersection</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868826035-ad97d793-bc30-4b57-bd86-5815ffa31804.png" alt="img"></p>
+<p>并集  |     union</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868880454-c9087d16-1366-472b-9e95-5900d304cdcd.png" alt="img"></p>
+<p>差集  -     difference</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701868984809-39613cc7-68ed-444c-b4f6-1403819c9f2b.png" alt="img"></p>
+<p>重要的作用:可以去除重复</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869108842-5382b6b0-eba1-4fe7-ac2c-d245eb48cf19.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869182632-27e56f57-291e-4125-89e9-7547942450f8.png" alt="img"></p>
+<p>去除重复之后的数据是无序的</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869222364-dd769d34-41b7-4df0-b83f-1b4a05c86e6a.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-字符串的进阶操作" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/">字符串的进阶操作</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2023-12-10T01:27:51.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、索引和切片</p>
+<p>索引：按照位置提取元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701602793387-0f3be2f0-1b53-4031-9f5d-0f5a55223ab0.png" alt="img"></p>
+<p>print(s[-1])表示倒数第一个 </p>
+<p>切片：从一个字符串中提取一部分内容</p>
+<p>print(s[3:6]) 从索引3位置进行切片，切到6结束 （切片拿不到第二个位置的元素），如果：左右两端有空白，表示开头或者结尾</p>
+<p>语法：s[start:end]从start到end进行切片，但是娶不到end，如果start从开头进行切片可以省略。如果start开始一直截取到末尾，那么end可以省略</p>
+<p><img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C.assets/1701604494670-d53eb395-cef8-4840-8e67-22d674ce74ad.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701604638967-222c9c99-428e-47f9-86da-67a0a857698f.png" alt="img"></p>
+<p>print(s[-3:-1])也表示从左往右切片</p>
+<p>print(s[-1:-3])无结果 </p>
+<p>可以给切片添加步长来控制切片的方向</p>
+<p>print(s[::-1])负号表示从右往左</p>
+<p><img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C.assets/1701605295310-e45559e1-2adb-458b-a987-3b64a4d4a5ee.png" alt="img"></p>
+<p>语法：s[start:end:step]从start切到end，每step个元素出来一个元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701605431530-4b484ce7-717f-4a17-a44f-6104f27b296c.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701605555631-a8858800-e7b5-45c5-93ce-c311b1dde345.png" alt="img"></p>
+<p>二、字符串大小写转换</p>
+<p>字符串操作一般不会对原字符产生影响，一般是返回一个新的字符串</p>
+<p>capitalize()把字符串的首字母变成大写</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701692466249-c4815c1e-acdd-4410-b866-91bd034fdc33.png" alt="img"></p>
+<p>title()所有单词首字母大写</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701692536338-b64f904b-b1d7-47eb-8145-861b30013b5f.png" alt="img"></p>
+<p>lower()把字母全部变成小写</p>
+<p> <img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C.assets/1701692664558-69eda80f-fdcd-41bc-9e26-869b7bb0c759.png" alt="img"> </p>
+<p>upper()把所有字母变成大写   </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701692753188-c2ade54b-d757-4954-a562-6f3e2fdb5397.png" alt="img"></p>
+<p>如何忽略大小写来进行判断</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701693006558-eb0b4e9d-2634-44c6-9895-c33369707f73.png" alt="img"></p>
+<p>三、字符串的替换和切割</p>
+<p>strip()去掉字符串左右两边的空白符（空格，\t，\n）</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701693613219-e2577dd2-ee2a-436a-a3d0-2d8531ccacac.png" alt="img"></p>
+<p>replace()字符串替换</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701694055529-39501e0d-ebc1-46c3-85b5-d92a89dc0601.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701694118972-832262db-74e2-47e4-860d-62103937f27f.png" alt="img"></p>
+<p>split()字符串切割 ，切割之后的结果会放在列表当中，用谁切割就会损失掉谁 </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701695099806-6916672e-b81c-4a71-8be9-94c7858e6f8f.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701695218596-f4a09474-0990-465f-86f5-3bef610f6c90.png" alt="img"> </p>
+<p>四、字符串的查找和判断</p>
+<p>1.查找</p>
+<p>find()可以返回要查找的字符串的位置，如果返回-1表示没有该字符串出现</p>
+<p><img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C.assets/1701695755990-2de2d05a-52dc-41b5-bd58-c171109129a6.png" alt="img"></p>
+<p>index()可以返回要查找的字符串的位置，如果报错就表示没有那个字符串</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701695893407-46c1882f-c8ea-4b2d-a8d9-6872e83811ed.png" alt="img"></p>
+<p>要查找的字符串 in 变量    返回值只有true和false，可以做条件上的判断</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701696097687-f04d5786-7702-4069-8c33-1a128025b92e.png" alt="img"></p>
+<p>要查找的字符串 not in 变量 判断是否不存在</p>
+<p>2.判断</p>
+<p>startswith()判断字符串是否以…开头，endswith()判断是否以…结尾</p>
+<p><img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C.assets/1701696455871-1615f4ac-f9b7-44f9-9776-69bbd502064c.png" alt="img"><br>isdigit()判断字符串是否由整数组成</p>
+<p> <img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701696612437-304ff221-2568-42e8-9011-f5846ff0f349.png" alt="img"></p>
+<p>五、补充</p>
+<p>len()测试字符串的长度</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701696928127-416eb6e2-9fe0-4a60-a38b-aa461f971d1f.png" alt="img"></p>
+<p>jion() 用一个东西把列表连接成一个字符串</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701697052254-c1043dc1-ccde-47b2-9339-7993bfb049d5.png" alt="img"></p>
+<p>f”{变量}” 格式化一个字符串 </p>
+<p>字符串操作对原字符串是不发生改变的</p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-centos安装环境和html5" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/">centos安装环境和html5</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/" class="article-date">
+  <time datetime="2023-12-10T01:23:27.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、bash脚本安装</p>
+<p>yum install net-tools.x86_64 -y 安装网络命令</p>
+<p>yum -y install epel-release   安装软件源</p>
+<p>yum -y install vim    安装编辑器</p>
+<p>yum install unzip -y  安装unzip工具</p>
+<p>yum search wget -y(yum install wget)    搜索并安装wget工具</p>
+<p>yum install -y git    安装Git版本控制工具</p>
+<p>yum install docker -y  安装容器引擎</p>
+<p>yum -y install python-pip 安装python的pip包管理工具</p>
+<p>yum install -y docker-compose 安装用于定义和运行多个容器的工具</p>
+<p>yum -y install python-pip</p>
+<p>二、html5的基本语法</p>
+<p>1.基本的语法和图片</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span>换行</span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span>水平线</span><br><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注释--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一号标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6号标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">s</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30&quot;</span> <span class="attr">heigth</span>=<span class="string">&quot;20&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;寄&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>ahdojooouojioj<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30&quot;</span> <span class="attr">heigth</span>=<span class="string">&quot;20&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;寄&quot;</span> /&gt;</span>hgww9ufishhoausb90hxlkhajdoiahfa<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862036417-89c076bd-d011-485b-91d5-f2d4a1fd8aa1.png" alt="img"></p>
+<p>2.表格</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>6<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862108691-2bfe0168-faab-4a9e-87d1-007216a06fc1.png" alt="img"></p>
+<p>3.表单</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>联系表单<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;submit-form.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>姓名:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;email&quot;</span>&gt;</span>电子邮件:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;message&quot;</span>&gt;</span>留言:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">&quot;message&quot;</span> <span class="attr">name</span>=<span class="string">&quot;message&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span>  </span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862165737-dba69f05-5c3d-4bc2-b68e-7993ef970976.png" alt="img"></p>
+<p>4.html+css页面</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>使用Div的页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css">  </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.container</span> &#123;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">80%</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: auto;  </span></span><br><span class="line"><span class="language-css">    &#125;  </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span> &#123;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">20%</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">10px</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">box-sizing</span>: border-box;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;  </span></span><br><span class="line"><span class="language-css">    &#125;  </span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #f9f9f9;&quot;</span>&gt;</span>Box 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #e9e9e9;&quot;</span>&gt;</span>Box 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #d9d9d9;&quot;</span>&gt;</span>Box 3<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #c9c9c9;&quot;</span>&gt;</span>Box 4<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #b9b9b9;&quot;</span>&gt;</span>Box 5<span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862744774-b2b25b68-e5ee-4c02-83a4-3fb411975df1.png" alt="img"></p>
+<p>5.DNS域名解析服务</p>
+<p>端口号可用范围：1 - 65535</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701912885436-ed103068-17cc-46fd-9720-9171bd6264c5.png" alt="img"></p>
+<p>pc机访问一个域名先看本地hosts文件，hosts优先级最高，由上往下优先级逐次降低</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701912703296-985b9a84-c61e-4766-aeec-3663cff50326.png" alt="img"></p>
+<p> <img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701949286330-af7104d5-c510-49c9-a060-0832e00e60ec.png" alt="img"></p>
+<p>三、仿制网页</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>欢迎光临<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#a</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">1</span>, <span class="number">1</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">40vh</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100vw</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-bottom</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#b</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">nav</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">82</span>, <span class="number">79</span>, <span class="number">79</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: aliceblue;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">15px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#c</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125; </span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#d</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125; </span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#e</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;m-head&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;top-links clearfix&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>新闻中心<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;logo&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./logo.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>省政府<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政务要闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政务公开<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政策法规<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政府数据<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>一件事一次办<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>锦绣潇湘<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;search&quot;</span> <span class="attr">name</span>=<span class="string">&quot;q&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入关键字&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;搜索&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;b&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./sy_zl2.jpg&quot;</span> <span class="attr">height</span>=<span class="string">&quot;150&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>植根人民 造福人民——习近平同志倡导践行“四下基层”闪耀时代光彩<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;d&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.png&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;e&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./2.png&quot;</span> <span class="attr">height</span>=<span class="string">&quot;450&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701998902578-5e84ca92-e46f-4b0e-a1db-35843363c5b1.png" alt="img"></p>
+<p>四、vue的安装</p>
+<p>1.新建一个文件夹名为vue</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999019231-5f6bb57c-149e-468a-a89a-8a0020cdec02.png" alt="img"></p>
+<p>2.在文件夹里打开cmd</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999056129-cdabf4b4-b295-4129-8f2b-b44ce5a10575.png" alt="img"></p>
+<p>3.输入npm create vue@latest，一直回车就可以了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999177873-c9ee28c9-c920-41be-a7c8-84273e1dcadf.png" alt="img"></p>
+<p>4.输入cd vue-project3进入目录，然后输入npm install</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702000484386-9fd417b1-2aba-4403-94f2-eaefc8667d17.png" alt="img"></p>
+<p>5.最后输入npm run dev会显示构建成功，打开链接</p>
+<p><img src="/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5.assets/1702000536272-d4eb1adb-9af1-4ed4-aedd-5c17eaf338f2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702000598688-30e19836-0ed5-497b-9875-0abc38caebf3.png" alt="img"></p>
+<p>五、在vscode上面操作vue</p>
+<p>1.在VScode中打开vue里面的vue-project3文件夹</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002153553-48ffb2f7-65d9-4a2a-a6fd-6d577c873a4e.png" alt="img"></p>
+<p>2.打开src里面的App.vue</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002188660-b1f2ede5-4c66-4492-b835-3554cd8bb603.png" alt="img"></p>
+<p>3.可以把其它代码删掉然后在<template></template>里面输入，就可以在页面中心位置显示出一个Hello World</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002255979-a390d5c1-0a4a-4148-8dc3-0def2b8c3549.png" alt="img"></p>
+<p>六、vue安装element组件</p>
+<p>1.按住ctrl+~打开终端，输入npm install element-plus –save</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702004215184-b143d826-cad5-4c9f-8b2a-d8ca1853227e.png" alt="img"></p>
+<p>2.编辑main.js，添加两行代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import ElementPlus from &#x27;element-plus&#x27;;</span><br><span class="line">import &#x27;element-plus/dist/index.css&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702004927836-923a49f9-7b6c-4857-9d2a-49c9fa93c1cd.png" alt="img"></p>
+<p>3.打开element网页，可以看到element各种组件的代码</p>
+<p><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/guide/installation.html#%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81">https://element-plus.org/zh-CN/guide/installation.html#%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81</a></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702015354883-e08a86bd-a381-4134-8d40-053dd0b245ad.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-网络基础知识" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">网络基础知识</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time datetime="2023-12-10T01:19:22.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、网络基础知识</p>
+<p>以太网适配器：网线接口</p>
+<p>Virtualbox：虚拟网络</p>
+<p>以太网4</p>
+<p>VMware Network：虚拟机网络以及网关</p>
+<p>无线局域网适配器 WLAN：常规ip地址</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701676443362-70206805-d4c5-42cf-82f8-098a5371a2c1.png" alt="img"></p>
+<p><strong>三个私网网段</strong></p>
+<p><strong>A:10.0.0.0 - 10.255.255.255</strong></p>
+<p><strong>B:172.16.0.0-173.31.255.255</strong></p>
+<p><strong>C:192.168.0.0-192.168.255.255</strong></p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/1701678405208-eaf8015a-6850-49de-9d80-40a5e94c85fb.png" alt="img"></p>
+<p>公网（外网) 私网(内网）</p>
+<p><strong>光猫：将光纤转换为电信号</strong></p>
+<p><strong>ap：路由器，即内网，内网ip任何人都可以用</strong></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701678971341-e48ce5a6-355c-4404-8078-ca1dac7a0eb4.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701680394833-85551912-8a66-4ab3-8aaf-b212e88e624c.png" alt="img"></p>
+<p>要是内网中两个ip一样，有可能两个都能正常上网，也有可能只有一个能上网，也有可能两个都不能上网。理论上是手动设置的静态IP优先。动态路由会变换ip找到最短路径，静态则不变。</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701739875297-e78e23bf-fbed-4b2e-8368-c7aab23ef2e0.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701741486958-c25b80ea-4ded-4a92-b0e8-0166dc1a0a06-170217133154925.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701746023328-2608b5b8-1bc4-4919-8912-c8509524aa91.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701758317393-a9967da3-b04e-4263-9f6f-a1e624f735fa.png" alt="img"></p>
+<p>pc1不能连pc2，pc3；pc2，pc3可以连pc1</p>
+<p>二、proxifier的设置</p>
+<p>1.下载好proxifier</p>
+<p>2.打开自己的clash猫，找到自己的代理IP和端口号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776163292-84a16641-885c-43f2-b308-7184a7192cc8.png" alt="img"></p>
+<p>3.打开proxifier点击配置文件-&gt;代理服务器-&gt;编辑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776229442-99c18f94-241a-4665-8f8c-96b30f950980-170217124911823.png" alt="img"></p>
+<p>4.将端口号改为clash猫上面的端口号，协议选择SOCKS5，点击确定</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776854800-f53f8e69-8a7f-4810-9eaf-370c0e314b34.png" alt="img"></p>
+<p>5.配置文件-&gt;代理规则，点击添加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776934226-d9a103e1-5084-4863-b33d-dd4b788666e1.png" alt="img"></p>
+<p>6.应用程序输入ssh*; ,动作选择第一个，点击确定，给localhost规则移除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777086415-77add8c0-6eca-4ff2-b411-21e97b6ebd66.png" alt="img"></p>
+<p>7.default选择direct</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777349422-80adca35-0e82-46f2-a71a-f322f906227d.png" alt="img"></p>
+<p>8.配置文件-&gt;名称解析</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777434319-0aac0a5c-cb08-472a-8878-0b2a0bd31e65.png" alt="img"></p>
+<p>9.将设置改为下图所示，这样proxifier就配置好了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777492892-b509770f-12fb-43b2-b980-a4c1708c7403.png" alt="img"></p>
+<p>三、wireshark的使用</p>
+<p>1.下载wireshark</p>
+<p><a target="_blank" rel="noopener" href="https://www.wireshark.org/">https://www.wireshark.org/</a></p>
+<p>2.安装时能勾选的东西全部勾选</p>
+<p>3.双击WLAN，就可以抓获WLAN的包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777745179-f00200df-80b7-4f7d-83d0-0e8a9254d27c.png" alt="img"></p>
+<p>4.点击停止</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777789325-bf287b62-ddcc-4d95-b541-b8e975180dfc.png" alt="img"></p>
+<p>5.可以搜索tcp、udp、http等协议</p>
+<p>ip.src &#x3D;&#x3D; 源ip   源IP过滤</p>
+<p>ip.dst &#x3D;&#x3D; 目的IP   目的ip过滤</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777838598-83f11bd4-2431-438b-ae41-508433360255.png" alt="img"></p>
+<p>6.抓获ping命令的包</p>
+<p>搜索icmp，然后打开cmd输入ping baidu.com</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777959244-21506089-3b64-4951-9871-fca6dd9d823e.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701778021650-c439645e-f411-40c3-9890-13dca4e805dd.png" alt="img"></p>
+<p>此时打开wireshark就可以看到捕获了ping命令的数据包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701778041850-250901f2-e4f6-44b2-a4d3-59961986cebb.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-安卓病毒监听-1" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/">安卓病毒监听</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/" class="article-date">
+  <time datetime="2023-12-10T01:17:30.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、反弹shell和正向shell</p>
+<p>s:服务器  c:客户端</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660291846-a17e872b-24f3-4200-b7bf-d429150169ff.png" alt="img"></p>
+<p>正向shell可能会出现bug，会有window或者Linux的防火墙抵御来自sever的监听。</p>
+<p>但是反向shell不会，因为反向shell是客户机c出栈，正向shell是入栈。</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660366168-55370707-0415-4889-b18d-e9263ebf2e0e.png" alt="img"><br>解决防火墙抵御bug的解决方法</p>
+<p>直接关闭防火墙或者在防火墙高级设置中允许连接</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701660546331-ed973438-6252-49ca-b6a7-ddc3d16bc886.png" alt="img"></p>
+<p>二、使用mumu进行病毒监听</p>
+<p>1.在官网上下载mumu模拟器版本，下载mumu6</p>
+<p><a target="_blank" rel="noopener" href="https://mumu.163.com/index.html">https://mumu.163.com/index.html</a></p>
+<p>2.安装好AhMyth程序</p>
+<p><img src="/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1.assets/1701673342335-595d7072-fc46-42d4-86a6-e036d13fd1ff.png" alt="img"></p>
+<p>3.win+r,输入cmd，输入ipconfig查找自己的ip</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688130573-7551193e-0e3d-409e-a28c-54ce1d53339b.png" alt="img"></p>
+<p>4.打开AhMyth，在Source IP中输入刚刚获取到的ip，端口号默认即可，然后点击Build</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688335608-ead456f5-0a71-4bb2-9509-87ca511dc95b.png" alt="img"></p>
+<p>5.找到生成的apk文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688393706-ba395adc-e388-4025-860e-c3e7aa3ec09e.png" alt="img"></p>
+<p>6.打开mumu模拟器，点击安装，选择刚刚生成的apk文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688447498-e444b208-2423-4cf2-bf56-3cce5e3ab818.png" alt="img"></p>
+<p>7.可以看到桌面上多了一个安卓图标</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688516812-5438a0ea-bff8-446d-b1e3-9eea23365e91.png" alt="img"></p>
+<p>8.切换到AhMyth，点击Listen,然后回到mumu双击安卓图标</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688610483-37e894f1-5985-43d8-95fc-ba48de88fd44.png" alt="img"></p>
+<p>9.点击Open The Lab，然后可以发现打开了一个新窗口。利用这个窗口可以实现对mumu模拟器的监听。</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701688749674-43eb71c1-a0c4-4ae9-9a81-5a44eb4ab9a2.png" alt="img"></p>
+<p>三、java的安装和环境配置</p>
+<p>1.下载Java安装包</p>
+<p>2.新建两个文件夹，分别命名为java8和java_jre</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701689197739-b795bea7-3220-4d8a-abf5-971840b870d9.png" alt="img"></p>
+<p>3.点击安装，将目录更换到java8文件夹下（由于我是在虚拟机安装没有其它盘，只能装在c盘），然后点击下一步</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690375791-21869947-b4d0-409b-ae95-db18a418fbab.png" alt="img"></p>
+<p>4.将目标文件夹的路径更换到java_jre文件夹中，然后下一步</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690636924-0e22f115-06ec-4de8-b27d-324070f46eb6.png" alt="img"></p>
+<p>5.右击此电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量，</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690778669-e54569a8-4e63-447a-b5f0-d8e560198c60.png" alt="img"></p>
+<p>6.找到系统变量的Path变量，双击打开</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701690882716-646fe9b5-e576-4967-8a36-7fc736ff225d.png" alt="img"></p>
+<p>7.将新建的两个文件夹的路径加进去，然后确定，这样java环境就配置好了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701691046259-19f314a4-937a-488e-85ac-62cc76225858.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-安卓病毒监听" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -354,358 +999,12 @@
 </article>
 
   
-    <article id="post-blog搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/">blog搭建</a>
-    </h1>
-  
 
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2023-12-01T08:35:18.000Z" itemprop="datePublished">2023-12-01</time>
-</a>
+
+  <nav id="page-nav">
     
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、利用github搭建hexo博客</p>
-<p>1.下载typora</p>
-<p>2.下载picgo</p>
-<p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p>
-<p>3.下载node.js</p>
-<p> <a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en</a></p>
-<p>4.下载git</p>
-<p>5.注册一个github账号</p>
-<p>6.在本地新建一个文件夹，名为hexo，路径不要有中文（不建议在C盘建立文件夹）</p>
-<p>7.选定hexo文件夹，右击-&gt;Git Bash Here</p>
-<p>8.使用nmp命令安装hexo,输入：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmp install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421082102-981198c7-483b-44f3-84f4-6ec2f2aefaaf.png" alt="img"></p>
-<p>9.检测网站雏形，在Git Bash Here中输入以下命令</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
-
-<p>10.配置ssh</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></div>
-
-<p>11.如果提示：No such file or directory说明你是第一次使用git</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></div>
-
-<p>12.连续按三次回车后,打开用户目录,找到.ssh\id_rsa.pub文件,用记事本打开并复制里面的内容,打开你的github主页,进入个人设置-&gt;SSH and GPG keys-&gt;New SSH key:</p>
-<p>在key里面填写刚刚复制的内容</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421806986-ca65d812-0185-4d0f-983d-2827ebf202a3.png" alt="img"></p>
-<p>13.尝试ssh连接,测试是否成功</p>
-<p>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>(邮箱地址不用改)</p>
-<p>14.在blog目录下打开cmd</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git-save</span><br></pre></td></tr></table></figure></div>
-
-<p>15.在上一个Git Bash Here中继续配置</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;asd&quot;//你的github用户名,非昵称</span><br><span class="line">git config --global user.name &quot;xxx@qq.com&quot;//填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div>
-
-<p>16.在github上新建一个存储库,命名为github的用户名.github.io</p>
-<p>17.编辑_config.yml文件,在最后面改成这样</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>:git</span><br><span class="line">	repository:git@github.com:asd/asd.github.io.git</span><br><span class="line">	branch:main</span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422480401-0e9f8e54-4f97-4c1e-a45a-88f901b1d09e.png" alt="img"></p>
-<p>18.在Git Bash Here中输入hexo d -g上传</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422630998-a298dcfe-af8f-410c-b144-c8369324af81.png" alt="img"></p>
-<p>二、picgo和typora的连接</p>
-<p>1.打开typora,选择文件-&gt;偏好设置</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423371632-41787294-abcf-4b8b-91d2-334307e8a083.png" alt="img"></p>
-<p>2.点击图像,插入图片时选择第三个,然后勾选前四个,上传服务选择PicGo(app),PicGo路径精确定位到PicGo.exe</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423418143-126c33c9-8687-4447-96cd-2954e1ff6838.png" alt="img"></p>
-<p>3.在github上点击个人主页,选择setting</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422863941-2661a534-3d7b-4deb-b831-c9f85cf844b0.png" alt="img"></p>
-<p>4.找到develoer setting-&gt;Personal access tokens-&gt;Tokens(classic)-&gt;Generate new token-&gt;Generate new token(classic),命名为123,生效时间选择永久,勾选第一个,生产令牌后复制令牌</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423208708-5b1c8bcf-97ce-45e5-a261-8facc836009e.png" alt="img"></p>
-<p>5.打开PicGo,点击图床设置-&gt;GitHub,然后编辑</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423796833-9950406b-68e4-4a09-b7e8-50a9daa7b40a.png" alt="img"></p>
-<p>6.图床配置名为123,仓库名为github用户名&#x2F;仓库名,分支名设为main,Token处填写刚刚复制的令牌,设定存储路径为img&#x2F;,点击确定,然后设为默认图床</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423908277-71582001-1645-4aea-af5e-cd41482b55fa.png" alt="img"></p>
-<p>7.回到typora,点击验证图片上传选项,会显示验证成功,这样PicGo和typora的连接就建立成功了.</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701424133266-dd775176-adb1-480f-a2fb-db0f2ef72ea1.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-flash捆绑木马" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/">flash捆绑木马</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/" class="article-date">
-  <time datetime="2023-12-01T08:35:00.311Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p><strong>flash钓鱼</strong></p>
-<p>一、flsah页面制作</p>
-<p>1.在虚拟机上下载PHPstudy<a target="_blank" rel="noopener" href="https://www.xp.cn/">https://www.xp.cn/</a></p>
-<p>2.将Apache2.4.39启动</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242117277-07e2434c-de41-49e8-b0b5-422296d3c198.png" alt="img"></p>
-<p>3.点击网站-&gt;管理-&gt;打开根目录</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242425297-25627557-6a19-4482-bced-647075779340.png" alt="img"></p>
-<p>4.删除里面所有的文件，然后创建一个txt后缀的文本文件，然后重命名为html后缀的index文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242539683-444f293f-c0aa-4b85-aa9d-03fe9a389e69.png" alt="img"></p>
-<p>5.在物理机上创建一个同样名字的HTML文件，再用物理机打开vscode</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242703814-fa5379d5-1015-4289-9201-e127352a8641.png" alt="img"></p>
-<p>6.点击文件-&gt;打开文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249884601-dddd9c7f-40c9-4e2a-87eb-b2dbc22de4e9.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249910816-31ce902a-0c4a-4802-b7e8-09cfaab3a726.png" alt="img"></p>
-<p>7.选择创建好了的html后缀的文件，然后点击打开，按住shift+!再回车就会出现主体代码</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701250528610-3f9e007a-c789-44c5-8b06-9fc229a01caa.png" alt="img"></p>
-<p>8.在body部分输入</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./flash.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257286044-367b115c-8415-489f-9684-616a4ee65d0b.png" alt="img"></p>
-<p>9.把刚刚在win10虚拟机中创建的html后缀的文件以记事本方式打开</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701256764522-d9dc980c-5cf8-4ccc-a1fb-e27e9af713a4.png" alt="img"></p>
-<p>10.把刚刚在vscode里面编辑的代码全选放到虚拟机打开的记事本中并保存</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257377858-610ce9af-b02a-4a33-8817-11d58da08b97.png" alt="img"></p>
-<p>11.使用一个js脚本，放在phpstudy的根目录下面</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/38965110/1701257616887-4fb4735e-cf48-4c4f-a6e3-5d8e645a7e65.js">📎flash.js</a></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257517150-40da6315-c04d-4eca-a6ff-5bff5e230329.png" alt="img"></p>
-<p>12.打开phpsutdy,点击网站-&gt;管理-&gt;打开网站</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257104962-c5db6f7e-616d-4512-bd2a-e7b429701929.png" alt="img"></p>
-<p>13.打开之后就会显示出已经成功做好的flash页面</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257675328-58254a46-e6ca-4d01-818d-c590670d89c7.png" alt="img"></p>
-<p>二、flash捆绑木马</p>
-<p>1.关掉所有的杀毒软件，然后下载好一个木马程序和flash安装包</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701257965001-0662f572-9b18-4ca9-ba98-f76b17434788.rar">📎木马.rar</a></p>
-<p>2.同时选中木马程序和flash安装包，右击，然后选择添加到压缩文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258200200-8652d6be-397d-4065-9d28-a8772764173b.png" alt="img"></p>
-<p>3.勾选创建自解压格式压缩文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258292065-c75d18f8-e62b-43ec-bfe7-ff4f2c0e7efa.png" alt="img"></p>
-<p>4.点击高级-&gt;自解压选项</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258341196-70b676d4-5e92-4b83-93bd-e7d699d36688.png" alt="img"></p>
-<p>5.解压路径设置 C:\windows\temp</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258415770-b0abff9f-be5c-499c-94e8-322225312f64.png" alt="img"></p>
-<p>6.然后点击设置选项卡，在解压后运行里面输入</p>
-<p>C:\windows\temp\flashcenter_pp_ax_install_cn.exe </p>
-<p>（黄色背景部分对应之前下载好的flash安装包的名字）</p>
-<p>C:\windows\temp\flash.exe</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258524712-fc5f3e77-99bf-43a6-8bcf-088ab7ccda83.png" alt="img"></p>
-<p>7.点击模式选项卡，选择全部隐藏</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258662803-6b087acd-87b1-4fb2-a402-3cc6602034a4.png" alt="img"></p>
-<p>8.点击更新选项卡，将更新模式和覆盖模式都选择为第二个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258732039-f6afe207-716d-4536-bb1e-a9b363100495.png" alt="img"></p>
-<p>9.点击确定，然后会显示出一个压缩包</p>
-<p>10.下载一个图标更改程序</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701259144003-8c7b05df-dee9-4dc0-a0ea-892dc098d500.rar">📎更改图标.rar</a></p>
-<p>11.点击Restorator.exe启动程序</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259200499-893f034b-5038-404e-8df3-93c51ba774d3.png" alt="img"></p>
-<p>12.将刚刚做好的压缩包和flash安装包拖到资源树中</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259331313-7c90067b-2109-4b43-8d78-037de2cdbb93.png" alt="img"></p>
-<p>13.删除压缩包的图标，将flash安装包的图标复制到压缩包中git clone </p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259414320-5998c659-18b4-4ad1-b87e-f6d3e625aff0.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259443564-3d4782d7-e7d0-4301-a310-9d7c59665e9d.png" alt="img"></p>
-<p>14.再次点击压缩包的图标，可以发现它变成了flash安装包的图标</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259474971-33a92c45-eeef-4d07-b7cd-8f0c974944fa.png" alt="img"></p>
-<p>15.点击保存</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259612821-1bc8a54f-0982-434e-8bb7-ff49d96f27fa.png" alt="img"></p>
-<p>16.将改好的压缩包放入phpstudy的根目录中，并将其名字改为flash压缩包的名字</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260620277-b5c02f4a-9f08-4618-9473-179e12ca3f10.png" alt="img"></p>
-<p>17.打开浏览器，在地址栏输入127.0.0.1，就可以看到捆绑木马的flash网站做好了</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260813077-0f742009-228e-480a-bf63-14a0633b3ba9.png" alt="img"></p>
-<p>18.点击立即升级，下载压缩包并打开，打开之后可以看到木马已经植入电脑</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260922885-cbc0e881-ff3d-4de9-afc1-12bb17a4cfd5.png" alt="img"></p>
-<p>三、自制的其它钓鱼网页（不带免杀）</p>
-<p>1.打开一个steam网页，右击选择另存页面为，将源码保存phpstudy的根目录下</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261407197-fcc16284-f069-4ad4-b056-eec6a81a0669.png" alt="img"></p>
-<p>2.找到一个steam安装包</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261585930-1f872cc8-d5bb-447c-9c17-439d347a28d2.png" alt="img"></p>
-<p>3.选中之前下好的木马和steam安装包，右击重复之前的压缩步骤，这一步的路径要改为steam安装包的名字</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261737866-6b0721e8-4371-4466-9bd7-1e47d4730c22.png" alt="img"></p>
-<p>4.压缩好了之后，再重复之前更改图标的操作，然后将压缩包放入phstudy的根目录中</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261867321-37455cc4-23ac-4773-a0cf-b69126b0f0e2.png" alt="img"></p>
-<p>5.把之前下好的Sign In.htm改为index.html</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261979887-6c17d526-e257-4fdb-bd81-2f1fe2295cd8.png" alt="img"></p>
-<p>6.右击index.html用记事本打开，找到installsteam这一部分</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262093234-b2da25f4-326c-41b5-ab6f-5d1c04c15669.png" alt="img"></p>
-<p>7.将href&#x3D;” “里面的内容改为&#x2F;Steaminstaller.exe ,保存更改</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262136805-e092cdc8-ced2-4d36-90f6-4f0d52f1ea84.png" alt="img"></p>
-<p>8.打开浏览器在地址栏输入127.0.0.1，点击Install steam</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262295670-2c70901a-1472-463d-bf8a-348747ce7c7d.png" alt="img"></p>
-<p>9.打开下载好的文件，可以看到电脑跟之前已植入木马</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262451061-c1c606b5-e522-48f7-87b6-6675ef8850af.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-大灰狼远控的使用" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">大灰狼远控的使用</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2023-12-01T08:34:46.505Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、简单的钓鱼网站的使用</p>
-<p>1.在kali中打开终端，然后输入vim &#x2F;etc&#x2F;proxychains.conf</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163989520-c04fdac0-75b9-4c53-9360-14543367bd40-17015255965491.png" alt="img"></p>
-<p>2.将打开的文件的最后一行改为代理IP和端口号</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164102196-7ec26a8b-a36c-48d2-85d7-4784e0ec0e13.png" alt="img"></p>
-<p>3.然后按ESC输入冒号：，再输入wq！保存并退出编辑</p>
-<p>4.在终端上输入proxychains git clone <a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a></p>
-<p>5.输入cd mip22</p>
-<p>6.输入chmod +x .&#x2F;*</p>
-<p>7.输入proxychains -q bash .&#x2F;mip22.sh，然后会出现以下界面</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164499098-4e23cf81-3848-4d66-b305-5149d99ec59e.png" alt="img"></p>
-<p>8.输入1</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169456733-f501ff26-7cab-43c6-b06c-681a4515f523.png" alt="img">9.选择一个钓鱼内容，例如输入51</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169581270-82784944-40af-4552-a169-efb3599421df-17015255965519.png" alt="img">10.输入3，等待加载</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169711062-13d90eee-84fd-4954-ac22-9b712726148c.png" alt="img">11.可以得到三个url，选择https的url，复制用浏览器打开，可以得到一个steam登录的钓鱼页面</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701169863063-ac506893-c7bc-4c28-ab1f-9ac313a6d0a3.png" alt="img">二、HTTP动态码的获取</p>
-<p>1.下载VScode<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>2.在VScode的扩展商店里面搜索python，安装第一个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170215657-9dd1552f-621d-4890-a54d-6d64f5bd35ee-170152559655215.png" alt="img"></p>
-<p>3.在VScode的扩展商店里面搜索code run，安装第一个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170316383-7e431e4b-6b0e-465d-a9bb-05a30b98ae17.png" alt="img"></p>
-<p>4.新建一个python类型的文件，输入代码</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;https://httpbin.org/get&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br></pre></td></tr></table></figure></div>
-
-<p>5.将输入的python代码保存在已经安装好的python目录下</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170569987-ca60416f-60cb-4ede-aee5-0a082f1ca894.png" alt="img">6.在搜索栏中搜索cmd，打开cmd</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170683708-6a1f3b8c-add2-4b0e-ab2d-4bbabc2c0a88.png" alt="img">7.输入python 1.py</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170747051-a383fea0-6d8f-473c-9dbf-34fdb4c01492.png" alt="img">8.出现报错，根据报错信息下载插件，输入pip install requests -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170851925-c9a0feb6-b8e1-4e43-8452-bcff8c4dfada.png" alt="img">9.再次输入python 1.py进行尝试，看是否还缺少插件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170918247-c81c08dc-2aff-431c-a08c-b2c1abef7c95.png" alt="img">10.再次出现报错，根据报错信息安装插件，输入pip install chardet -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170994659-9f1fd45b-1731-4b67-a5b9-94640bf72284-170152559655329.png" alt="img"></p>
-<p> 11.再次输入python 1.py进行尝试，可以发现成功获取动态码</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171049744-1454bc09-aa00-4bdd-b04a-d7dd1a0a44bb-170152559655331.png" alt="img"></p>
-<p>三、大灰狼的使用</p>
-<p>1.关闭物理机和win10虚拟机的防病毒及防火墙，下载大灰狼并打开</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171518360-8a279f31-25f1-4c76-832d-6639ac7f39d1.png" alt="img"></p>
-<p>2.点击服务生成</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171565452-0758b854-3477-4009-8c6d-a24a1368a0c3-170152559655435.png" alt="img"></p>
-<p>3.将域名ip改为自己的本机ip，然后点击生成服务</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171641871-2a1d26db-e34a-4c80-8d7b-ffce73638523.png" alt="img">4.生成一个后缀为.exe的可执行文件，将文件拖入win10虚拟机中，在win10虚拟机上双击执行，然后就可以用大灰狼对虚拟机进行远程操作了。</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701227982639-77b0633f-4405-424d-87b9-7c3b9f258425.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228005878-7138970c-1e2e-40c6-97c9-9fd7611e5d4b.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228050788-ffa1b89c-f065-4683-b82e-2ee25e0419b8.png" alt="img">5.右击已连接的虚拟机，可以对win10虚拟机进行远程控制，键盘记录等</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228257371-d40f470e-399b-4c14-95a6-7f9815bb6ff2.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228269579-d1848b4f-3165-4fee-8026-dea1e75d4606.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-tg注册和永恒之黑" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/" class="article-date">
-  <time datetime="2023-12-01T01:09:25.503Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、tg的注册：</p>
-<ol>
-<li>sms在线接码平台</li>
-<li>手机挂代理(收验证码)</li>
-<li>手机谷歌套件的发验证码<br>注册完成后就可以对手机号、QQ号、邮箱进行查询</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163617479-c42eefe1-8daf-49da-aa07-2871f4c3c813-17015254890821.png" alt="img"></p>
-<p>二、永恒之黑实验：<br>1.下载好vmware，再安装win10镜像</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163626735-ce579434-ee50-4223-b8d7-5e9b721ef9fc-17015254890833.png" alt="img"></p>
-<p>2.在win10虚拟机上使用cmd命令ipconfig得到win10虚拟机的IP地址（192.168.102.129）</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163640102-33375e52-b019-43d7-95df-b17d18e803c5-17015254890835.png" alt="img"></p>
-<p>\3. 使用一个python攻击脚本 ，在地址栏中输入cmd</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163682165-6835b31a-b4cd-44f4-b042-dc35427507f6-17015254890837.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163689571-7a212673-d807-412c-be84-2320969b397e-17015254890839.png" alt="img"></p>
-<ol>
-<li>使用命令python .\CVE-2020-0796.py 192.168.102.129对win10虚拟机进行攻击，虚拟机就会显示蓝屏</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163700410-61ea9d0e-c936-440e-b35f-84f64c7a2b5f-17015901971241.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 
 </section>
@@ -753,7 +1052,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
     </div>
   </div>
 
@@ -765,23 +1064,23 @@
       <ul>
         
           <li>
-            <a href="/2023/12/04/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
           </li>
         
           <li>
-            <a href="/2023/12/03/centos%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">centos基本命令</a>
+            <a href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
           </li>
         
           <li>
-            <a href="/2023/12/03/python%E8%AF%AD%E6%B3%95%E4%B8%80/">python语法一</a>
+            <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
           </li>
         
           <li>
-            <a href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/">blog搭建</a>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/">字符串的进阶操作</a>
           </li>
         
           <li>
-            <a href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/">flash捆绑木马</a>
+            <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/">centos安装环境和html5</a>
           </li>
         
       </ul>

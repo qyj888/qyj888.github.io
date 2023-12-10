@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>网络基础知识 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、网络基础知识 以太网适配器：网线接口 Virtualbox：虚拟网络 以太网4 VMware Network：虚拟机网络以及网关 无线局域网适配器 WLAN：常规ip地址  三个私网网段 A:10.0.0.0 - 10.255.255.255 B:172.16.0.0-173.31.255.255 C:192.168.0.0-192.168.255.255  公网（外网) 私网(内网） 光猫：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络基础知识">
+<meta property="og:url" content="http://example.com/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、网络基础知识 以太网适配器：网线接口 Virtualbox：虚拟网络 以太网4 VMware Network：虚拟机网络以及网关 无线局域网适配器 WLAN：常规ip地址  三个私网网段 A:10.0.0.0 - 10.255.255.255 B:172.16.0.0-173.31.255.255 C:192.168.0.0-192.168.255.255  公网（外网) 私网(内网） 光猫：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701676443362-70206805-d4c5-42cf-82f8-098a5371a2c1.png">
+<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/1701678405208-eaf8015a-6850-49de-9d80-40a5e94c85fb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701678971341-e48ce5a6-355c-4404-8078-ca1dac7a0eb4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701680394833-85551912-8a66-4ab3-8aaf-b212e88e624c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701739875297-e78e23bf-fbed-4b2e-8368-c7aab23ef2e0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701741486958-c25b80ea-4ded-4a92-b0e8-0166dc1a0a06-170217133154925.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701746023328-2608b5b8-1bc4-4919-8912-c8509524aa91.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701758317393-a9967da3-b04e-4263-9f6f-a1e624f735fa.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701776163292-84a16641-885c-43f2-b308-7184a7192cc8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701776229442-99c18f94-241a-4665-8f8c-96b30f950980-170217124911823.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701776854800-f53f8e69-8a7f-4810-9eaf-370c0e314b34.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701776934226-d9a103e1-5084-4863-b33d-dd4b788666e1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777086415-77add8c0-6eca-4ff2-b411-21e97b6ebd66.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777349422-80adca35-0e82-46f2-a71a-f322f906227d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777434319-0aac0a5c-cb08-472a-8878-0b2a0bd31e65.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777492892-b509770f-12fb-43b2-b980-a4c1708c7403.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777745179-f00200df-80b7-4f7d-83d0-0e8a9254d27c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777789325-bf287b62-ddcc-4d95-b541-b8e975180dfc.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777838598-83f11bd4-2431-438b-ae41-508433360255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701777959244-21506089-3b64-4951-9871-fca6dd9d823e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701778021650-c439645e-f411-40c3-9890-13dca4e805dd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701778041850-250901f2-e4f6-44b2-a4d3-59961986cebb.png">
+<meta property="article:published_time" content="2023-12-10T01:19:22.000Z">
+<meta property="article:modified_time" content="2023-12-10T01:22:33.984Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701676443362-70206805-d4c5-42cf-82f8-098a5371a2c1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-网络基础知识" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      网络基础知识
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time datetime="2023-12-10T01:19:22.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、网络基础知识</p>
+<p>以太网适配器：网线接口</p>
+<p>Virtualbox：虚拟网络</p>
+<p>以太网4</p>
+<p>VMware Network：虚拟机网络以及网关</p>
+<p>无线局域网适配器 WLAN：常规ip地址</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701676443362-70206805-d4c5-42cf-82f8-098a5371a2c1.png" alt="img"></p>
+<p><strong>三个私网网段</strong></p>
+<p><strong>A:10.0.0.0 - 10.255.255.255</strong></p>
+<p><strong>B:172.16.0.0-173.31.255.255</strong></p>
+<p><strong>C:192.168.0.0-192.168.255.255</strong></p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/1701678405208-eaf8015a-6850-49de-9d80-40a5e94c85fb.png" alt="img"></p>
+<p>公网（外网) 私网(内网）</p>
+<p><strong>光猫：将光纤转换为电信号</strong></p>
+<p><strong>ap：路由器，即内网，内网ip任何人都可以用</strong></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701678971341-e48ce5a6-355c-4404-8078-ca1dac7a0eb4.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701680394833-85551912-8a66-4ab3-8aaf-b212e88e624c.png" alt="img"></p>
+<p>要是内网中两个ip一样，有可能两个都能正常上网，也有可能只有一个能上网，也有可能两个都不能上网。理论上是手动设置的静态IP优先。动态路由会变换ip找到最短路径，静态则不变。</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701739875297-e78e23bf-fbed-4b2e-8368-c7aab23ef2e0.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701741486958-c25b80ea-4ded-4a92-b0e8-0166dc1a0a06-170217133154925.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701746023328-2608b5b8-1bc4-4919-8912-c8509524aa91.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701758317393-a9967da3-b04e-4263-9f6f-a1e624f735fa.png" alt="img"></p>
+<p>pc1不能连pc2，pc3；pc2，pc3可以连pc1</p>
+<p>二、proxifier的设置</p>
+<p>1.下载好proxifier</p>
+<p>2.打开自己的clash猫，找到自己的代理IP和端口号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776163292-84a16641-885c-43f2-b308-7184a7192cc8.png" alt="img"></p>
+<p>3.打开proxifier点击配置文件-&gt;代理服务器-&gt;编辑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776229442-99c18f94-241a-4665-8f8c-96b30f950980-170217124911823.png" alt="img"></p>
+<p>4.将端口号改为clash猫上面的端口号，协议选择SOCKS5，点击确定</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776854800-f53f8e69-8a7f-4810-9eaf-370c0e314b34.png" alt="img"></p>
+<p>5.配置文件-&gt;代理规则，点击添加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701776934226-d9a103e1-5084-4863-b33d-dd4b788666e1.png" alt="img"></p>
+<p>6.应用程序输入ssh*; ,动作选择第一个，点击确定，给localhost规则移除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777086415-77add8c0-6eca-4ff2-b411-21e97b6ebd66.png" alt="img"></p>
+<p>7.default选择direct</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777349422-80adca35-0e82-46f2-a71a-f322f906227d.png" alt="img"></p>
+<p>8.配置文件-&gt;名称解析</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777434319-0aac0a5c-cb08-472a-8878-0b2a0bd31e65.png" alt="img"></p>
+<p>9.将设置改为下图所示，这样proxifier就配置好了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777492892-b509770f-12fb-43b2-b980-a4c1708c7403.png" alt="img"></p>
+<p>三、wireshark的使用</p>
+<p>1.下载wireshark</p>
+<p><a target="_blank" rel="noopener" href="https://www.wireshark.org/">https://www.wireshark.org/</a></p>
+<p>2.安装时能勾选的东西全部勾选</p>
+<p>3.双击WLAN，就可以抓获WLAN的包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777745179-f00200df-80b7-4f7d-83d0-0e8a9254d27c.png" alt="img"></p>
+<p>4.点击停止</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777789325-bf287b62-ddcc-4d95-b541-b8e975180dfc.png" alt="img"></p>
+<p>5.可以搜索tcp、udp、http等协议</p>
+<p>ip.src &#x3D;&#x3D; 源ip   源IP过滤</p>
+<p>ip.dst &#x3D;&#x3D; 目的IP   目的ip过滤</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777838598-83f11bd4-2431-438b-ae41-508433360255.png" alt="img"></p>
+<p>6.抓获ping命令的包</p>
+<p>搜索icmp，然后打开cmd输入ping baidu.com</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701777959244-21506089-3b64-4951-9871-fca6dd9d823e.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701778021650-c439645e-f411-40c3-9890-13dca4e805dd.png" alt="img"></p>
+<p>此时打开wireshark就可以看到捕获了ping命令的数据包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701778041850-250901f2-e4f6-44b2-a4d3-59961986cebb.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            centos安装环境和html5
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">安卓病毒监听</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/">字符串的进阶操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/">centos安装环境和html5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

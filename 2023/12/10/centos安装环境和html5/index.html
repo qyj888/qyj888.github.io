@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>centos安装环境和html5 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、bash脚本安装 yum install net-tools.x86_64 -y 安装网络命令 yum -y install epel-release   安装软件源 yum -y install vim    安装编辑器 yum install unzip -y  安装unzip工具 yum search wget -y(yum install wget)    搜索并安装wget工具 yu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos安装环境和html5">
+<meta property="og:url" content="http://example.com/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、bash脚本安装 yum install net-tools.x86_64 -y 安装网络命令 yum -y install epel-release   安装软件源 yum -y install vim    安装编辑器 yum install unzip -y  安装unzip工具 yum search wget -y(yum install wget)    搜索并安装wget工具 yu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701862036417-89c076bd-d011-485b-91d5-f2d4a1fd8aa1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701862108691-2bfe0168-faab-4a9e-87d1-007216a06fc1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701862165737-dba69f05-5c3d-4bc2-b68e-7993ef970976.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701862744774-b2b25b68-e5ee-4c02-83a4-3fb411975df1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701912885436-ed103068-17cc-46fd-9720-9171bd6264c5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701912703296-985b9a84-c61e-4766-aeec-3663cff50326.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701949286330-af7104d5-c510-49c9-a060-0832e00e60ec.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701998902578-5e84ca92-e46f-4b0e-a1db-35843363c5b1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701999019231-5f6bb57c-149e-468a-a89a-8a0020cdec02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701999056129-cdabf4b4-b295-4129-8f2b-b44ce5a10575.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701999177873-c9ee28c9-c920-41be-a7c8-84273e1dcadf.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702000484386-9fd417b1-2aba-4403-94f2-eaefc8667d17.png">
+<meta property="og:image" content="http://example.com/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5.assets/1702000536272-d4eb1adb-9af1-4ed4-aedd-5c17eaf338f2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702000598688-30e19836-0ed5-497b-9875-0abc38caebf3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702002153553-48ffb2f7-65d9-4a2a-a6fd-6d577c873a4e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702002188660-b1f2ede5-4c66-4492-b835-3554cd8bb603.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702002255979-a390d5c1-0a4a-4148-8dc3-0def2b8c3549.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702004215184-b143d826-cad5-4c9f-8b2a-d8ca1853227e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702004927836-923a49f9-7b6c-4857-9d2a-49c9fa93c1cd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1702015354883-e08a86bd-a381-4134-8d40-053dd0b245ad.png">
+<meta property="article:published_time" content="2023-12-10T01:23:27.000Z">
+<meta property="article:modified_time" content="2023-12-10T01:25:45.117Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1701862036417-89c076bd-d011-485b-91d5-f2d4a1fd8aa1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-centos安装环境和html5" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      centos安装环境和html5
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/" class="article-date">
+  <time datetime="2023-12-10T01:23:27.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、bash脚本安装</p>
+<p>yum install net-tools.x86_64 -y 安装网络命令</p>
+<p>yum -y install epel-release   安装软件源</p>
+<p>yum -y install vim    安装编辑器</p>
+<p>yum install unzip -y  安装unzip工具</p>
+<p>yum search wget -y(yum install wget)    搜索并安装wget工具</p>
+<p>yum install -y git    安装Git版本控制工具</p>
+<p>yum install docker -y  安装容器引擎</p>
+<p>yum -y install python-pip 安装python的pip包管理工具</p>
+<p>yum install -y docker-compose 安装用于定义和运行多个容器的工具</p>
+<p>yum -y install python-pip</p>
+<p>二、html5的基本语法</p>
+<p>1.基本的语法和图片</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span>换行</span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span>水平线</span><br><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注释--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>一号标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6号标题<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">s</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span>字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30&quot;</span> <span class="attr">heigth</span>=<span class="string">&quot;20&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;寄&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>ahdojooouojioj<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;30&quot;</span> <span class="attr">heigth</span>=<span class="string">&quot;20&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;寄&quot;</span> /&gt;</span>hgww9ufishhoausb90hxlkhajdoiahfa<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862036417-89c076bd-d011-485b-91d5-f2d4a1fd8aa1.png" alt="img"></p>
+<p>2.表格</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>6<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862108691-2bfe0168-faab-4a9e-87d1-007216a06fc1.png" alt="img"></p>
+<p>3.表单</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>联系表单<span class="tag">&lt;/<span class="name">h2</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;submit-form.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>姓名:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;email&quot;</span>&gt;</span>电子邮件:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;message&quot;</span>&gt;</span>留言:<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">&quot;message&quot;</span> <span class="attr">name</span>=<span class="string">&quot;message&quot;</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span>  </span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862165737-dba69f05-5c3d-4bc2-b68e-7993ef970976.png" alt="img"></p>
+<p>4.html+css页面</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>使用Div的页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css">  </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.container</span> &#123;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">80%</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: auto;  </span></span><br><span class="line"><span class="language-css">    &#125;  </span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span> &#123;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">20%</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">10px</span>;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">box-sizing</span>: border-box;  </span></span><br><span class="line"><span class="language-css">      <span class="attribute">float</span>: left;  </span></span><br><span class="line"><span class="language-css">    &#125;  </span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #f9f9f9;&quot;</span>&gt;</span>Box 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #e9e9e9;&quot;</span>&gt;</span>Box 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #d9d9d9;&quot;</span>&gt;</span>Box 3<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #c9c9c9;&quot;</span>&gt;</span>Box 4<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background-color: #b9b9b9;&quot;</span>&gt;</span>Box 5<span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701862744774-b2b25b68-e5ee-4c02-83a4-3fb411975df1.png" alt="img"></p>
+<p>5.DNS域名解析服务</p>
+<p>端口号可用范围：1 - 65535</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701912885436-ed103068-17cc-46fd-9720-9171bd6264c5.png" alt="img"></p>
+<p>pc机访问一个域名先看本地hosts文件，hosts优先级最高，由上往下优先级逐次降低</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701912703296-985b9a84-c61e-4766-aeec-3663cff50326.png" alt="img"></p>
+<p> <img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701949286330-af7104d5-c510-49c9-a060-0832e00e60ec.png" alt="img"></p>
+<p>三、仿制网页</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>欢迎光临<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#a</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">255</span>, <span class="number">1</span>, <span class="number">1</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">40vh</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100vw</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin-bottom</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#b</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">nav</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">82</span>, <span class="number">79</span>, <span class="number">79</span>);</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: aliceblue;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">10px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: blue;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">15px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#c</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125; </span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#d</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125; </span></span><br><span class="line"><span class="language-css">        <span class="selector-id">#e</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;m-head&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrap&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;top-links clearfix&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>新闻中心<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;logo&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./logo.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>省政府<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政务要闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政务公开<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政策法规<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>政府数据<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>一件事一次办<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>锦绣潇湘<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;search&quot;</span> <span class="attr">name</span>=<span class="string">&quot;q&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入关键字&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;搜索&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;b&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./sy_zl2.jpg&quot;</span> <span class="attr">height</span>=<span class="string">&quot;150&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>植根人民 造福人民——习近平同志倡导践行“四下基层”闪耀时代光彩<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;d&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./1.png&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;e&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./2.png&quot;</span> <span class="attr">height</span>=<span class="string">&quot;450&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701998902578-5e84ca92-e46f-4b0e-a1db-35843363c5b1.png" alt="img"></p>
+<p>四、vue的安装</p>
+<p>1.新建一个文件夹名为vue</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999019231-5f6bb57c-149e-468a-a89a-8a0020cdec02.png" alt="img"></p>
+<p>2.在文件夹里打开cmd</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999056129-cdabf4b4-b295-4129-8f2b-b44ce5a10575.png" alt="img"></p>
+<p>3.输入npm create vue@latest，一直回车就可以了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701999177873-c9ee28c9-c920-41be-a7c8-84273e1dcadf.png" alt="img"></p>
+<p>4.输入cd vue-project3进入目录，然后输入npm install</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702000484386-9fd417b1-2aba-4403-94f2-eaefc8667d17.png" alt="img"></p>
+<p>5.最后输入npm run dev会显示构建成功，打开链接</p>
+<p><img src="/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5.assets/1702000536272-d4eb1adb-9af1-4ed4-aedd-5c17eaf338f2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702000598688-30e19836-0ed5-497b-9875-0abc38caebf3.png" alt="img"></p>
+<p>五、在vscode上面操作vue</p>
+<p>1.在VScode中打开vue里面的vue-project3文件夹</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002153553-48ffb2f7-65d9-4a2a-a6fd-6d577c873a4e.png" alt="img"></p>
+<p>2.打开src里面的App.vue</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002188660-b1f2ede5-4c66-4492-b835-3554cd8bb603.png" alt="img"></p>
+<p>3.可以把其它代码删掉然后在<template></template>里面输入，就可以在页面中心位置显示出一个Hello World</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702002255979-a390d5c1-0a4a-4148-8dc3-0def2b8c3549.png" alt="img"></p>
+<p>六、vue安装element组件</p>
+<p>1.按住ctrl+~打开终端，输入npm install element-plus –save</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702004215184-b143d826-cad5-4c9f-8b2a-d8ca1853227e.png" alt="img"></p>
+<p>2.编辑main.js，添加两行代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import ElementPlus from &#x27;element-plus&#x27;;</span><br><span class="line">import &#x27;element-plus/dist/index.css&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702004927836-923a49f9-7b6c-4857-9d2a-49c9fa93c1cd.png" alt="img"></p>
+<p>3.打开element网页，可以看到element各种组件的代码</p>
+<p><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/guide/installation.html#%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81">https://element-plus.org/zh-CN/guide/installation.html#%E7%8E%AF%E5%A2%83%E6%94%AF%E6%8C%81</a></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702015354883-e08a86bd-a381-4134-8d40-053dd0b245ad.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            字符串的进阶操作
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/10/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">网络基础知识</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C/">字符串的进阶操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/centos%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E5%92%8Chtml5/">centos安装环境和html5</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
