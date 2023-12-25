@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>前后端分离 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、制作一个简易的图书馆系统 📎tushuguan.rar 一个users数据库和一个books数据库   登录页面（需要管理员身份登录）   后台页面   点击上传书籍，可以添加书籍     也可以删除书籍   利用yakit抓包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端分离">
+<meta property="og:url" content="http://example.com/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、制作一个简易的图书馆系统 📎tushuguan.rar 一个users数据库和一个books数据库   登录页面（需要管理员身份登录）   后台页面   点击上传书籍，可以添加书籍     也可以删除书籍   利用yakit抓包">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076223960-acd39b5a-3fdb-45a8-af26-7527419817ac.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076230954-a4346efc-ff88-41c5-b25d-0cb0a89503da.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076260636-b87bbcb6-3870-4c57-a166-014bd1bb3fa7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076298700-3102418c-7a92-4228-9160-ed6b840f9734.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076323045-03741072-193b-4b37-b955-74222cc0bdff.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076354970-29d2ba79-b259-4a04-98f9-0cea40096368.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076385509-1f67819e-66ec-4f00-8fd6-52823ddcabe9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076393848-e6b91fef-8ee4-4de8-86fd-94dcf3a97dc5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076406451-d35f0b69-4e6f-4cbc-8af2-7fd6c4d52285.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076419893-24d0f721-680e-47ed-9da4-afc8b002b7a8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076437849-95d76d0e-e46f-4c83-a3e3-8c6f9601e4e8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076442814-05a38e0c-432e-4954-8854-e2feb92ca52a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076489773-383cc84a-01bb-44cd-9849-d583b60f8b31-170347281997520.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076489773-383cc84a-01bb-44cd-9849-d583b60f8b31-170347276099016.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076497888-2afbb021-1721-445f-8857-f0535a3dfe7a.png">
+<meta property="article:published_time" content="2023-12-25T02:50:46.000Z">
+<meta property="article:modified_time" content="2023-12-25T02:53:49.457Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703076223960-acd39b5a-3fdb-45a8-af26-7527419817ac.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-前后端分离" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      前后端分离
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" class="article-date">
+  <time datetime="2023-12-25T02:50:46.000Z" itemprop="datePublished">2023-12-25</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、制作一个简易的图书馆系统</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1703075146915-963153b3-0a97-4f59-bd40-775394344b98.rar">📎tushuguan.rar</a></p>
+<p>一个users数据库和一个books数据库</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076223960-acd39b5a-3fdb-45a8-af26-7527419817ac.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076230954-a4346efc-ff88-41c5-b25d-0cb0a89503da.png" alt="img"></p>
+<p>登录页面（需要管理员身份登录）</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076260636-b87bbcb6-3870-4c57-a166-014bd1bb3fa7.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076298700-3102418c-7a92-4228-9160-ed6b840f9734.png" alt="img"></p>
+<p>后台页面</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076323045-03741072-193b-4b37-b955-74222cc0bdff.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076354970-29d2ba79-b259-4a04-98f9-0cea40096368.png" alt="img"></p>
+<p>点击上传书籍，可以添加书籍</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076385509-1f67819e-66ec-4f00-8fd6-52823ddcabe9.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076393848-e6b91fef-8ee4-4de8-86fd-94dcf3a97dc5.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076406451-d35f0b69-4e6f-4cbc-8af2-7fd6c4d52285.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076419893-24d0f721-680e-47ed-9da4-afc8b002b7a8.png" alt="img"></p>
+<p>也可以删除书籍</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076437849-95d76d0e-e46f-4c83-a3e3-8c6f9601e4e8.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076442814-05a38e0c-432e-4954-8854-e2feb92ca52a.png" alt="img"></p>
+<p>利用yakit抓包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076489773-383cc84a-01bb-44cd-9849-d583b60f8b31-170347281997520.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076489773-383cc84a-01bb-44cd-9849-d583b60f8b31-170347276099016.png"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703076497888-2afbb021-1721-445f-8857-f0535a3dfe7a.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2023/12/25/%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">文件</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/25/%E6%96%87%E4%BB%B6/">文件</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/17/PHP%E9%A1%B5%E9%9D%A2/">PHP页面</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/17/%E4%BD%BF%E7%94%A8vue%E5%88%B6%E9%80%A0%E9%A1%B5%E9%9D%A2/">使用vue制造页面</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2023 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
