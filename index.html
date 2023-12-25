@@ -59,6 +59,99 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-文件" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/25/%E6%96%87%E4%BB%B6/">文件</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/25/%E6%96%87%E4%BB%B6/" class="article-date">
+  <time datetime="2023-12-25T02:45:17.000Z" itemprop="datePublished">2023-12-25</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、文件的操作</p>
+<p>1.打开文件</p>
+<p>open(文件路径，mode&#x3D;””，encoding&#x3D;””)</p>
+<p>​    文件路径:</p>
+<p>​      绝对路径</p>
+<p>​        d:&#x2F;test&#x2F;xxx.txt</p>
+<p>​      相对路径</p>
+<p>​         当前程序所在文件夹</p>
+<p>​     mode:</p>
+<p>​        r:read 读取</p>
+<p>​        w:write 写</p>
+<p>​        a: append 追加写入</p>
+<p>​        b: 读写的是非文本文件 -&gt;bytes</p>
+<p>​      with:上下文，不需要手动关闭文件</p>
+<p>修改文件：</p>
+<p>   从源文件中读取内容</p>
+<p>   在内存中进行调整（修改）</p>
+<p>   把修改后的内容写入新文件中</p>
+<p>   删除源文件，将新文件重命名成源文件</p>
+<p>open(“”国产自拍.txt)</p>
+<p>open(“..&#x2F;葫芦娃.txt”)   ..&#x2F; 上一层文件夹</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305195719-09bfb799-3937-4183-86fb-64d5646058c7.png" alt="img"></p>
+<p>读取文件</p>
+<p><img src="/%E6%96%87%E4%BB%B6.assets/1702305417192-45355b02-4747-4818-a42c-9adf32f9f9cb.png" alt="img"></p>
+<p>readline() 读取一行</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305547873-c96afaff-c8d6-4f0a-9ff5-96ba795e0e28.png" alt="img"></p>
+<p>每次读完一行都指向下一行</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305598247-4eb6aacf-93a6-4b3d-ba20-b6750b191ae6.png" alt="img"></p>
+<p>因为文件每一行末尾都有一个换行符，所以输出的时候会占两行</p>
+<p>strip()去掉字符串左右两端的空白，换行，制表符</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305771541-4742e939-2a09-4d2b-b173-79934551397e.png" alt="img"></p>
+<p>以列表形式输出，可以看见换行符</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305911629-310b54ba-2280-419b-b49e-9fbb33a9f4f8.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702306042623-f702eb41-f6bc-4ed8-93f3-d99ae955af26.png" alt="img"></p>
+<p>写入文件</p>
+<p>w模式下，如果文件不存在，自动创建一个文件；每一次open都会清空文件中的内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703077679453-40b141d2-52fa-46f4-8db0-bb6259d9d093.png" alt="img"></p>
+<p>f.colse()每次对文件进行操作之后都要关闭</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079337370-79a78220-5e2f-437f-a8fb-2d88a51d4493.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079487758-6ee45c29-fb33-455b-ab22-1948707b3330.png" alt="img"></p>
+<p>a模式</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079899762-fd6e4f48-deed-4a4b-8b05-a66601b2e7e2.png" alt="img"></p>
+<p>with</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080154619-81168c2e-369d-41c8-934b-94c892331761.png" alt="img"></p>
+<p>读取图片</p>
+<p>在读写非文本文件时要加上b</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080392708-c21447bc-25a7-4962-a342-5df3c92f4c8f.png" alt="img"></p>
+<p>文件的复制</p>
+<p>从源文件中读取内容，写入到新路径去</p>
+<p>\ 表示下面一行和现在这一行为同一行</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080603708-07b91283-af2b-4ef2-be7e-d3102a21e254.png" alt="img"></p>
+<p>import os 和操作系统相关的模块引入</p>
+<p>import time 和时间相关的模块</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083807097-9bff5904-4ead-40d4-8d5e-8f42ab6494e3.png" alt="img"></p>
+<p>os remove</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083754201-1c16abde-724a-4cb2-be2d-5249368a5b6a.png" alt="img"></p>
+<p>time.sleep(3)让程序休眠三秒钟</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083931321-6a499c07-cdd9-45a2-88bb-bc62989ab30b.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-PHP页面" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -845,92 +938,6 @@
 </article>
 
   
-    <article id="post-centos基本命令" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/03/centos%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">centos基本命令</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/03/centos%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time datetime="2023-12-03T06:59:07.000Z" itemprop="datePublished">2023-12-03</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、centos基本命令</p>
-<p>ls文件目录</p>
-<p>ls &#x2F; 根目录</p>
-<p>ls -a  查看隐藏文件</p>
-<p>隐藏文件    .xxxxxx</p>
-<p>​                           xxxxx</p>
-<p>ls . 当前目录</p>
-<p>ls .. 上级目录</p>
-<p>touch 文件名   创建文件（按ls查看）</p>
-<p>touch  .文件名  创建隐藏文件（按ls -a查看）</p>
-<p>ls -al 显示当前目录下的所有的文件及属性</p>
-<p>第一列是文件属性</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701396334535-a9b04a41-1b77-47b8-89dd-f5122c95ff90.png" alt="img"></p>
-<p>mkdir 创建文件夹</p>
-<p>mkdir -p 文件名&#x2F;文件名&#x2F;文件名创建递归文件夹</p>
-<p>cd切换目录</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701398639076-c3a7807f-ca01-4b89-819d-912a115f5327.png" alt="img"></p>
-<p>whoami查看当前用户的名字</p>
-<p>cat 文件名  查看文本文件</p>
-<p>id当前用户的权限</p>
-<p>pwd当前所在的目录</p>
-<p>rm -f 文件名   强制删除</p>
-<p>rm -rf test1&#x2F;  强制删除文件夹下所有的内容</p>
-<p>ls &#x2F;bin |grep mv查找bin目录所有带mv的文件</p>
-<p>ls &#x2F;bin|more</p>
-<p>ls &#x2F;bin|less</p>
-<p>ls &#x2F;bin|grep ls</p>
-<p>cat &#x2F;bin&#x2F;ls</p>
-<p>vi 文件名 编辑文件</p>
-<p>touch anaconda-ks.cfg</p>
-<p>cat -n 文件名  查看文件内容（-n显示行号）</p>
-<p>chmod 755 文件名 修改权限</p>
-<p>echo “123“(想要写的内容) &gt;&gt;test1&#x2F;4 将内容追加到test1目录中的4里面</p>
-<p>find &#x2F;bin -name ls搜索在bin目录下名字为ls的文件</p>
-<p>find &#x2F;bin -user root</p>
-<p>find &#x2F;bin size +204800  搜索bin目录中大小在100M以上的文件</p>
-<p>find &#x2F;bin -iname ls</p>
-<p>useradd admin 创建用户</p>
-<p>passwd admin 修改admin密码（不加用户名，就是修改当前用户密码）</p>
-<p>ip add显示centos的ip地址</p>
-<p>二、物理机连接centos</p>
-<p>1.systemctl enable sshd</p>
-<p>2.systemctl start sshd</p>
-<p>3.vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config   </p>
-<p> 4.按esc，输入：set nu显示行号，找到38行去掉#后面没有yes就添加一个yes即可，PermitRootLogin yes</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701586413605-92c5d585-3938-4243-ae08-41ea4f9f563f.png" alt="img"></p>
-<p>5.systemctl restart sshd</p>
-<p>6.ip add 查找centos的地址</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701586631402-6bc21dcd-3793-4dfd-a3d9-7780affd935c.png" alt="img"></p>
-<p>7.ssh <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#50;&#46;&#x31;&#x33;&#55;">&#x72;&#111;&#111;&#116;&#x40;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x30;&#50;&#46;&#x31;&#x33;&#55;</a></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701586055000-fb47b375-ec7e-4571-8a51-ccac036fd23c.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -996,6 +1003,10 @@
       <ul>
         
           <li>
+            <a href="/2023/12/25/%E6%96%87%E4%BB%B6/">文件</a>
+          </li>
+        
+          <li>
             <a href="/2023/12/17/PHP%E9%A1%B5%E9%9D%A2/">PHP页面</a>
           </li>
         
@@ -1009,10 +1020,6 @@
         
           <li>
             <a href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/10/%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C/">列表的操作</a>
           </li>
         
       </ul>

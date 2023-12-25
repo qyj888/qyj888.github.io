@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-17T01:27:58.249Z</updated>
+  <updated>2023-12-25T02:47:50.057Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文件</title>
+    <link href="http://example.com/2023/12/25/%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2023/12/25/%E6%96%87%E4%BB%B6/</id>
+    <published>2023-12-25T02:45:17.000Z</published>
+    <updated>2023-12-25T02:47:50.057Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、文件的操作</p><p>1.打开文件</p><p>open(文件路径，mode&#x3D;””，encoding&#x3D;””)</p><p>​    文件路径:</p><p>​      绝对路径</p><p>​        d:&#x2F;test&#x2F;xxx.txt</p><p>​      相对路径</p><p>​         当前程序所在文件夹</p><p>​     mode:</p><p>​        r:read 读取</p><p>​        w:write 写</p><p>​        a: append 追加写入</p><p>​        b: 读写的是非文本文件 -&gt;bytes</p><p>​      with:上下文，不需要手动关闭文件</p><p>修改文件：</p><p>   从源文件中读取内容</p><p>   在内存中进行调整（修改）</p><p>   把修改后的内容写入新文件中</p><p>   删除源文件，将新文件重命名成源文件</p><p>open(“”国产自拍.txt)</p><p>open(“..&#x2F;葫芦娃.txt”)   ..&#x2F; 上一层文件夹</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305195719-09bfb799-3937-4183-86fb-64d5646058c7.png" alt="img"></p><p>读取文件</p><p><img src="/%E6%96%87%E4%BB%B6.assets/1702305417192-45355b02-4747-4818-a42c-9adf32f9f9cb.png" alt="img"></p><p>readline() 读取一行</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305547873-c96afaff-c8d6-4f0a-9ff5-96ba795e0e28.png" alt="img"></p><p>每次读完一行都指向下一行</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305598247-4eb6aacf-93a6-4b3d-ba20-b6750b191ae6.png" alt="img"></p><p>因为文件每一行末尾都有一个换行符，所以输出的时候会占两行</p><p>strip()去掉字符串左右两端的空白，换行，制表符</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305771541-4742e939-2a09-4d2b-b173-79934551397e.png" alt="img"></p><p>以列表形式输出，可以看见换行符</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702305911629-310b54ba-2280-419b-b49e-9fbb33a9f4f8.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702306042623-f702eb41-f6bc-4ed8-93f3-d99ae955af26.png" alt="img"></p><p>写入文件</p><p>w模式下，如果文件不存在，自动创建一个文件；每一次open都会清空文件中的内容</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703077679453-40b141d2-52fa-46f4-8db0-bb6259d9d093.png" alt="img"></p><p>f.colse()每次对文件进行操作之后都要关闭</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079337370-79a78220-5e2f-437f-a8fb-2d88a51d4493.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079487758-6ee45c29-fb33-455b-ab22-1948707b3330.png" alt="img"></p><p>a模式</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703079899762-fd6e4f48-deed-4a4b-8b05-a66601b2e7e2.png" alt="img"></p><p>with</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080154619-81168c2e-369d-41c8-934b-94c892331761.png" alt="img"></p><p>读取图片</p><p>在读写非文本文件时要加上b</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080392708-c21447bc-25a7-4962-a342-5df3c92f4c8f.png" alt="img"></p><p>文件的复制</p><p>从源文件中读取内容，写入到新路径去</p><p>\ 表示下面一行和现在这一行为同一行</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703080603708-07b91283-af2b-4ef2-be7e-d3102a21e254.png" alt="img"></p><p>import os 和操作系统相关的模块引入</p><p>import time 和时间相关的模块</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083807097-9bff5904-4ead-40d4-8d5e-8f42ab6494e3.png" alt="img"></p><p>os remove</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083754201-1c16abde-724a-4cb2-be2d-5249368a5b6a.png" alt="img"></p><p>time.sleep(3)让程序休眠三秒钟</p><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703083931321-6a499c07-cdd9-45a2-88bb-bc62989ab30b.png" alt="img"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一、文件的操作&lt;/p&gt;
+&lt;p&gt;1.打开文件&lt;/p&gt;
+&lt;p&gt;open(文件路径，mode&amp;#x3D;””，encoding&amp;#x3D;””)&lt;/p&gt;
+&lt;p&gt;​    文件路径:&lt;/p&gt;
+&lt;p&gt;​      绝对路径&lt;/p&gt;
+&lt;p&gt;​        d:&amp;#x2F;test&amp;#</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>PHP页面</title>
