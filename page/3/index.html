@@ -59,6 +59,302 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-blog搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/">blog搭建</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/" class="article-date">
+  <time datetime="2023-12-01T08:35:18.000Z" itemprop="datePublished">2023-12-01</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、利用github搭建hexo博客</p>
+<p>1.下载typora</p>
+<p>2.下载picgo</p>
+<p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p>
+<p>3.下载node.js</p>
+<p> <a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en</a></p>
+<p>4.下载git</p>
+<p>5.注册一个github账号</p>
+<p>6.在本地新建一个文件夹，名为hexo，路径不要有中文（不建议在C盘建立文件夹）</p>
+<p>7.选定hexo文件夹，右击-&gt;Git Bash Here</p>
+<p>8.使用nmp命令安装hexo,输入：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmp install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421082102-981198c7-483b-44f3-84f4-6ec2f2aefaaf.png" alt="img"></p>
+<p>9.检测网站雏形，在Git Bash Here中输入以下命令</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+
+<p>10.配置ssh</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></div>
+
+<p>11.如果提示：No such file or directory说明你是第一次使用git</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p>12.连续按三次回车后,打开用户目录,找到.ssh\id_rsa.pub文件,用记事本打开并复制里面的内容,打开你的github主页,进入个人设置-&gt;SSH and GPG keys-&gt;New SSH key:</p>
+<p>在key里面填写刚刚复制的内容</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421806986-ca65d812-0185-4d0f-983d-2827ebf202a3.png" alt="img"></p>
+<p>13.尝试ssh连接,测试是否成功</p>
+<p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>(邮箱地址不用改)</p>
+<p>14.在blog目录下打开cmd</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git-save</span><br></pre></td></tr></table></figure></div>
+
+<p>15.在上一个Git Bash Here中继续配置</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;asd&quot;//你的github用户名,非昵称</span><br><span class="line">git config --global user.name &quot;xxx@qq.com&quot;//填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div>
+
+<p>16.在github上新建一个存储库,命名为github的用户名.github.io</p>
+<p>17.编辑_config.yml文件,在最后面改成这样</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>:git</span><br><span class="line">	repository:git@github.com:asd/asd.github.io.git</span><br><span class="line">	branch:main</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422480401-0e9f8e54-4f97-4c1e-a45a-88f901b1d09e.png" alt="img"></p>
+<p>18.在Git Bash Here中输入hexo d -g上传</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422630998-a298dcfe-af8f-410c-b144-c8369324af81.png" alt="img"></p>
+<p>二、picgo和typora的连接</p>
+<p>1.打开typora,选择文件-&gt;偏好设置</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423371632-41787294-abcf-4b8b-91d2-334307e8a083.png" alt="img"></p>
+<p>2.点击图像,插入图片时选择第三个,然后勾选前四个,上传服务选择PicGo(app),PicGo路径精确定位到PicGo.exe</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423418143-126c33c9-8687-4447-96cd-2954e1ff6838.png" alt="img"></p>
+<p>3.在github上点击个人主页,选择setting</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422863941-2661a534-3d7b-4deb-b831-c9f85cf844b0.png" alt="img"></p>
+<p>4.找到develoer setting-&gt;Personal access tokens-&gt;Tokens(classic)-&gt;Generate new token-&gt;Generate new token(classic),命名为123,生效时间选择永久,勾选第一个,生产令牌后复制令牌</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423208708-5b1c8bcf-97ce-45e5-a261-8facc836009e.png" alt="img"></p>
+<p>5.打开PicGo,点击图床设置-&gt;GitHub,然后编辑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423796833-9950406b-68e4-4a09-b7e8-50a9daa7b40a.png" alt="img"></p>
+<p>6.图床配置名为123,仓库名为github用户名&#x2F;仓库名,分支名设为main,Token处填写刚刚复制的令牌,设定存储路径为img&#x2F;,点击确定,然后设为默认图床</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423908277-71582001-1645-4aea-af5e-cd41482b55fa.png" alt="img"></p>
+<p>7.回到typora,点击验证图片上传选项,会显示验证成功,这样PicGo和typora的连接就建立成功了.</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701424133266-dd775176-adb1-480f-a2fb-db0f2ef72ea1.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-flash捆绑木马" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/">flash捆绑木马</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/" class="article-date">
+  <time datetime="2023-12-01T08:35:00.311Z" itemprop="datePublished">2023-12-01</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong>flash钓鱼</strong></p>
+<p>一、flsah页面制作</p>
+<p>1.在虚拟机上下载PHPstudy<a target="_blank" rel="noopener" href="https://www.xp.cn/">https://www.xp.cn/</a></p>
+<p>2.将Apache2.4.39启动</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242117277-07e2434c-de41-49e8-b0b5-422296d3c198.png" alt="img"></p>
+<p>3.点击网站-&gt;管理-&gt;打开根目录</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242425297-25627557-6a19-4482-bced-647075779340.png" alt="img"></p>
+<p>4.删除里面所有的文件，然后创建一个txt后缀的文本文件，然后重命名为html后缀的index文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242539683-444f293f-c0aa-4b85-aa9d-03fe9a389e69.png" alt="img"></p>
+<p>5.在物理机上创建一个同样名字的HTML文件，再用物理机打开vscode</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242703814-fa5379d5-1015-4289-9201-e127352a8641.png" alt="img"></p>
+<p>6.点击文件-&gt;打开文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249884601-dddd9c7f-40c9-4e2a-87eb-b2dbc22de4e9.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249910816-31ce902a-0c4a-4802-b7e8-09cfaab3a726.png" alt="img"></p>
+<p>7.选择创建好了的html后缀的文件，然后点击打开，按住shift+!再回车就会出现主体代码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701250528610-3f9e007a-c789-44c5-8b06-9fc229a01caa.png" alt="img"></p>
+<p>8.在body部分输入</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./flash.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257286044-367b115c-8415-489f-9684-616a4ee65d0b.png" alt="img"></p>
+<p>9.把刚刚在win10虚拟机中创建的html后缀的文件以记事本方式打开</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701256764522-d9dc980c-5cf8-4ccc-a1fb-e27e9af713a4.png" alt="img"></p>
+<p>10.把刚刚在vscode里面编辑的代码全选放到虚拟机打开的记事本中并保存</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257377858-610ce9af-b02a-4a33-8817-11d58da08b97.png" alt="img"></p>
+<p>11.使用一个js脚本，放在phpstudy的根目录下面</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/38965110/1701257616887-4fb4735e-cf48-4c4f-a6e3-5d8e645a7e65.js">📎flash.js</a></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257517150-40da6315-c04d-4eca-a6ff-5bff5e230329.png" alt="img"></p>
+<p>12.打开phpsutdy,点击网站-&gt;管理-&gt;打开网站</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257104962-c5db6f7e-616d-4512-bd2a-e7b429701929.png" alt="img"></p>
+<p>13.打开之后就会显示出已经成功做好的flash页面</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257675328-58254a46-e6ca-4d01-818d-c590670d89c7.png" alt="img"></p>
+<p>二、flash捆绑木马</p>
+<p>1.关掉所有的杀毒软件，然后下载好一个木马程序和flash安装包</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701257965001-0662f572-9b18-4ca9-ba98-f76b17434788.rar">📎木马.rar</a></p>
+<p>2.同时选中木马程序和flash安装包，右击，然后选择添加到压缩文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258200200-8652d6be-397d-4065-9d28-a8772764173b.png" alt="img"></p>
+<p>3.勾选创建自解压格式压缩文件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258292065-c75d18f8-e62b-43ec-bfe7-ff4f2c0e7efa.png" alt="img"></p>
+<p>4.点击高级-&gt;自解压选项</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258341196-70b676d4-5e92-4b83-93bd-e7d699d36688.png" alt="img"></p>
+<p>5.解压路径设置 C:\windows\temp</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258415770-b0abff9f-be5c-499c-94e8-322225312f64.png" alt="img"></p>
+<p>6.然后点击设置选项卡，在解压后运行里面输入</p>
+<p>C:\windows\temp\flashcenter_pp_ax_install_cn.exe </p>
+<p>（黄色背景部分对应之前下载好的flash安装包的名字）</p>
+<p>C:\windows\temp\flash.exe</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258524712-fc5f3e77-99bf-43a6-8bcf-088ab7ccda83.png" alt="img"></p>
+<p>7.点击模式选项卡，选择全部隐藏</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258662803-6b087acd-87b1-4fb2-a402-3cc6602034a4.png" alt="img"></p>
+<p>8.点击更新选项卡，将更新模式和覆盖模式都选择为第二个</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258732039-f6afe207-716d-4536-bb1e-a9b363100495.png" alt="img"></p>
+<p>9.点击确定，然后会显示出一个压缩包</p>
+<p>10.下载一个图标更改程序</p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701259144003-8c7b05df-dee9-4dc0-a0ea-892dc098d500.rar">📎更改图标.rar</a></p>
+<p>11.点击Restorator.exe启动程序</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259200499-893f034b-5038-404e-8df3-93c51ba774d3.png" alt="img"></p>
+<p>12.将刚刚做好的压缩包和flash安装包拖到资源树中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259331313-7c90067b-2109-4b43-8d78-037de2cdbb93.png" alt="img"></p>
+<p>13.删除压缩包的图标，将flash安装包的图标复制到压缩包中git clone </p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259414320-5998c659-18b4-4ad1-b87e-f6d3e625aff0.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259443564-3d4782d7-e7d0-4301-a310-9d7c59665e9d.png" alt="img"></p>
+<p>14.再次点击压缩包的图标，可以发现它变成了flash安装包的图标</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259474971-33a92c45-eeef-4d07-b7cd-8f0c974944fa.png" alt="img"></p>
+<p>15.点击保存</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259612821-1bc8a54f-0982-434e-8bb7-ff49d96f27fa.png" alt="img"></p>
+<p>16.将改好的压缩包放入phpstudy的根目录中，并将其名字改为flash压缩包的名字</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260620277-b5c02f4a-9f08-4618-9473-179e12ca3f10.png" alt="img"></p>
+<p>17.打开浏览器，在地址栏输入127.0.0.1，就可以看到捆绑木马的flash网站做好了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260813077-0f742009-228e-480a-bf63-14a0633b3ba9.png" alt="img"></p>
+<p>18.点击立即升级，下载压缩包并打开，打开之后可以看到木马已经植入电脑</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260922885-cbc0e881-ff3d-4de9-afc1-12bb17a4cfd5.png" alt="img"></p>
+<p>三、自制的其它钓鱼网页（不带免杀）</p>
+<p>1.打开一个steam网页，右击选择另存页面为，将源码保存phpstudy的根目录下</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261407197-fcc16284-f069-4ad4-b056-eec6a81a0669.png" alt="img"></p>
+<p>2.找到一个steam安装包</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261585930-1f872cc8-d5bb-447c-9c17-439d347a28d2.png" alt="img"></p>
+<p>3.选中之前下好的木马和steam安装包，右击重复之前的压缩步骤，这一步的路径要改为steam安装包的名字</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261737866-6b0721e8-4371-4466-9bd7-1e47d4730c22.png" alt="img"></p>
+<p>4.压缩好了之后，再重复之前更改图标的操作，然后将压缩包放入phstudy的根目录中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261867321-37455cc4-23ac-4773-a0cf-b69126b0f0e2.png" alt="img"></p>
+<p>5.把之前下好的Sign In.htm改为index.html</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261979887-6c17d526-e257-4fdb-bd81-2f1fe2295cd8.png" alt="img"></p>
+<p>6.右击index.html用记事本打开，找到installsteam这一部分</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262093234-b2da25f4-326c-41b5-ab6f-5d1c04c15669.png" alt="img"></p>
+<p>7.将href&#x3D;” “里面的内容改为&#x2F;Steaminstaller.exe ,保存更改</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262136805-e092cdc8-ced2-4d36-90f6-4f0d52f1ea84.png" alt="img"></p>
+<p>8.打开浏览器在地址栏输入127.0.0.1，点击Install steam</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262295670-2c70901a-1472-463d-bf8a-348747ce7c7d.png" alt="img"></p>
+<p>9.打开下载好的文件，可以看到电脑跟之前已植入木马</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262451061-c1c606b5-e522-48f7-87b6-6675ef8850af.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-大灰狼远控的使用" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">大灰狼远控的使用</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2023-12-01T08:34:46.505Z" itemprop="datePublished">2023-12-01</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、简单的钓鱼网站的使用</p>
+<p>1.在kali中打开终端，然后输入vim &#x2F;etc&#x2F;proxychains.conf</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163989520-c04fdac0-75b9-4c53-9360-14543367bd40-17015255965491.png" alt="img"></p>
+<p>2.将打开的文件的最后一行改为代理IP和端口号</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164102196-7ec26a8b-a36c-48d2-85d7-4784e0ec0e13.png" alt="img"></p>
+<p>3.然后按ESC输入冒号：，再输入wq！保存并退出编辑</p>
+<p>4.在终端上输入proxychains git clone <a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a></p>
+<p>5.输入cd mip22</p>
+<p>6.输入chmod +x .&#x2F;*</p>
+<p>7.输入proxychains -q bash .&#x2F;mip22.sh，然后会出现以下界面</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164499098-4e23cf81-3848-4d66-b305-5149d99ec59e.png" alt="img"></p>
+<p>8.输入1</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169456733-f501ff26-7cab-43c6-b06c-681a4515f523.png" alt="img">9.选择一个钓鱼内容，例如输入51</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169581270-82784944-40af-4552-a169-efb3599421df-17015255965519.png" alt="img">10.输入3，等待加载</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169711062-13d90eee-84fd-4954-ac22-9b712726148c.png" alt="img">11.可以得到三个url，选择https的url，复制用浏览器打开，可以得到一个steam登录的钓鱼页面</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701169863063-ac506893-c7bc-4c28-ab1f-9ac313a6d0a3.png" alt="img">二、HTTP动态码的获取</p>
+<p>1.下载VScode<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>2.在VScode的扩展商店里面搜索python，安装第一个</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170215657-9dd1552f-621d-4890-a54d-6d64f5bd35ee-170152559655215.png" alt="img"></p>
+<p>3.在VScode的扩展商店里面搜索code run，安装第一个</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170316383-7e431e4b-6b0e-465d-a9bb-05a30b98ae17.png" alt="img"></p>
+<p>4.新建一个python类型的文件，输入代码</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;https://httpbin.org/get&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br></pre></td></tr></table></figure></div>
+
+<p>5.将输入的python代码保存在已经安装好的python目录下</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170569987-ca60416f-60cb-4ede-aee5-0a082f1ca894.png" alt="img">6.在搜索栏中搜索cmd，打开cmd</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170683708-6a1f3b8c-add2-4b0e-ab2d-4bbabc2c0a88.png" alt="img">7.输入python 1.py</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170747051-a383fea0-6d8f-473c-9dbf-34fdb4c01492.png" alt="img">8.出现报错，根据报错信息下载插件，输入pip install requests -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170851925-c9a0feb6-b8e1-4e43-8452-bcff8c4dfada.png" alt="img">9.再次输入python 1.py进行尝试，看是否还缺少插件</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170918247-c81c08dc-2aff-431c-a08c-b2c1abef7c95.png" alt="img">10.再次出现报错，根据报错信息安装插件，输入pip install chardet -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170994659-9f1fd45b-1731-4b67-a5b9-94640bf72284-170152559655329.png" alt="img"></p>
+<p> 11.再次输入python 1.py进行尝试，可以发现成功获取动态码</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171049744-1454bc09-aa00-4bdd-b04a-d7dd1a0a44bb-170152559655331.png" alt="img"></p>
+<p>三、大灰狼的使用</p>
+<p>1.关闭物理机和win10虚拟机的防病毒及防火墙，下载大灰狼并打开</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171518360-8a279f31-25f1-4c76-832d-6639ac7f39d1.png" alt="img"></p>
+<p>2.点击服务生成</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171565452-0758b854-3477-4009-8c6d-a24a1368a0c3-170152559655435.png" alt="img"></p>
+<p>3.将域名ip改为自己的本机ip，然后点击生成服务</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171641871-2a1d26db-e34a-4c80-8d7b-ffce73638523.png" alt="img">4.生成一个后缀为.exe的可执行文件，将文件拖入win10虚拟机中，在win10虚拟机上双击执行，然后就可以用大灰狼对虚拟机进行远程操作了。</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701227982639-77b0633f-4405-424d-87b9-7c3b9f258425.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228005878-7138970c-1e2e-40c6-97c9-9fd7611e5d4b.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228050788-ffa1b89c-f065-4683-b82e-2ee25e0419b8.png" alt="img">5.右击已连接的虚拟机，可以对win10虚拟机进行远程控制，键盘记录等</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228257371-d40f470e-399b-4c14-95a6-7f9815bb6ff2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228269579-d1848b4f-3165-4fee-8026-dea1e75d4606.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-tg注册和永恒之黑" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -217,23 +513,23 @@
       <ul>
         
           <li>
+            <a href="/2024/01/08/%E7%BB%95%E8%BF%87waf/">绕过waf</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/pikachu%E9%9D%B6%E5%9C%BA/">pikachu靶场</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+          </li>
+        
+          <li>
             <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
           </li>
         
           <li>
             <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/">sql注入第二弹（sqlmap）</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/">sql注入第一弹</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
           </li>
         
       </ul>

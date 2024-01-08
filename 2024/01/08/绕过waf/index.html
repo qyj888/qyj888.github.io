@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>绕过waf | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="一.安全狗的安装与使用：https:&#x2F;&#x2F;www.safedog.cn&#x2F;![img](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;qyj888&#x2F;888&#x2F;main&#x2F;img&#x2F;1704286376561-bcb9d328-8396-4a7c-a318-50ef2d94d7ae.png) 1.安装：首先找到phpstudy的网站根目录，找到这个目录：C:\phpstudy_pro\E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绕过waf">
+<meta property="og:url" content="http://example.com/2024/01/08/%E7%BB%95%E8%BF%87waf/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.安全狗的安装与使用：https:&#x2F;&#x2F;www.safedog.cn&#x2F;![img](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;qyj888&#x2F;888&#x2F;main&#x2F;img&#x2F;1704286376561-bcb9d328-8396-4a7c-a318-50ef2d94d7ae.png) 1.安装：首先找到phpstudy的网站根目录，找到这个目录：C:\phpstudy_pro\E">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704287279584-06c7d00f-ea3f-4855-b715-95ee8a743ff3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704287708219-9efa88af-e5a3-4ded-b1c4-dea0d01565a6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1703926489604-9c1db1db-d658-419e-8c86-4769d0d96022.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704288358239-1e8485f4-7cb9-428b-a5b4-f003a5d3d386.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704292442983-e65c2af9-e3f9-4716-9ad4-2a986d4a4858.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704292976653-f0fa4d42-cf35-4392-96a7-283cdb4f5c20.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704294188462-6a99f6a1-0fab-4ac0-ab46-43ed46a7ad53.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704295723686-870274ad-a651-4e7a-9969-adf52414c9af.png">
+<meta property="article:published_time" content="2024-01-08T01:53:53.000Z">
+<meta property="article:modified_time" content="2024-01-08T01:56:23.486Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/qyj888/888/main/img/1704287279584-06c7d00f-ea3f-4855-b715-95ee8a743ff3.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/archives" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-绕过waf" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      绕过waf
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2024/01/08/%E7%BB%95%E8%BF%87waf/" class="article-date">
+  <time datetime="2024-01-08T01:53:53.000Z" itemprop="datePublished">2024-01-08</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="一-安全狗的安装与使用："><a href="#一-安全狗的安装与使用：" class="headerlink" title="一.安全狗的安装与使用："></a>一.安全狗的安装与使用：</h1><p><a target="_blank" rel="noopener" href="https://www.safedog.cn/![img](https://raw.githubusercontent.com/qyj888/888/main/img/1704286376561-bcb9d328-8396-4a7c-a318-50ef2d94d7ae.png)">https://www.safedog.cn/![img](https://raw.githubusercontent.com/qyj888/888/main/img/1704286376561-bcb9d328-8396-4a7c-a318-50ef2d94d7ae.png)</a></p>
+<h2 id="1-安装："><a href="#1-安装：" class="headerlink" title="1.安装："></a>1.安装：</h2><p>首先找到phpstudy的网站根目录，找到这个目录：C:\phpstudy_pro\Extensions\Apache2.4.39\bin在此位置输入cmd，一般情况下会报错，因为不是以管理员的身份启动的，这里注意要用管理员的身份进行启动命令行然后输入：httpd.exe -k install -n apache2.4在操作之前保证apache和mysql是关闭状态。此时在你的services.msc上面就能看到已经存在Apache<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704287279584-06c7d00f-ea3f-4855-b715-95ee8a743ff3.png" alt="img">点击启动，之后安装安全狗。在安装路径时选择自定义路径找到网站根目录下的apache目录。<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704287708219-9efa88af-e5a3-4ded-b1c4-dea0d01565a6.png" alt="img"></p>
+<h2 id="2-验证安全狗是否安装成功："><a href="#2-验证安全狗是否安装成功：" class="headerlink" title="2.验证安全狗是否安装成功："></a>2.验证安全狗是否安装成功：</h2><p>这里以第一关为例：输入?id&#x3D;1’ union select,被安全狗的过滤规则检测到了,就会出现拦截<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1703926489604-9c1db1db-d658-419e-8c86-4769d0d96022.png" alt="img"></p>
+<h2 id="3-通过不断构建尝试绕WAF："><a href="#3-通过不断构建尝试绕WAF：" class="headerlink" title="3.通过不断构建尝试绕WAF："></a>3.通过不断构建尝试绕WAF：</h2><p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704288358239-1e8485f4-7cb9-428b-a5b4-f003a5d3d386.png" alt="img">最终发现单独的union和select不会出现狗，但是当union select出现时狗就来了。单独的order和by也不会出狗，但是当出现order by时狗就有跳出来了。4.绕过：用yakit免配置启动浏览器打开这个网站：<a target="_blank" rel="noopener" href="http://192.168.17.128/sqli/Less-1/?id=1!%5Bimg%5D(https://raw.githubusercontent.com/qyj888/888/main/img/1704292176034-ffe9c6a8-e180-4319-b560-3af051343e86.png)%E5%9C%A8id=1%E7%9A%84%E4%BD%8D%E7%BD%AE%E6%8F%92%E5%85%A5%E6%A0%87%E7%AD%BE%E9%80%89%E6%8B%A9%E4%B8%B4%E6%97%B6%E5%AD%97%E5%85%B8%EF%BC%8C%E5%8F%91%E9%80%81%E4%B9%8B%E5%90%8E%E5%B0%B1%E4%BC%9A%E6%8C%A8%E4%B8%AA%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%E3%80%82!%5Bimg%5D(https://raw.githubusercontent.com/qyj888/888/main/img/1704091196967-1b6ad3ce-fc70-4816-95a7-914469d17e7b.png)%E8%BF%99%E9%87%8C%E5%AD%98%E5%9C%A8%E9%94%99%E8%AF%AF%EF%BC%8C%E5%9C%A8union%E4%B8%8Eselect%E4%B9%8B%E9%97%B4%E9%9C%80%E8%A6%81%E5%8A%A0%E4%B8%8A%E7%A9%BA%E6%A0%BC%E7%9A%84%E7%BC%96%E7%A0%81%20%EF%BC%8C%E5%90%8C%E7%90%86order">http://192.168.17.128/sqli/Less-1/?id=1![img](https://raw.githubusercontent.com/qyj888/888/main/img/1704292176034-ffe9c6a8-e180-4319-b560-3af051343e86.png)在id=1的位置插入标签选择临时字典，发送之后就会挨个进行检测。![img](https://raw.githubusercontent.com/qyj888/888/main/img/1704091196967-1b6ad3ce-fc70-4816-95a7-914469d17e7b.png)这里存在错误，在union与select之间需要加上空格的编码%20，同理order</a> by也一样。<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704292442983-e65c2af9-e3f9-4716-9ad4-2a986d4a4858.png" alt="img">上图为错误结果，下图为正确结果。<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704292976653-f0fa4d42-cf35-4392-96a7-283cdb4f5c20.png" alt="img">首先尝试union select有狗，此时再union&#x2F;<em>&#x2F;select接这尝试union&#x2F;&#x2F;&#x2F;&#x2F;select，再次尝试union&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;!134567select&#x2F;<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704294188462-6a99f6a1-0fab-4ac0-ab46-43ed46a7ad53.png" alt="img">输入id&#x3D;-1’union&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;!00044select&#x2F;1,&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;!00044database&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;&#x2F;!()</em>&#x2F;,3– -，此时显示出了数据库security，成功注入。<img src="https://raw.githubusercontent.com/qyj888/888/main/img/1704295723686-870274ad-a651-4e7a-9969-adf52414c9af.png" alt="img"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2024/01/08/pikachu%E9%9D%B6%E5%9C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">pikachu靶场</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpg" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        渗透不了一点
+      
+    </h3>
+    <p class="avatar-slogan">
+      缘分落地生根是我们。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1/" rel="tag">1</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/1/" style="font-size: 10px;">1</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/08/%E7%BB%95%E8%BF%87waf/">绕过waf</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/pikachu%E9%9D%B6%E5%9C%BA/">pikachu靶场</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2024 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/archives" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

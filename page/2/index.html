@@ -59,6 +59,214 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-使用vue制造页面" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/17/%E4%BD%BF%E7%94%A8vue%E5%88%B6%E9%80%A0%E9%A1%B5%E9%9D%A2/">使用vue制造页面</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/17/%E4%BD%BF%E7%94%A8vue%E5%88%B6%E9%80%A0%E9%A1%B5%E9%9D%A2/" class="article-date">
+  <time datetime="2023-12-17T01:09:43.000Z" itemprop="datePublished">2023-12-17</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>1.在vue目录下新建一个vue-project项目</p>
+<p>2.尝试仿制下列图片</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702304245430-9f3c4e64-65c8-4138-b8e5-397740aad1a3.png" alt="img"></p>
+<p>3.代码如下</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span> <span class="attr">setup</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Check</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Delete</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Edit</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Message</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Search</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Star</span>,</span></span><br><span class="line"><span class="language-javascript">&#125; <span class="keyword">from</span> <span class="string">&#x27;@element-plus/icons-vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> value1 = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> value2 = <span class="title function_">ref</span>(<span class="literal">true</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Document</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Menu</span> <span class="keyword">as</span> <span class="title class_">IconMenu</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Location</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Setting</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">User</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Shop</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Tickets</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">PieChart</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Menu</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Expand</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Promotion</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Rank</span>,</span></span><br><span class="line"><span class="language-javascript">&#125; <span class="keyword">from</span> <span class="string">&#x27;@element-plus/icons-vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> <span class="title function_">handleOpen</span> = (<span class="params">key, keyPath</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key, keyPath)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> <span class="title function_">handleClose</span> = (<span class="params">key, keyPath</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key, keyPath)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> input = <span class="title function_">ref</span>(<span class="string">&#x27;&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> tableData = [</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    序号: <span class="string">&#x27;1&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    姓名: <span class="string">&#x27;张翼德&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    邮箱: <span class="string">&#x27;12466358@qq.com&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    手机: <span class="string">&#x27;18678290912&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    角色: <span class="string">&#x27;3060&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    创建时间: <span class="string">&#x27;2023-01-01&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    序号: <span class="string">&#x27;2&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    姓名: <span class="string">&#x27;赵子龙&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    邮箱: <span class="string">&#x27;1878298456@qq.com&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    手机: <span class="string">&#x27;13874392674&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    角色: <span class="string">&#x27;3090&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    创建时间: <span class="string">&#x27;2023-02-02&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    序号: <span class="string">&#x27;3&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    姓名: <span class="string">&#x27;关云长&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    邮箱: <span class="string">&#x27;1872354987@qq.com&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    手机: <span class="string">&#x27;1024567890&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    角色: <span class="string">&#x27;4060&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    创建时间: <span class="string">&#x27;2023-03-03&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    序号: <span class="string">&#x27;4&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    姓名: <span class="string">&#x27;李太白&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    邮箱: <span class="string">&#x27;1083273839@qq.com&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    手机: <span class="string">&#x27;17187293564&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    角色: <span class="string">&#x27;4090&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    创建时间: <span class="string">&#x27;2023-04-04&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">]</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> ment=[</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&quot;用户管理&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;用户列表1&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;用户列表2&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;用户列表3&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">          &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">name</span>: <span class="string">&quot;用户列表3-1&quot;</span></span></span><br><span class="line"><span class="language-javascript">          &#125;</span></span><br><span class="line"><span class="language-javascript">        ]</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&quot;权限管理&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;权限列表1&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;权限列表2&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;权限列表3&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">name</span>: <span class="string">&quot;商品管理&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">     <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;商品列表1&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;商品列表2&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;商品列表3&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">     ]</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&quot;订单管理&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;订单列表1&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;订单列表2&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;订单列表3&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&quot;数据统计&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">ch</span>: [</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;数据统计1&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;数据统计2&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">name</span>: <span class="string">&quot;数据统计3&quot;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">]</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;common-layout&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-aside</span> <span class="attr">class</span>=<span class="string">&quot;ce&quot;</span> <span class="attr">style</span>=<span class="string">&quot;float:lef;&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-row</span> <span class="attr">class</span>=<span class="string">&quot;tac&quot;</span>&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;12&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color:white;&quot;</span>&gt;</span>菜单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-menu</span></span></span><br><span class="line"><span class="tag">        <span class="attr">active-text-color</span>=<span class="string">&quot;#ffd04b&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">background-color</span>=<span class="string">&quot;#334256&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;el-menu-vertical-demo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">default-active</span>=<span class="string">&quot;1-1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">text-color</span>=<span class="string">&quot;#fff&quot;</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">open</span>=<span class="string">&quot;handleOpen&quot;</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">close</span>=<span class="string">&quot;handleClose&quot;</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-sub-menu</span> <span class="attr">index</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">template</span> #<span class="attr">title</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">User</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[0].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">            <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;1-1&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Menu</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[0].ch[0].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-sub-menu</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;2&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Setting</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[1].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;3&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Shop</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[2].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;4&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Tickets</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[3].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;5&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">PieChart</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;ment[4].name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-menu</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-aside</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;shadow-box&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;8&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Expand</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>首页/用户列表<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;8&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;8&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Promotion</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-icon</span>&gt;</span><span class="tag">&lt;<span class="name">Rank</span> /&gt;</span><span class="tag">&lt;/<span class="name">el-icon</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>语言<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-main</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;s&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;4&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;input&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入搜素的用户姓名&quot;</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line"></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;1.5&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line"></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span>&gt;</span>添加用户<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;24&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">&quot;tableData&quot;</span> <span class="attr">border</span> <span class="attr">style</span>=<span class="string">&quot;width: 100%&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;序号&quot;</span> <span class="attr">label</span>=<span class="string">&quot;序号&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;姓名&quot;</span> <span class="attr">label</span>=<span class="string">&quot;姓名&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;邮箱&quot;</span> <span class="attr">label</span>=<span class="string">&quot;邮箱&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;手机&quot;</span> <span class="attr">label</span>=<span class="string">&quot;手机&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;角色&quot;</span> <span class="attr">label</span>=<span class="string">&quot;角色&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;创建时间&quot;</span> <span class="attr">label</span>=<span class="string">&quot;创建时间&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-row</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-col</span> <span class="attr">:span</span>=<span class="string">&quot;19&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo-pagination-block&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-model:current-page</span>=<span class="string">&quot;currentPage4&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">v-model:page-size</span>=<span class="string">&quot;pageSize4&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:page-sizes</span>=<span class="string">&quot;[100, 200, 300, 400]&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:small</span>=<span class="string">&quot;small&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:disabled</span>=<span class="string">&quot;disabled&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:background</span>=<span class="string">&quot;background&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">layout</span>=<span class="string">&quot;total, sizes, prev, pager, next, jumper&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">:total</span>=<span class="string">&quot;400&quot;</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">size-change</span>=<span class="string">&quot;handleSizeChange&quot;</span></span></span><br><span class="line"><span class="tag">      @<span class="attr">current-change</span>=<span class="string">&quot;handleCurrentChange&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-col</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-row</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">el-main</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-class">.ce</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">50vh</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">background-color</span>: <span class="number">#334256</span>;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"><span class="selector-class">.tac</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">width</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"><span class="selector-class">.title</span> &#123;</span></span><br><span class="line"><span class="language-css">  <span class="attribute">text-align</span>: center;</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"><span class="selector-class">.shadow-box</span> &#123;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">8vh</span>;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: white;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.5</span>); <span class="comment">/* 设置阴影效果 */</span>  </span></span><br><span class="line"><span class="language-css">        &#125;  </span></span><br><span class="line"><span class="language-css"><span class="selector-class">.s</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">90vw</span>;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">70vh</span>;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: white;   </span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;  </span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.5</span>);</span></span><br><span class="line"><span class="language-css">&#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>4.制作的效果</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702304314277-3d6a45a0-bcb6-4155-a638-2f1596d4c6c5.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1702304325422-0b82bca1-f2dc-44a1-a091-15297d699111.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-字符集和编码" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/">字符集和编码</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/" class="article-date">
+  <time datetime="2023-12-10T01:45:12.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、字符集和编码</p>
+<p>ascii &#x3D;&gt;编排了128个文字符号，只需要7个0和1就可以表示了</p>
+<p>1 byte &#x3D;&gt;8bit</p>
+<p>ANSI &#x3D;&gt; 一套标准，每个字符16bit，2byte</p>
+<p>gb231编码(中国),gbk编码(windows 默认就是这个) ，16bit，2byte</p>
+<p>JIS编码(日本)</p>
+<p>Unicode:万国码，32bit，4byte（只是一个标准，不能用）</p>
+<p>utf：是可变长度的unicode，可以进行数据的传输和存储-&gt;行书，草书，隶书</p>
+<p>btf-8:最短的字节长度8</p>
+<p>​        英文：8bit，1byte</p>
+<p>​        欧洲文字：16bit，2byte</p>
+<p>​        中文：24bit，3byte</p>
+<p>gbk和utf-8不能直接进行转化</p>
+<p>二、编码和解码</p>
+<p>1.bytes</p>
+<p>程序员平时遇见的所有的数据最终单位都是字节byte</p>
+<p>b ‘xxxxx’ btyes类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954291004-ab4f1288-d2c7-41b3-821b-7f2eb9d05f8c.png" alt="img"></p>
+<p>如何把一个gbk的字节转化成utf-8的字节</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954468012-f62a4199-ca77-4df8-91ce-baeb3a6ca786.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701954872043-f6e79979-ede6-46f6-aa99-b6bf1d88bb99.png" alt="img"></p>
+<p>三、运算符</p>
+<p>算数运算 + - * &#x2F; % &#x2F;&#x2F;</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955273511-3a0781af-8257-46a9-89e3-1061bbb43b9b.png" alt="img"></p>
+<p>比较运算符 &gt; &gt;&#x3D; &lt; &lt;&#x3D; &#x3D;&#x3D; !&#x3D;</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955315268-2bb5a2b6-2a3f-4412-b683-b17c99e2ba35.png" alt="img"></p>
+<p>赋值运算符 &#x3D; +&#x3D; -&#x3D; *&#x3D; ….</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955568252-c114342c-5ca3-42fc-8e3d-977f8db864a1.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955605394-05154e8d-2ce4-4407-b7dc-e533d847eda0.png" alt="img"></p>
+<p>逻辑运算符</p>
+<p>and 并且，左右两端同时成立结果为真</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955889653-9a003a3b-1652-4fef-8dd6-818397467a2f.png" alt="img"></p>
+<p>or 或者，左右两端有一个成立结果就成立</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701955968191-4c310807-4f79-4fe2-a8c3-d8a108c67cb9.png" alt="img"></p>
+<p>not 非，非真即假，非假即真</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701956054559-1a9ffce9-0ce0-446e-84fa-0a2a5bac6f2f.png" alt="img"></p>
+<p>当and和or以及not同时出现的时候，最好加上括号，不会产生歧义或者不易理解</p>
+<p>运算顺序：括号&gt;not&gt;and&gt;or</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701956635891-b9c5b47e-22ae-46b1-93d9-adf5f089dee1.png" alt="img"></p>
+<p>成员运算符</p>
+<p>in 判断xxx是否在xxx中出现了</p>
+<p>not in 判断xxx是否不在xxx中出现了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701957837904-0cf3720a-2a63-4190-8683-68cab3cf00d4-170217287312814.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-字典" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/10/%E5%AD%97%E5%85%B8/">字典</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%97%E5%85%B8/" class="article-date">
+  <time datetime="2023-12-10T01:38:53.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>一、字典的概念</p>
+<p>字典是以键值对的形式进行存储数据的</p>
+<p>字典的表示方式：{key:value,key2:value,key3:value}</p>
+<p>用起来只是把索引换成了key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869597350-21c3bb5d-c6c9-4903-ae78-7f01b66b31e4-170217257992130.png" alt="img"></p>
+<p>字典的key必须是可哈希的数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869702106-8de24410-1e30-4850-95de-e5f3712e5c99.png" alt="img"></p>
+<p>字典的val可以是任何数据类型</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701869804311-89e76d3c-641c-48a9-a07e-562205b0b5df.png" alt="img"></p>
+<p>二、字典的增删改查</p>
+<p>1.增加</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871004801-3241e56b-6027-4d54-9f7d-884d96ce7665.png" alt="img"></p>
+<p>如果字典里已经有了一个相同的key那么执行的就是修改操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871594674-f9248ea1-5a56-4760-ac13-19f12bfff728.png" alt="img"></p>
+<p>setdefault() 设置默认值，如果之前已经有了tom了，那么setdefault就不起作用了</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871755916-80d6162e-a01f-4208-b468-0a8ed310a536.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871825072-7390e505-52cc-4c73-a4f6-9abbff03eb39.png" alt="img"></p>
+<p>2.删除</p>
+<p>pop()根据key去删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871905535-c7be1b69-68b8-4dcb-8469-47a7ba24fc43.png" alt="img"></p>
+<p>3.查询</p>
+<p>如果key不存在，程序会报错，当你确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871965204-af2b2f1a-77b7-4118-9914-5fa45f350641.png" alt="img"></p>
+<p>get() 如果key不存在会返回None，当你不确定你的key没有问题的时候可以用</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701871994959-5649fa5f-a1f9-401d-86df-c1baa26469f3.png" alt="img"></p>
+<p>None单纯的就是空，表示没有的意思</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872308919-6c9bd991-cafc-46e9-8885-d50441117e77.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872574684-c84d20ad-b7f9-47f3-9b05-3e0bd5a5c9f3.png" alt="img"></p>
+<p>三、字典的循环和嵌套</p>
+<p>1.可以用for循环直接拿到key</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701872949235-c7d9e492-b269-4d21-b7d9-d1f0405896d1.png" alt="img"></p>
+<p>2.希望把所有的key全都保存在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873052476-2897c0b0-aa69-4773-85d4-16955d257411.png" alt="img"></p>
+<p>3.希望把所有的val都放在一个列表中</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873271727-870a2553-e031-4952-838a-890f6cacc4cc.png" alt="img"></p>
+<p>4.直接拿到字典中的key和val</p>
+<p>item中只有两项元素</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873726003-25a85623-5d70-4322-9067-c06395f31a72.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874069203-666d10d4-5216-49ac-8461-5913dd709acc.png" alt="img"></p>
+<p>for key,value in dic.items():    可以直接拿到字典的所有的key和value</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874123122-924ce637-8d2b-4788-a2e5-2419c982d473.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874281198-fcbbb103-1297-48f5-9b2b-e7026852e64c.png" alt="img"></p>
+<p>解构（解包）元组或者列表都可以执行该操作</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701873874828-db00e330-594d-4d90-a427-0eff03df87a2.png" alt="img"></p>
+<p>5.字典的嵌套</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874461023-ffd34164-967c-4656-a745-2feeddc23b2c.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874574034-f92caa04-8da8-431f-8411-2aba01a6ee64.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701874693210-164ce52e-c470-48d3-8e71-01df8de3ba83.png" alt="img"></p>
+<p>四、循环删除</p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875080422-45def8e4-a07b-4898-baf8-7d0fe5bbba91.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701875096637-92acf055-3634-41f1-83ef-eec5babb226d.png" alt="img"></p>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-列表的操作" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -759,302 +967,6 @@
 </article>
 
   
-    <article id="post-blog搭建" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/">blog搭建</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/blog%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2023-12-01T08:35:18.000Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、利用github搭建hexo博客</p>
-<p>1.下载typora</p>
-<p>2.下载picgo</p>
-<p><a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p>
-<p>3.下载node.js</p>
-<p> <a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en</a></p>
-<p>4.下载git</p>
-<p>5.注册一个github账号</p>
-<p>6.在本地新建一个文件夹，名为hexo，路径不要有中文（不建议在C盘建立文件夹）</p>
-<p>7.选定hexo文件夹，右击-&gt;Git Bash Here</p>
-<p>8.使用nmp命令安装hexo,输入：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nmp install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421082102-981198c7-483b-44f3-84f4-6ec2f2aefaaf.png" alt="img"></p>
-<p>9.检测网站雏形，在Git Bash Here中输入以下命令</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
-
-<p>10.配置ssh</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></div>
-
-<p>11.如果提示：No such file or directory说明你是第一次使用git</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure></div>
-
-<p>12.连续按三次回车后,打开用户目录,找到.ssh\id_rsa.pub文件,用记事本打开并复制里面的内容,打开你的github主页,进入个人设置-&gt;SSH and GPG keys-&gt;New SSH key:</p>
-<p>在key里面填写刚刚复制的内容</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701421806986-ca65d812-0185-4d0f-983d-2827ebf202a3.png" alt="img"></p>
-<p>13.尝试ssh连接,测试是否成功</p>
-<p>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>(邮箱地址不用改)</p>
-<p>14.在blog目录下打开cmd</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git-save</span><br></pre></td></tr></table></figure></div>
-
-<p>15.在上一个Git Bash Here中继续配置</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;asd&quot;//你的github用户名,非昵称</span><br><span class="line">git config --global user.name &quot;xxx@qq.com&quot;//填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div>
-
-<p>16.在github上新建一个存储库,命名为github的用户名.github.io</p>
-<p>17.编辑_config.yml文件,在最后面改成这样</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	<span class="built_in">type</span>:git</span><br><span class="line">	repository:git@github.com:asd/asd.github.io.git</span><br><span class="line">	branch:main</span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422480401-0e9f8e54-4f97-4c1e-a45a-88f901b1d09e.png" alt="img"></p>
-<p>18.在Git Bash Here中输入hexo d -g上传</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422630998-a298dcfe-af8f-410c-b144-c8369324af81.png" alt="img"></p>
-<p>二、picgo和typora的连接</p>
-<p>1.打开typora,选择文件-&gt;偏好设置</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423371632-41787294-abcf-4b8b-91d2-334307e8a083.png" alt="img"></p>
-<p>2.点击图像,插入图片时选择第三个,然后勾选前四个,上传服务选择PicGo(app),PicGo路径精确定位到PicGo.exe</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423418143-126c33c9-8687-4447-96cd-2954e1ff6838.png" alt="img"></p>
-<p>3.在github上点击个人主页,选择setting</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701422863941-2661a534-3d7b-4deb-b831-c9f85cf844b0.png" alt="img"></p>
-<p>4.找到develoer setting-&gt;Personal access tokens-&gt;Tokens(classic)-&gt;Generate new token-&gt;Generate new token(classic),命名为123,生效时间选择永久,勾选第一个,生产令牌后复制令牌</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423208708-5b1c8bcf-97ce-45e5-a261-8facc836009e.png" alt="img"></p>
-<p>5.打开PicGo,点击图床设置-&gt;GitHub,然后编辑</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423796833-9950406b-68e4-4a09-b7e8-50a9daa7b40a.png" alt="img"></p>
-<p>6.图床配置名为123,仓库名为github用户名&#x2F;仓库名,分支名设为main,Token处填写刚刚复制的令牌,设定存储路径为img&#x2F;,点击确定,然后设为默认图床</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701423908277-71582001-1645-4aea-af5e-cd41482b55fa.png" alt="img"></p>
-<p>7.回到typora,点击验证图片上传选项,会显示验证成功,这样PicGo和typora的连接就建立成功了.</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701424133266-dd775176-adb1-480f-a2fb-db0f2ef72ea1.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-flash捆绑木马" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/">flash捆绑木马</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/flash%E6%8D%86%E7%BB%91%E6%9C%A8%E9%A9%AC/" class="article-date">
-  <time datetime="2023-12-01T08:35:00.311Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p><strong>flash钓鱼</strong></p>
-<p>一、flsah页面制作</p>
-<p>1.在虚拟机上下载PHPstudy<a target="_blank" rel="noopener" href="https://www.xp.cn/">https://www.xp.cn/</a></p>
-<p>2.将Apache2.4.39启动</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242117277-07e2434c-de41-49e8-b0b5-422296d3c198.png" alt="img"></p>
-<p>3.点击网站-&gt;管理-&gt;打开根目录</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242425297-25627557-6a19-4482-bced-647075779340.png" alt="img"></p>
-<p>4.删除里面所有的文件，然后创建一个txt后缀的文本文件，然后重命名为html后缀的index文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242539683-444f293f-c0aa-4b85-aa9d-03fe9a389e69.png" alt="img"></p>
-<p>5.在物理机上创建一个同样名字的HTML文件，再用物理机打开vscode</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701242703814-fa5379d5-1015-4289-9201-e127352a8641.png" alt="img"></p>
-<p>6.点击文件-&gt;打开文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249884601-dddd9c7f-40c9-4e2a-87eb-b2dbc22de4e9.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701249910816-31ce902a-0c4a-4802-b7e8-09cfaab3a726.png" alt="img"></p>
-<p>7.选择创建好了的html后缀的文件，然后点击打开，按住shift+!再回车就会出现主体代码</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701250528610-3f9e007a-c789-44c5-8b06-9fc229a01caa.png" alt="img"></p>
-<p>8.在body部分输入</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./flash.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257286044-367b115c-8415-489f-9684-616a4ee65d0b.png" alt="img"></p>
-<p>9.把刚刚在win10虚拟机中创建的html后缀的文件以记事本方式打开</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701256764522-d9dc980c-5cf8-4ccc-a1fb-e27e9af713a4.png" alt="img"></p>
-<p>10.把刚刚在vscode里面编辑的代码全选放到虚拟机打开的记事本中并保存</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257377858-610ce9af-b02a-4a33-8817-11d58da08b97.png" alt="img"></p>
-<p>11.使用一个js脚本，放在phpstudy的根目录下面</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/js/38965110/1701257616887-4fb4735e-cf48-4c4f-a6e3-5d8e645a7e65.js">📎flash.js</a></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257517150-40da6315-c04d-4eca-a6ff-5bff5e230329.png" alt="img"></p>
-<p>12.打开phpsutdy,点击网站-&gt;管理-&gt;打开网站</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257104962-c5db6f7e-616d-4512-bd2a-e7b429701929.png" alt="img"></p>
-<p>13.打开之后就会显示出已经成功做好的flash页面</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701257675328-58254a46-e6ca-4d01-818d-c590670d89c7.png" alt="img"></p>
-<p>二、flash捆绑木马</p>
-<p>1.关掉所有的杀毒软件，然后下载好一个木马程序和flash安装包</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701257965001-0662f572-9b18-4ca9-ba98-f76b17434788.rar">📎木马.rar</a></p>
-<p>2.同时选中木马程序和flash安装包，右击，然后选择添加到压缩文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258200200-8652d6be-397d-4065-9d28-a8772764173b.png" alt="img"></p>
-<p>3.勾选创建自解压格式压缩文件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258292065-c75d18f8-e62b-43ec-bfe7-ff4f2c0e7efa.png" alt="img"></p>
-<p>4.点击高级-&gt;自解压选项</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258341196-70b676d4-5e92-4b83-93bd-e7d699d36688.png" alt="img"></p>
-<p>5.解压路径设置 C:\windows\temp</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258415770-b0abff9f-be5c-499c-94e8-322225312f64.png" alt="img"></p>
-<p>6.然后点击设置选项卡，在解压后运行里面输入</p>
-<p>C:\windows\temp\flashcenter_pp_ax_install_cn.exe </p>
-<p>（黄色背景部分对应之前下载好的flash安装包的名字）</p>
-<p>C:\windows\temp\flash.exe</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258524712-fc5f3e77-99bf-43a6-8bcf-088ab7ccda83.png" alt="img"></p>
-<p>7.点击模式选项卡，选择全部隐藏</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258662803-6b087acd-87b1-4fb2-a402-3cc6602034a4.png" alt="img"></p>
-<p>8.点击更新选项卡，将更新模式和覆盖模式都选择为第二个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701258732039-f6afe207-716d-4536-bb1e-a9b363100495.png" alt="img"></p>
-<p>9.点击确定，然后会显示出一个压缩包</p>
-<p>10.下载一个图标更改程序</p>
-<p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2023/rar/38965110/1701259144003-8c7b05df-dee9-4dc0-a0ea-892dc098d500.rar">📎更改图标.rar</a></p>
-<p>11.点击Restorator.exe启动程序</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259200499-893f034b-5038-404e-8df3-93c51ba774d3.png" alt="img"></p>
-<p>12.将刚刚做好的压缩包和flash安装包拖到资源树中</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259331313-7c90067b-2109-4b43-8d78-037de2cdbb93.png" alt="img"></p>
-<p>13.删除压缩包的图标，将flash安装包的图标复制到压缩包中git clone </p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259414320-5998c659-18b4-4ad1-b87e-f6d3e625aff0.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259443564-3d4782d7-e7d0-4301-a310-9d7c59665e9d.png" alt="img"></p>
-<p>14.再次点击压缩包的图标，可以发现它变成了flash安装包的图标</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259474971-33a92c45-eeef-4d07-b7cd-8f0c974944fa.png" alt="img"></p>
-<p>15.点击保存</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701259612821-1bc8a54f-0982-434e-8bb7-ff49d96f27fa.png" alt="img"></p>
-<p>16.将改好的压缩包放入phpstudy的根目录中，并将其名字改为flash压缩包的名字</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260620277-b5c02f4a-9f08-4618-9473-179e12ca3f10.png" alt="img"></p>
-<p>17.打开浏览器，在地址栏输入127.0.0.1，就可以看到捆绑木马的flash网站做好了</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260813077-0f742009-228e-480a-bf63-14a0633b3ba9.png" alt="img"></p>
-<p>18.点击立即升级，下载压缩包并打开，打开之后可以看到木马已经植入电脑</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701260922885-cbc0e881-ff3d-4de9-afc1-12bb17a4cfd5.png" alt="img"></p>
-<p>三、自制的其它钓鱼网页（不带免杀）</p>
-<p>1.打开一个steam网页，右击选择另存页面为，将源码保存phpstudy的根目录下</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261407197-fcc16284-f069-4ad4-b056-eec6a81a0669.png" alt="img"></p>
-<p>2.找到一个steam安装包</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261585930-1f872cc8-d5bb-447c-9c17-439d347a28d2.png" alt="img"></p>
-<p>3.选中之前下好的木马和steam安装包，右击重复之前的压缩步骤，这一步的路径要改为steam安装包的名字</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261737866-6b0721e8-4371-4466-9bd7-1e47d4730c22.png" alt="img"></p>
-<p>4.压缩好了之后，再重复之前更改图标的操作，然后将压缩包放入phstudy的根目录中</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261867321-37455cc4-23ac-4773-a0cf-b69126b0f0e2.png" alt="img"></p>
-<p>5.把之前下好的Sign In.htm改为index.html</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701261979887-6c17d526-e257-4fdb-bd81-2f1fe2295cd8.png" alt="img"></p>
-<p>6.右击index.html用记事本打开，找到installsteam这一部分</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262093234-b2da25f4-326c-41b5-ab6f-5d1c04c15669.png" alt="img"></p>
-<p>7.将href&#x3D;” “里面的内容改为&#x2F;Steaminstaller.exe ,保存更改</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262136805-e092cdc8-ced2-4d36-90f6-4f0d52f1ea84.png" alt="img"></p>
-<p>8.打开浏览器在地址栏输入127.0.0.1，点击Install steam</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262295670-2c70901a-1472-463d-bf8a-348747ce7c7d.png" alt="img"></p>
-<p>9.打开下载好的文件，可以看到电脑跟之前已植入木马</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701262451061-c1c606b5-e522-48f7-87b6-6675ef8850af.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-大灰狼远控的使用" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">大灰狼远控的使用</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2023/12/01/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%BF%9C%E6%8E%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2023-12-01T08:34:46.505Z" itemprop="datePublished">2023-12-01</time>
-</a>
-    
-    
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <p>一、简单的钓鱼网站的使用</p>
-<p>1.在kali中打开终端，然后输入vim &#x2F;etc&#x2F;proxychains.conf</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701163989520-c04fdac0-75b9-4c53-9360-14543367bd40-17015255965491.png" alt="img"></p>
-<p>2.将打开的文件的最后一行改为代理IP和端口号</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164102196-7ec26a8b-a36c-48d2-85d7-4784e0ec0e13.png" alt="img"></p>
-<p>3.然后按ESC输入冒号：，再输入wq！保存并退出编辑</p>
-<p>4.在终端上输入proxychains git clone <a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a></p>
-<p>5.输入cd mip22</p>
-<p>6.输入chmod +x .&#x2F;*</p>
-<p>7.输入proxychains -q bash .&#x2F;mip22.sh，然后会出现以下界面</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701164499098-4e23cf81-3848-4d66-b305-5149d99ec59e.png" alt="img"></p>
-<p>8.输入1</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169456733-f501ff26-7cab-43c6-b06c-681a4515f523.png" alt="img">9.选择一个钓鱼内容，例如输入51</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169581270-82784944-40af-4552-a169-efb3599421df-17015255965519.png" alt="img">10.输入3，等待加载</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701169711062-13d90eee-84fd-4954-ac22-9b712726148c.png" alt="img">11.可以得到三个url，选择https的url，复制用浏览器打开，可以得到一个steam登录的钓鱼页面</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701169863063-ac506893-c7bc-4c28-ab1f-9ac313a6d0a3.png" alt="img">二、HTTP动态码的获取</p>
-<p>1.下载VScode<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>2.在VScode的扩展商店里面搜索python，安装第一个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170215657-9dd1552f-621d-4890-a54d-6d64f5bd35ee-170152559655215.png" alt="img"></p>
-<p>3.在VScode的扩展商店里面搜索code run，安装第一个</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170316383-7e431e4b-6b0e-465d-a9bb-05a30b98ae17.png" alt="img"></p>
-<p>4.新建一个python类型的文件，输入代码</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;https://httpbin.org/get&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line"><span class="built_in">print</span>(r.status_code)</span><br></pre></td></tr></table></figure></div>
-
-<p>5.将输入的python代码保存在已经安装好的python目录下</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170569987-ca60416f-60cb-4ede-aee5-0a082f1ca894.png" alt="img">6.在搜索栏中搜索cmd，打开cmd</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170683708-6a1f3b8c-add2-4b0e-ab2d-4bbabc2c0a88.png" alt="img">7.输入python 1.py</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170747051-a383fea0-6d8f-473c-9dbf-34fdb4c01492.png" alt="img">8.出现报错，根据报错信息下载插件，输入pip install requests -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170851925-c9a0feb6-b8e1-4e43-8452-bcff8c4dfada.png" alt="img">9.再次输入python 1.py进行尝试，看是否还缺少插件</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170918247-c81c08dc-2aff-431c-a08c-b2c1abef7c95.png" alt="img">10.再次出现报错，根据报错信息安装插件，输入pip install chardet -i <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a> –trusted-host mirrors.aliyun.com</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701170994659-9f1fd45b-1731-4b67-a5b9-94640bf72284-170152559655329.png" alt="img"></p>
-<p> 11.再次输入python 1.py进行尝试，可以发现成功获取动态码</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171049744-1454bc09-aa00-4bdd-b04a-d7dd1a0a44bb-170152559655331.png" alt="img"></p>
-<p>三、大灰狼的使用</p>
-<p>1.关闭物理机和win10虚拟机的防病毒及防火墙，下载大灰狼并打开</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171518360-8a279f31-25f1-4c76-832d-6639ac7f39d1.png" alt="img"></p>
-<p>2.点击服务生成</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171565452-0758b854-3477-4009-8c6d-a24a1368a0c3-170152559655435.png" alt="img"></p>
-<p>3.将域名ip改为自己的本机ip，然后点击生成服务</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701171641871-2a1d26db-e34a-4c80-8d7b-ffce73638523.png" alt="img">4.生成一个后缀为.exe的可执行文件，将文件拖入win10虚拟机中，在win10虚拟机上双击执行，然后就可以用大灰狼对虚拟机进行远程操作了。</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701227982639-77b0633f-4405-424d-87b9-7c3b9f258425.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228005878-7138970c-1e2e-40c6-97c9-9fd7611e5d4b.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228050788-ffa1b89c-f065-4683-b82e-2ee25e0419b8.png" alt="img">5.右击已连接的虚拟机，可以对win10虚拟机进行远程控制，键盘记录等</p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228257371-d40f470e-399b-4c14-95a6-7f9815bb6ff2.png" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/qyj888/888/main/img/1701228269579-d1848b4f-3165-4fee-8026-dea1e75d4606.png" alt="img"></p>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -1120,23 +1032,23 @@
       <ul>
         
           <li>
+            <a href="/2024/01/08/%E7%BB%95%E8%BF%87waf/">绕过waf</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/pikachu%E9%9D%B6%E5%9C%BA/">pikachu靶场</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/08/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+          </li>
+        
+          <li>
             <a href="/2024/01/07/moneybox%E9%9D%B6%E6%9C%BA/">moneybox靶机</a>
           </li>
         
           <li>
             <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%89%E5%BC%B9/">sql注入第三弹</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%88sqlmap%EF%BC%89/">sql注入第二弹（sqlmap）</a>
-          </li>
-        
-          <li>
-            <a href="/2024/01/07/sql%E6%B3%A8%E5%85%A5%E7%AC%AC%E4%B8%80%E5%BC%B9/">sql注入第一弹</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/25/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
           </li>
         
       </ul>
